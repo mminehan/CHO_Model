@@ -1,0 +1,472 @@
+// Ecoli core model -
+
+// ============================================================== //
+// Signal transduction/metabolic reactions -
+#pragma::metabolic_reaction_handler
+//
+// Record:
+// name (unique),reactants,products,reverse,forward;
+//
+// Notes:
+// [] = system (not tracked)
+//
+// ============================================================= //
+
+
+//R_malS,M_maltose_c+M_h2o_c,2*M_glc_D_c,0,inf
+//R_PTS,M_pep_c+M_glc_D_c,M_g6p_c+M_pyr_c,0,inf
+// Phosphotransferase system (PTS)
+// R_PTS,M_pep_c+M_glc_D_e,M_g6p_c+M_pyr_c,0,inf
+// ??? Is PTS active in cell-free system?
+
+R_glk_atp,M_atp_c+M_glc_D_c,M_adp_c+M_g6p_c+M_h_c,0,inf
+R_glk_utp,M_utp_c+M_glc_D_c,M_udp_c+M_g6p_c+M_h_c,0,inf
+R_glk_ctp,M_ctp_c+M_glc_D_c,M_cdp_c+M_g6p_c+M_h_c,0,inf
+R_glk_gtp,M_gtp_c+M_glc_D_c,M_gdp_c+M_g6p_c+M_h_c,0,inf
+
+// Glucokinase (glk)
+R_pgi,M_g6p_c,M_f6p_c,-inf,inf
+	// Phosphoglucose isomerase (pgi)
+R_pfk,M_atp_c+M_f6p_c,M_adp_c+M_fdp_c+M_h_c,0,inf
+	// Phosphofructokinase (pfk)
+R_fdp,M_fdp_c+M_h2o_c,M_f6p_c+M_pi_c,0,inf
+	// Fructose-1,6-bisphosphate aldolase (fdp)
+R_fbaA,M_fdp_c,M_dhap_c+M_g3p_c,-inf,inf
+	// Fructose-1,6-bisphosphatase (fbaA)
+R_tpiA,M_dhap_c,M_g3p_c,-inf,inf
+	// Triosphosphate isomerase (tpiA)
+R_gapA,M_g3p_c+M_nad_c+M_pi_c,M_13dpg_c+M_h_c+M_nadh_c,-inf,inf
+	// Glyceraldehyde-3-phosphate dehydrogenase (gapA)
+R_pgk,M_13dpg_c+M_adp_c,M_3pg_c+M_atp_c,-inf,inf
+	// Phosphoglycerate kinase (pgk)
+R_gpm,M_3pg_c,M_2pg_c,-inf,inf
+	// Phosphoglycerate mutase (gpm)
+R_eno,M_2pg_c,M_h2o_c+M_pep_c,-inf,inf
+	// Enolase (eno)
+R_pyk,M_adp_c+M_h_c+M_pep_c,M_atp_c+M_pyr_c,0,inf
+	// Pyruvate kinase (pykAF)
+R_pck,M_atp_c+M_oaa_c,M_adp_c+M_co2_c+M_pep_c,0,inf
+	// PEP carboxykinase (pck)
+R_ppc,M_co2_c+M_h2o_c+M_pep_c,M_h_c+M_oaa_c+M_pi_c,0,inf
+	// PEP carboxylase (ppc)
+R_pdh,M_coa_c+M_nad_c+M_pyr_c,M_accoa_c+M_co2_c+M_nadh_c,0,inf
+	// Pyruvate dehydrogenase (pdh)
+R_pps,M_atp_c+M_h2o_c+M_pyr_c,M_amp_c+2*M_h_c+M_pep_c+M_pi_c,0,inf
+	// PEP synthase (pps)
+
+// ======================================================================
+// PENTOSE PHOSPHATE PATHWAY
+// ======================================================================
+R_zwf,M_g6p_c+M_nadp_c,M_6pgl_c+M_h_c+M_nadph_c,-inf,inf
+	// Glucose-6-phosphate dehydrogenase (zwf)
+R_pgl,M_6pgl_c+M_h2o_c,M_6pgc_c+M_h_c,0,inf
+	// 6-Phosphogluconolactonase (pgl)
+R_gnd,M_6pgc_c+M_nadp_c,M_co2_c+M_nadph_c+M_ru5p_D_c,0,inf
+	// 6-Phosphogluconate dehydrogenase(gnd)
+R_rpe,M_ru5p_D_c,M_xu5p_D_c,-inf,inf
+	// Ribose-5-phosphate epimerase (rpe)
+R_rpi,M_r5p_c,M_ru5p_D_c,-inf,inf
+	// Ribose-5-phosphate isomerase (rpi)
+R_talAB,M_g3p_c+M_s7p_c,M_e4p_c+M_f6p_c,-inf,inf
+	// Transaldolase (talAB)
+R_tkt1,M_r5p_c+M_xu5p_D_c,M_g3p_c+M_s7p_c,-inf,inf
+	// Transketolase 1 (tktA)
+R_tkt2,M_e4p_c+M_xu5p_D_c,M_f6p_c+M_g3p_c,-inf,inf
+	// Transketolase 2 (tktB)
+
+// ======================================================================
+// ENTNER-DOUDOROFF (ED) PATHWAY -
+// ======================================================================
+R_edd,M_6pgc_c,M_2ddg6p_c+M_h2o_c,0,inf
+	// 6-Phosphogluconate dehydrase (edd)
+R_eda,M_2ddg6p_c,M_g3p_c+M_pyr_c,0,inf
+	// 2-Keto-3-deoxy-6-phospho-gluconate aldolase (eda)
+
+// ======================================================================
+// TCA CYCLE
+// ======================================================================
+R_gltA,M_accoa_c+M_h2o_c+M_oaa_c,M_cit_c+M_coa_c+M_h_c,0,inf
+	// Citrate synthase (gltA)
+R_acn,M_cit_c,M_icit_c,-inf,inf
+	// Aconitase (acn)
+R_icd,M_icit_c+M_nadp_c,M_akg_c+M_co2_c+M_nadph_c,0,inf
+	// Isocitrate dehydrogenase (icd)
+R_sucAB,M_akg_c+M_coa_c+M_nad_c,M_co2_c+M_nadh_c+M_succoa_c,0,inf
+	// 2-Ketoglutarate dehydrogenase (sucAB)
+R_sucCD,M_adp_c+M_pi_c+M_succoa_c,M_atp_c+M_coa_c+M_succ_c,0,inf
+	// Succinate thiokinase (sucCD)
+
+R_sdh,M_q8_c+M_succ_c,M_fum_c+M_q8h2_c,0,inf
+	// Succinate dehydrogenase (sdhABCD)
+R_frd,M_fum_c+M_mql8_c,M_mqn8_c+M_succ_c,0,inf
+	// Fumurate reductase (frdABCD)
+
+R_fum,M_fum_c+M_h2o_c,M_mal_L_c,0,inf
+	// Fumarase (fumAB)
+R_mdh,M_mal_L_c+M_nad_c,M_oaa_c+M_h_c+M_nadh_c,0,inf
+	// Malate dehydrogenase (mdh)
+
+// ======================================================================
+// ANAPLEUROTIC/GLYOXYLATE REACTIONS
+// ======================================================================
+R_aceA,M_icit_c,M_glx_c+M_succ_c,0,inf
+	// Isocitrate lyase (aceA)
+R_aceB,M_accoa_c+M_glx_c+M_h2o_c,M_coa_c+M_h_c+M_mal_L_c,0,inf
+	// Malate synthase (aceB)
+R_maeA,M_mal_L_c+M_nad_c,M_co2_c+M_nadh_c+M_pyr_c,0,inf
+	// Malic enzyme (maeA)
+R_maeB,M_mal_L_c+M_nadp_c,M_co2_c+M_nadph_c+M_pyr_c,0,inf
+	// Malic enzyme (maeB)
+
+// ======================================================================
+// OVERFLOW METABOLISM
+// ======================================================================
+R_pta,M_accoa_c+M_pi_c,M_actp_c+M_coa_c,-inf,inf
+R_ackA,M_actp_c+M_adp_c,M_ac_c+M_atp_c,-inf,inf
+R_acs,M_ac_c+M_atp_c+M_coa_c,M_accoa_c+M_amp_c+M_ppi_c,0,inf
+	// Acetyl-CoA synthetase (acs)
+R_adhE,M_accoa_c+2*M_h_c+2*M_nadh_c,M_coa_c+M_etoh_c+2*M_nad_c,-inf,inf
+	// Alcohol dehydrogenase (adhE)
+R_ldh_f,M_pyr_c+M_nadh_c+M_h_c,M_lac_D_c+M_nad_c,0,inf
+R_ldh_r,M_lac_D_c+M_nad_c,M_pyr_c+M_nadh_c+M_h_c,0,inf
+
+	// Lactate dehydrogenase (ldh)
+R_pflAB,M_coa_c+M_pyr_c,M_accoa_c+M_for_c,0,inf
+	// Pyruvate formate lyase (pflAB)
+
+// ===========================================
+// OXIDATIVE PHOSPHORYLATION
+// ===========================================
+R_cyd,2*M_h_c+0.5*M_o2_c+M_q8h2_c,M_h2o_c+M_q8_c+2*M_h_e,0,inf
+	// Cytochrome oxidase bd (cyd)
+R_cyo,4*M_h_c+0.5*M_o2_c+M_q8h2_c,M_h2o_c+M_q8_c+4*M_h_e,0,inf
+R_app,2*M_h_c+M_mql8_c+0.5*M_o2_c,M_h2o_c+M_mqn8_c+2*M_h_e,0,inf
+R_atp,M_adp_c+M_pi_c+4*M_h_e,M_atp_c+3*M_h_c+M_h2o_c,0,inf
+	// ATP synthase (atp)
+
+// ===========================================
+// COFACTORS
+// ===========================================
+R_nuo,3*M_h_c+M_nadh_c+M_q8_c,M_nad_c+M_q8h2_c+2*M_h_e,0,inf
+	// NADH:ubiquinone oxidoreductase(nuo)
+R_pnt1,M_nad_c+M_nadph_c,M_nadh_c+M_nadp_c,0,inf
+	// Transhydrogenase (pntAB)
+R_pnt2,M_nadh_c+M_nadp_c+2*M_h_e,2*M_h_c+M_nad_c+M_nadph_c,0,inf
+	// Transhydrogenase (pntAB)
+R_ndh1,M_h_c+M_nadh_c+M_q8_c,M_nad_c+M_q8h2_c,0,inf
+	// NADH dehydrogenase (ndh)
+R_ndh2,M_h_c+M_mqn8_c+M_nadh_c,M_mql8_c+M_nad_c,0,inf
+	// NADH dehydrogenase (ndh)
+R_hack1,M_atp_c+M_h2o_c,M_adp_c+M_h_c+M_pi_c,0,inf
+R_ppk,M_atp_c+M_pi_c,M_adp_c+M_ppi_c,0,inf
+R_ppa,M_ppi_c+M_h2o_c,2*M_pi_c+M_h_c,0,inf
+	// Inorganic pyrophosphatase (ppa)
+
+// ===============================================
+// CHORISMATE
+// ===============================================
+// Chorismate is an intermediate in the synthesis of the amino acids:
+// tyrosine, phenylalanine, and tryptophan. It is also a precursor of folic acid
+// ubiquinone, menaquinone, and enterochelin.
+R_chor,M_e4p_c+2*M_pep_c+M_nadph_c+M_atp_c,M_chor_c+M_nadp_c+M_adp_c+4*M_pi_c,0,inf
+
+// ===============================================
+// IMP
+// ===============================================
+// Inosine monophosphate (IMP) is precursor to purines adenosine and guanosine.
+R_gar,M_r5p_c+M_gln_L_c+M_gly_L_c+2*M_atp_c+M_h2o_c,M_gar_c+M_glu_L_c+M_adp_c+M_amp_c+M_pi_c+M_ppi_c+7*M_h_c,0,inf
+R_air,M_gar_c+M_10fthf_c+M_gln_L_c+2*M_atp_c+M_h2o_c,M_air_c+M_thf_c+M_glu_L_c+2*M_adp_c+2*M_pi_c+3*M_h_c,0,inf
+R_aicar,M_air_c+M_asp_L_c+2*M_atp_c+M_hco3_c,M_aicar_c+M_fum_c+2*M_adp_c+2*M_h_c+2*M_pi_c,0,inf
+R_imp,M_aicar_c+M_10fthf_c,M_imp_c+M_thf_c+M_h2o_c,0,inf
+
+// ===============================================
+// Reactions EC_iJR904 to fix gaps
+// ===============================================
+// R_mthfc R_methenyltetrahydrofolate_cyclohydrolase
+R_mthfc,M_h2o_c+M_methf_c,M_10fthf_c,-inf,inf
+
+// R_methylenetetrahydrofolate_dehydrogenase__NADP_
+R_mthfd,M_mlthf_c+M_nadp_c,M_h_c+M_methf_c+M_nadph_c,-inf,inf
+
+// R_mthfr2 R_5_10_methylenetetrahydrofolate_reductase__NADH_
+R_mthfr2,M_mlthf_c+M_h_c+M_nadh_c,M_5mthf_c+M_nad_c,0,inf
+
+// ===============================================
+// PURINE SYNTHESIS
+// ===============================================
+// Guanosine
+R_gmp,M_imp_c+M_atp_c+M_gln_L_c+M_nad_c+2*M_h2o_c,M_gmp_c+M_amp_c+M_glu_L_c+M_nadh_c+3*M_h_c+M_ppi_c,0,inf
+R_gdp,M_gmp_c+M_atp_c,M_gdp_c+M_adp_c,0,inf
+	// Guanylate kinase (gmk)
+R_gtp,M_gdp_c+M_atp_c,M_gtp_c+M_adp_c,0,inf
+	// GDP kinase (ndk)
+
+// Adenosine
+R_amp,M_asp_L_c+M_imp_c+M_gtp_c,M_amp_c+M_gdp_c+M_pi_c+2*M_h_c+M_fum_c,0,inf
+R_adk,M_amp_c+M_atp_c,2*M_adp_c,-inf,inf
+	// Adenylate kinase (adk)
+
+// ===============================================
+// PYRIMIDINE SYNTHESIS
+// ===============================================
+// Uridine
+R_ump,M_gln_L_c+M_asp_L_c+M_r5p_c+M_q8_c+3*M_atp_c+M_hco3_c,M_ump_c+M_glu_L_c+M_q8h2_c+2*M_h_c+2*M_adp_c+M_amp_c+2*M_pi_c+M_ppi_c+M_co2_c,0,inf
+R_udp,M_ump_c+M_atp_c,M_udp_c+M_adp_c,0,inf
+R_utp,M_udp_c+M_atp_c,M_utp_c+M_adp_c,0,inf
+
+// Cytidine
+R_ctp,M_utp_c+M_gln_L_c+M_atp_c+M_h2o_c,M_ctp_c+M_glu_L_c+M_adp_c+M_pi_c+3*M_h_c,0,inf
+R_cdp,M_ctp_c+M_h2o_c,M_cdp_c+M_pi_c+M_h_c,0,inf
+R_cmp,M_cdp_c+M_h2o_c,M_cmp_c+M_pi_c+M_h_c,0,inf
+
+// ===============================================
+// AMINO ACIDS
+// ===============================================
+
+// Alanine -
+R_alaAC,M_pyr_c+M_glu_L_c,M_ala_L_c+M_akg_c,0,inf
+	// Glutamic-pyruvic transaminase
+
+// Arginine -
+R_arg,M_glu_L_c+M_accoa_c+4*M_atp_c+M_nadph_c+3*M_h2o_c+M_gln_L_c+M_asp_L_c+M_co2_c,M_arg_L_c+M_coa_c+5*M_h_c+3*M_adp_c+3*M_pi_c+M_nadp_c+M_akg_c+M_ac_c+M_amp_c+M_ppi_c+M_fum_c,0,inf
+
+// Aspartate -
+R_aspA,M_fum_c+M_nh4_c,M_asp_L_c,-inf,inf
+R_aspC,M_glu_L_c+M_oaa_c,M_asp_L_c+M_akg_c,0,inf
+	// Aspartate transaminase (aspC)
+
+// Asparagine -
+R_asnB,M_asp_L_c+M_gln_L_c+M_h2o_c+M_atp_c,M_asn_L_c+M_glu_L_c+M_h_c+M_ppi_c+M_amp_c,0,inf
+	// Glutamine-dependent asparagine synthetase (asnB)
+R_asnA,M_asp_L_c+M_atp_c+M_nh4_c,M_asn_L_c+M_h_c+M_ppi_c+M_amp_c,0,inf
+	// Ammonia-dependent asparagine synthetase (asnA)
+
+// Cysteine -
+R_cysEMK,M_ser_L_c+M_accoa_c+M_h2s_c,M_cys_L_c+M_coa_c+M_h_c+M_ac_c,0,inf
+
+// Glutamate -
+R_gltBD,M_gln_L_c+M_akg_c+M_nadph_c+M_h_c,2*M_glu_L_c+M_nadp_c,0,inf
+	// Glutamate synthase (gltBD)
+R_gdhA,M_akg_c+M_nadph_c+M_nh4_c+M_h_c,M_glu_L_c+M_h2o_c+M_nadp_c,0,inf
+	// Glutamate dehydrogenase (gdhA)
+
+// Glutamine -
+R_glnA,M_glu_L_c+M_atp_c+M_nh4_c,M_gln_L_c+M_h_c+M_adp_c+M_pi_c,0,inf
+	// Glutamine synthatase(glnA)
+
+// Glycine -
+R_glyA,M_ser_L_c+M_thf_c,M_gly_L_c+M_h2o_c+M_mlthf_c,0,inf
+	// Glycine cleavage systam (gcv)
+
+// Histidine -
+R_his,M_gln_L_c+M_r5p_c+3*M_atp_c+2*M_nad_c+3*M_h2o_c,M_his_L_c+M_akg_c+M_aicar_c+2*M_adp_c+2*M_nadh_c+M_pi_c+2*M_ppi_c+6*M_h_c,0,inf
+	// Replacing aicar with imp here
+
+// Isoleucine -
+R_ile,M_thr_L_c+2*M_h_c+M_pyr_c+M_nadph_c+M_glu_L_c,M_ile_L_c+M_h2o_c+M_nh4_c+M_co2_c+M_nadp_c+M_akg_c,0,inf
+	// ilv
+
+// Leucine -
+R_leu,2*M_pyr_c+M_glu_L_c+M_h_c+M_nad_c+M_nadph_c+M_accoa_c,M_leu_L_c+2*M_co2_c+M_nadp_c+M_coa_c+M_nadh_c+M_akg_c,0,inf
+	// leu
+
+// Lysine -
+R_lys,M_asp_L_c+M_atp_c+2*M_nadph_c+2*M_h_c+M_pyr_c+M_succoa_c+M_glu_L_c,M_lys_L_c+M_adp_c+M_pi_c+2*M_nadp_c+M_coa_c+M_akg_c+M_succ_c+M_co2_c,0,inf
+
+// Methionine -
+R_met,M_asp_L_c+M_cys_L_c+M_succoa_c+M_atp_c+2*M_nadph_c+M_5mthf_c,M_met_L_c+M_coa_c+M_succ_c+M_adp_c+M_pi_c+2*M_nadp_c+M_thf_c+M_nh4_c+M_pyr_c,0,inf
+	// met
+
+// Phenylalanine -
+R_phe,M_chor_c+M_h_c+M_glu_L_c,M_phe_L_c+M_co2_c+M_h2o_c+M_akg_c,0,inf
+
+// Proline -
+R_pro,M_glu_L_c+M_atp_c+2*M_h_c+2*M_nadph_c,M_pro_L_c+M_adp_c+2*M_nadp_c+M_pi_c+M_h2o_c,0,inf
+	// Glutamyl kinase (proB)
+
+// Serine -
+R_serABC,M_3pg_c+M_nad_c+M_glu_L_c+M_h2o_c,M_ser_L_c+M_nadh_c+M_h_c+M_akg_c+M_pi_c,0,inf
+	// ser
+
+// Threonine -
+R_thr,M_asp_L_c+2*M_atp_c+2*M_nadph_c+M_h_c+M_h2o_c,M_thr_L_c+2*M_adp_c+2*M_pi_c+2*M_nadp_c,0,inf
+	// thr
+
+// Tryptophan -
+R_trp,M_chor_c+M_gln_L_c+M_ser_L_c+M_r5p_c+2*M_atp_c,M_trp_L_c+M_glu_L_c+M_pyr_c+M_ppi_c+2*M_h2o_c+M_co2_c+M_g3p_c+2*M_adp_c+M_h_c,0,inf
+
+// Tyrosine -
+R_tyr,M_chor_c+M_glu_L_c+M_nad_c,M_tyr_L_c+M_akg_c+M_nadh_c+M_co2_c,0,inf
+	// tyr
+
+// Valine -
+R_val,2*M_pyr_c+2*M_h_c+M_nadph_c+M_glu_L_c,M_val_L_c+M_co2_c+M_nadp_c+M_h2o_c+M_akg_c,0,inf
+	// ilv
+
+// ======================================================================
+// AMINO ACID DEGRADATION
+// ======================================================================
+
+// superpathway of L-arginine and L-ornithine degradation
+R_arg_deg1,M_arg_L_c+5.0*M_h2o_c+M_atp_c+M_o2_c+2.0*M_nad_c+M_akg_c,4.0*M_h_c+M_co2_c+M_urea_c+M_glu_L_c+M_pi_c+M_adp_c+M_nh4_c+M_h2o2_c+2.0*M_nadh_c+M_succ_c,0,inf
+R_arg_deg2,M_arg_L_c+5.0*M_h2o_c+M_atp_c+M_o2_c+M_nad_c+M_nadp_c+M_akg_c,4.0*M_h_c+M_co2_c+M_urea_c+M_glu_L_c+M_pi_c+M_adp_c+M_nh4_c+M_h2o2_c+M_nadh_c+M_nadph_c+M_succ_c,0,inf
+R_arg_deg3,M_arg_L_c+5.0*M_h2o_c+M_atp_c+M_o2_c+2.0*M_nadp_c+M_akg_c,4.0*M_h_c+M_co2_c+M_urea_c+M_glu_L_c+M_pi_c+M_adp_c+M_nh4_c+M_h2o2_c+2.0*M_nadph_c+M_succ_c,0,inf
+R_arg_deg4,M_arg_L_c+3.0*M_h2o_c+2.0*M_akg_c+2.0*M_nad_c,3.0*M_h_c+M_co2_c+M_urea_c+2.0*M_glu_L_c+2.0*M_nadh_c+M_succ_c,0,inf
+R_arg_deg5,M_arg_L_c+3.0*M_h2o_c+2.0*M_akg_c+M_nad_c+M_nadp_c,3.0*M_h_c+M_co2_c+M_urea_c+2.0*M_glu_L_c+M_nadh_c+M_nadph_c+M_succ_c,0,inf
+
+// L-arginine degradation II (AST pathway)
+R_arg_deg6,M_arg_L_c+M_accoa_c+4.0*M_h2o_c+M_akg_c+M_nad_c,M_coa_c+M_h_c+M_co2_c+2.0*M_nh4_c+2.0*M_glu_L_c+M_nadh_c+M_succ_c,0,inf
+
+// superpathway of L-threonine metabolism
+R_thr_deg1,M_thr_L_c+M_nad_c+M_coa_c,M_nadh_c+M_h_c+M_accoa_c+M_gly_L_c,0,inf
+R_thr_deg2,M_thr_L_c+M_nad_c+M_o2_c+M_h2o_c,M_nadh_c+M_co2_c+M_h2o2_c+M_nh4_c+M_mglx_c,0,inf
+R_thr_deg3,M_thr_L_c+M_coa_c+M_nad_c,M_gly_L_c+M_accoa_c+M_nadh_c+M_h_c,0,inf
+R_thr_deg4,M_thr_L_c+M_pi_c+M_adp_c,M_h_c+M_h2o_c+M_for_c+M_atp_c+M_prop_c,0,inf
+R_thr_deg5,M_thr_L_c+M_h_c+M_pyr_c+M_nadph_c+M_glu_L_c,2.0*M_h2o_c+M_co2_c+M_nadp_c+M_akg_c+M_ile_L_c,0,inf
+
+R_gly_deg,M_gly_L_c+M_accoa_c+M_h_c+M_o2_c+M_h2o_c,M_coa_c+M_co2_c+M_h2o2_c+M_nh4_c+M_mglx_c,0,inf
+R_mglx_deg,M_mglx_c+M_nadp_c+M_h2o_c,M_pyr_c+M_nadph_c+M_h_c,-inf,inf
+
+// L-serine degradation I
+R_ser_deg,M_ser_L_c,M_nh4_c+M_pyr_c,0,inf
+
+// L-proline degradation
+R_pro_deg,M_pro_L_c+M_q8_c+2.0*M_h2o_c+M_nad_c,2.0*M_h_c+M_q8h2_c+M_nadh_c+M_glu_L_c,0,inf
+
+// L-tryptophan degradation II (via pyruvate)
+R_trp_deg,M_trp_L_c+M_h2o_c,M_indole_c+M_nh4_c+M_pyr_c,0,inf
+
+// L-cysteine degradation II
+R_cys_deg,M_cys_L_c+M_h2o_c,M_h2s_c+M_nh4_c+M_pyr_c,0,inf
+
+// L-alanine degradation I
+R_ala_deg,M_ala_L_c+M_h2o_c+M_q8_c,M_q8h2_c+M_nh4_c+M_pyr_c,0,inf
+
+// L-lysine degradation I
+R_lys_deg,M_lys_L_c,M_co2_c+M_cadav_c,0,inf
+
+// L-glutamine degradation I
+R_gln_deg,M_gln_L_c+M_h2o_c,M_nh4_c+M_glu_L_c,0,inf
+
+// L-glutamate degradation IX (via 4-aminobutanoate)
+R_glu_deg,M_glu_L_c+M_h_c,M_co2_c+M_gaba_c,0,inf
+R_gaba_deg1,M_gaba_c+M_akg_c+M_h2o_c+M_nad_c,M_succ_c+M_glu_L_c+2*M_h_c+M_nadh_c,0,inf
+R_gaba_deg2,M_gaba_c+M_akg_c+M_h2o_c+M_nadp_c,M_succ_c+M_glu_L_c+2*M_h_c+M_nadph_c,0,inf
+
+// L-asparagine degradation I
+R_asn_deg,M_asn_L_c+M_h2o_c+M_adp_c+M_pi_c,M_nh4_c+M_asp_L_c+M_atp_c,0,inf
+
+// ===============================================
+// NUCLEOTIDE ENERGIZATION
+// ===============================================
+//R_amp_ppi,M_amp_c+M_ppi_c+4*M_h_c,M_atp_c+M_h2o_c,0,inf
+//R_amp_pi,M_amp_c+2*M_pi_c+6*M_h_c,M_atp_c+2*M_h2o_c,0,inf
+//R_gmp_ppi,M_gmp_c+M_ppi_c+4*M_h_c,M_gtp_c+M_h2o_c,0,inf
+//R_gmp_pi,M_gmp_c+2*M_pi_c+6*M_h_c,M_gtp_c+2*M_h2o_c,0,inf
+//R_cmp_ppi,M_cmp_c+M_ppi_c+4*M_h_c,M_ctp_c+M_h2o_c,0,inf
+//R_cmp_pi,M_cmp_c+2*M_pi_c+6*M_h_c,M_ctp_c+2*M_h2o_c,0,inf
+//R_ump_ppi,M_ump_c+M_ppi_c+4*M_h_c,M_utp_c+M_h2o_c,0,inf
+//R_ump_pi,M_ump_c+2*M_pi_c+6*M_h_c,M_utp_c+2*M_h2o_c,0,inf
+
+// ===============================================
+// TRANSCRIPTION
+// ===============================================
+
+// CAT -
+transcriptional_initiation_CAT,GENE_CAT+RNAP,OPEN_GENE_CAT,0,inf
+transcription_CAT,OPEN_GENE_CAT+151*M_gtp_c+144*M_ctp_c+189*M_utp_c+176*M_atp_c,mRNA_CAT+GENE_CAT+RNAP+1320*M_pi_c,0,inf
+mRNA_degradation_CAT,mRNA_CAT,151*M_gmp_c+144*M_cmp_c+189*M_ump_c+176*M_amp_c,0,inf
+
+
+// ===============================================
+// TRANSLATION
+// ===============================================
+
+// CAT -
+translation_initiation_CAT,mRNA_CAT+RIBOSOME,RIBOSOME_START_CAT,0,inf
+translation_CAT,RIBOSOME_START_CAT+438*M_gtp_c+15.0*M_ala_L_c_tRNA+5.0*M_arg_L_c_tRNA+10.0*M_asn_L_c_tRNA+12.0*M_asp_L_c_tRNA+5.0*M_cys_L_c_tRNA+12.0*M_glu_L_c_tRNA+13.0*M_gln_L_c_tRNA+10.0*M_gly_L_c_tRNA+12.0*M_his_L_c_tRNA+9.0*M_ile_L_c_tRNA+13.0*M_leu_L_c_tRNA+12.0*M_lys_L_c_tRNA+9.0*M_met_L_c_tRNA+20.0*M_phe_L_c_tRNA+7.0*M_pro_L_c_tRNA+10.0*M_ser_L_c_tRNA+13.0*M_thr_L_c_tRNA+5.0*M_trp_L_c_tRNA+11.0*M_tyr_L_c_tRNA+16.0*M_val_L_c_tRNA,RIBOSOME+mRNA_CAT+PROTEIN_CAT+438*M_gdp_c+438*M_pi_c+219*tRNA,0,inf
+tRNA_charging_M_ala_L_c_CAT,15.0*M_ala_L_c+15.0*M_atp_c+15.0*tRNA,15.0*M_ala_L_c_tRNA+15.0*M_amp_c+30.0*M_pi_c,0,inf
+tRNA_charging_M_arg_L_c_CAT,5.0*M_arg_L_c+5.0*M_atp_c+5.0*tRNA,5.0*M_arg_L_c_tRNA+5.0*M_amp_c+10.0*M_pi_c,0,inf
+tRNA_charging_M_asn_L_c_CAT,10.0*M_asn_L_c+10.0*M_atp_c+10.0*tRNA,10.0*M_asn_L_c_tRNA+10.0*M_amp_c+20.0*M_pi_c,0,inf
+tRNA_charging_M_asp_L_c_CAT,12.0*M_asp_L_c+12.0*M_atp_c+12.0*tRNA,12.0*M_asp_L_c_tRNA+12.0*M_amp_c+24.0*M_pi_c,0,inf
+tRNA_charging_M_cys_L_c_CAT,5.0*M_cys_L_c+5.0*M_atp_c+5.0*tRNA,5.0*M_cys_L_c_tRNA+5.0*M_amp_c+10.0*M_pi_c,0,inf
+tRNA_charging_M_glu_L_c_CAT,12.0*M_glu_L_c+12.0*M_atp_c+12.0*tRNA,12.0*M_glu_L_c_tRNA+12.0*M_amp_c+24.0*M_pi_c,0,inf
+tRNA_charging_M_gln_L_c_CAT,13.0*M_gln_L_c+13.0*M_atp_c+13.0*tRNA,13.0*M_gln_L_c_tRNA+13.0*M_amp_c+26.0*M_pi_c,0,inf
+tRNA_charging_M_gly_L_c_CAT,10.0*M_gly_L_c+10.0*M_atp_c+10.0*tRNA,10.0*M_gly_L_c_tRNA+10.0*M_amp_c+20.0*M_pi_c,0,inf
+tRNA_charging_M_his_L_c_CAT,12.0*M_his_L_c+12.0*M_atp_c+12.0*tRNA,12.0*M_his_L_c_tRNA+12.0*M_amp_c+24.0*M_pi_c,0,inf
+tRNA_charging_M_ile_L_c_CAT,9.0*M_ile_L_c+9.0*M_atp_c+9.0*tRNA,9.0*M_ile_L_c_tRNA+9.0*M_amp_c+18.0*M_pi_c,0,inf
+tRNA_charging_M_leu_L_c_CAT,13.0*M_leu_L_c+13.0*M_atp_c+13.0*tRNA,13.0*M_leu_L_c_tRNA+13.0*M_amp_c+26.0*M_pi_c,0,inf
+tRNA_charging_M_lys_L_c_CAT,12.0*M_lys_L_c+12.0*M_atp_c+12.0*tRNA,12.0*M_lys_L_c_tRNA+12.0*M_amp_c+24.0*M_pi_c,0,inf
+tRNA_charging_M_met_L_c_CAT,9.0*M_met_L_c+9.0*M_atp_c+9.0*tRNA,9.0*M_met_L_c_tRNA+9.0*M_amp_c+18.0*M_pi_c,0,inf
+tRNA_charging_M_phe_L_c_CAT,20.0*M_phe_L_c+20.0*M_atp_c+20.0*tRNA,20.0*M_phe_L_c_tRNA+20.0*M_amp_c+40.0*M_pi_c,0,inf
+tRNA_charging_M_pro_L_c_CAT,7.0*M_pro_L_c+7.0*M_atp_c+7.0*tRNA,7.0*M_pro_L_c_tRNA+7.0*M_amp_c+14.0*M_pi_c,0,inf
+tRNA_charging_M_ser_L_c_CAT,10.0*M_ser_L_c+10.0*M_atp_c+10.0*tRNA,10.0*M_ser_L_c_tRNA+10.0*M_amp_c+20.0*M_pi_c,0,inf
+tRNA_charging_M_thr_L_c_CAT,13.0*M_thr_L_c+13.0*M_atp_c+13.0*tRNA,13.0*M_thr_L_c_tRNA+13.0*M_amp_c+26.0*M_pi_c,0,inf
+tRNA_charging_M_trp_L_c_CAT,5.0*M_trp_L_c+5.0*M_atp_c+5.0*tRNA,5.0*M_trp_L_c_tRNA+5.0*M_amp_c+10.0*M_pi_c,0,inf
+tRNA_charging_M_tyr_L_c_CAT,11.0*M_tyr_L_c+11.0*M_atp_c+11.0*tRNA,11.0*M_tyr_L_c_tRNA+11.0*M_amp_c+22.0*M_pi_c,0,inf
+tRNA_charging_M_val_L_c_CAT,16.0*M_val_L_c+16.0*M_atp_c+16.0*tRNA,16.0*M_val_L_c_tRNA+16.0*M_amp_c+32.0*M_pi_c,0,inf
+
+
+// ===========================================
+// EXCHANGE REACTIONS
+// ===========================================
+tNRA_exchange,[],tRNA,-inf,inf
+PROTEIN_export_CAT,PROTEIN_CAT,[],0,inf
+
+
+// AA's
+M_ala_L_c_exchange,[],M_ala_L_c,-inf,inf
+M_arg_L_c_exchange,[],M_arg_L_c,-inf,inf
+M_asn_L_c_exchange,[],M_asn_L_c,-inf,inf
+M_asp_L_c_exchange,[],M_asp_L_c,-inf,inf
+M_cys_L_c_exchange,[],M_cys_L_c,-inf,inf
+M_glu_L_c_exchange,[],M_glu_L_c,-inf,inf
+M_gln_L_c_exchange,[],M_gln_L_c,-inf,inf
+M_gly_L_c_exchange,[],M_gly_L_c,-inf,inf
+M_his_L_c_exchange,[],M_his_L_c,-inf,inf
+M_ile_L_c_exchange,[],M_ile_L_c,-inf,inf
+M_leu_L_c_exchange,[],M_leu_L_c,-inf,inf
+M_lys_L_c_exchange,[],M_lys_L_c,-inf,inf
+M_met_L_c_exchange,[],M_met_L_c,-inf,inf
+M_phe_L_c_exchange,[],M_phe_L_c,-inf,inf
+M_pro_L_c_exchange,[],M_pro_L_c,-inf,inf
+M_ser_L_c_exchange,[],M_ser_L_c,-inf,inf
+M_thr_L_c_exchange,[],M_thr_L_c,-inf,inf
+M_trp_L_c_exchange,[],M_trp_L_c,-inf,inf
+M_tyr_L_c_exchange,[],M_tyr_L_c,-inf,inf
+M_val_L_c_exchange,[],M_val_L_c,-inf,inf
+
+// co2 and o2 exchange -
+M_o2_c_exchange,[],M_o2_c,0,inf
+M_co2_c_exchange,M_co2_c,[],0,inf
+
+// elemental exchange -
+M_h2s_c_exchange,[],M_h2s_c,-inf,inf
+M_h2o_c_exchange,[],M_h2o_c,-inf,inf
+M_h_xt_exchange,[],M_h_c,0,inf
+M_nh4_c_exchange,[],M_nh4_c,-inf,inf
+M_hco3_c_exchange,[],M_hco3_c,-inf,inf
+M_pi_c_exchange,[],M_pi_c,-inf,inf
+
+// Glucose and byproduct exchange -
+M_glc_D_c_exchange,[],M_glc_D_c,-inf,inf
+M_for_c_exchange,[],M_for_c,-inf,inf
+M_lac_D_c_exchange,[],M_lac_D_c,-inf,inf
+M_ac_c_exchange,[],M_ac_c,-inf,inf
+M_etoh_c_exchange,[],M_etoh_c,-inf,inf
+M_akg_c_exchange,[],M_akg_c,-inf,inf
+M_fum_c_exchange,[],M_fum_c,-inf,inf
+M_mal_L_c_exchange,[],M_mal_L_c,-inf,inf
+M_pyr_c_exchange,[],M_pyr_c,-inf,inf
+M_succ_c_exchange,[],M_succ_c,-inf,inf
+M_mglx_c_exchange,[],M_mglx_c,-inf,inf
+M_prop_c_exchange,[],M_prop_c,-inf,inf
+M_indole_c_exchange,[],M_indole_c,-inf,inf
+M_h2o2_c_exchange,[],M_h2o2_c,-inf,inf
+M_cadav_c_exchange,[],M_cadav_c,-inf,inf
+M_urea_c_exchange,[],M_urea_c,-inf,inf
+M_coa_c_exchange,[],M_coa_c,0,inf
+M_succoa_c_exchange,M_succoa_c,[],0,inf
+
+// test -
+M_atp_exchange,M_atp_c,[],0,inf

@@ -1,0 +1,195 @@
+{
+
+  "default_parameter_dictionary":{
+    "default_protein_half_life":"300",
+    "default_protein_initial_condition":"0.004",
+    "default_saturation_constant":"0.05",
+    "default_enzyme_kcat":"25000.0",
+    "default_number_of_feed_streams":"3",
+    "default_convex_species_initial_condition":"1.0",
+    "default_volumetric_flowrate_array":"Flow_Run-1.csv",
+    "default_experimental_data_array":"State_Run-1.csv"
+  },
+
+  "default_user_dictionary":{
+    "default_username":"varnerlab",
+    "default_company_name":"Cornell University",
+    "default_department_name":"Chemical and Biomolecular Engineering",
+    "default_street_address":"120 Olin Hall",
+    "default_city_address":"Ithaca",
+    "default_state_address":"NY",
+    "default_zipcode":"14850"
+  },
+
+  "unbalanced_species_suffix":{
+
+    "symbol":"_3"
+  },
+
+  "function_comment_dictionary":{
+
+    "data_dictionary_function":{
+
+      "function_name":"DataDictionary",
+      "function_description":"Holds simulation and model parameters as key => value pairs in a Julia Dict()",
+
+      "input_args":[
+        {
+          "symbol":"time_start::Float64",
+          "description":"Simulation start time value (scalar)"
+        },
+        {
+          "symbol":"time_stop::Float64",
+          "description":"Simulation stop time value (scalar)"
+        },
+        {
+          "symbol":"time_step::Float64",
+          "description":"Simulation time step (scalar)"
+        }
+      ],
+      "output_args":[
+        {
+          "symbol":"data_dictionary::Dict{AbstractString,Any}",
+          "description":"Dictionary holding model and simulation parameters as key => value pairs"
+        }
+      ]
+    },
+    "control_function":{
+
+      "function_name":"Control",
+      "function_description":"Calculate the allosteric control array at time t",
+
+      "input_args":[{
+          "symbol":"t::Float64",
+          "description":"Current time value (scalar)"
+        },
+        {
+          "symbol":"x::Array{Float64,1}",
+          "description":"State array (number_of_species x 1)"
+        },
+        {
+          "symbol":"data_dictionary::Dict{AbstractString,Any}",
+          "description":"Dictionary holding model parameters"
+        }
+      ],
+      "output_args":[
+        {
+          "symbol":"control_array::Array{Float64,1}",
+          "description":"Transcriptional control array (number_of_genes x 1) at time t"
+        }
+      ]
+    },
+
+    "solve_function":{
+
+      "function_name":"Solve",
+      "function_description":"Solve the model equations for tstart to tstop at time_step",
+
+      "input_args":[
+        {
+          "symbol":"time_start::Float64",
+          "description":"Simulation start time value (scalar)"
+        },
+        {
+          "symbol":"time_stop::Float64",
+          "description":"Simulation stop time value (scalar)"
+        },
+        {
+          "symbol":"time_step::Float64",
+          "description":"Simulation time step (scalar)"
+        },
+        {
+          "symbol":"data_dictionary::Dict{AbstractString,Any}",
+          "description":"Dictionary holding model parameters"
+        }
+      ],
+      "output_args":[
+        {
+          "symbol":"T::Array{Float64,1}",
+          "description":"Time array (number_of_timesteps x 1)"
+        },
+        {
+          "symbol":"X::Array{Float64,1}",
+          "description":"State array (number_of_species x 1)"
+        }
+      ]
+    },
+
+    "dilution_function":{
+
+      "function_name":"Dilution",
+      "function_description":"Calculate the dilution effects from nutrient transport",
+
+      "input_args":[{
+          "symbol":"t::Float64",
+          "description":"Current time value (scalar)"
+        },
+        {
+          "symbol":"x::Array{Float64,1}",
+          "description":"State array (number_of_species x 1)"
+        },
+        {
+          "symbol":"data_dictionary::Dict{AbstractString,Any}",
+          "description":"Dictionary holding model parameters"
+        }
+      ],
+      "output_args":[
+        {
+          "symbol":"dilution_array::Array{Float64,1}",
+          "description":"Dilution array (number_of_species x 1) at time t"
+        }
+      ]
+    },
+
+    "kinetics_function":{
+
+      "function_name":"Kinetics",
+      "function_description":"Calculate the flux array at time t",
+
+      "input_args":[{
+          "symbol":"t::Float64",
+          "description":"Current time value (scalar)"
+        },
+        {
+          "symbol":"x::Array{Float64,1}",
+          "description":"State array (number_of_species x 1)"
+        },
+        {
+          "symbol":"data_dictionary::Dict{AbstractString,Any}",
+          "description":"Dictionary holding model parameters"
+        }
+      ],
+      "output_args":[
+        {
+          "symbol":"flux_array::Array{Float64,1}",
+          "description":"Flux array (number_of_rates x 1) at time t"
+        }
+      ]
+    },
+
+    "input_function":{
+      "function_name":"Inputs",
+      "function_description":"Calculate the simulation inputs at time t",
+
+      "input_args":[{
+          "symbol":"t::Float64",
+          "description":"Current time value (scalar)"
+        },
+        {
+          "symbol":"x::Array{Float64,1}",
+          "description":"State array (number_of_species x 1)"
+        },
+        {
+          "symbol":"data_dictionary::Dict{AbstractString,Any}",
+          "description":"Dictionary holding model parameters"
+        }
+      ],
+      "output_args":[
+        {
+          "symbol":"u::Array{Float64,1}",
+          "description":"Input array (number_of_species x 1) at time t"
+        }
+      ]
+    }
+  }
+}

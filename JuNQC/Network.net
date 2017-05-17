@@ -1,0 +1,4675 @@
+// ----------------------------------------------------------------------------------- //
+// Copyright (c) 2017 Varnerlab
+// Robert Frederick Smith School of Chemical and Biomolecular Engineering
+// Cornell University, Ithaca NY 14850
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// ----------------------------------------------------------------------------------- //
+
+// ----------------------------------------------------------------------------------- //
+// metabolic reactions -
+#pragma::metabolic_reaction_handler
+//
+// Record:
+// name (unique),reactants,products,reverse,forward
+//
+// Notes:
+// [] = system (not tracked)
+// ----------------------------------------------------------------------------------- //
+
+// r_0001::(2S,3S)-3-Hydroxy-2-Methylbacoa Hydro-Liase
+r_0001,s_0420_c_1,s_0738_c_1+s_0659_c_1,-inf,inf
+
+// r_0002::(6S)-Tetrahydrofolate Aminomethyltransfe Rase (Ammonia-Forming)
+r_0002,s_0099_c_1+s_0025_c_1,s_0914_c_1+s_0774_c_1+s_0270_c_1,0,inf
+
+// r_0003::(Acceptor) 1-Oxidoreductase
+r_0003,s_0180_c_1+s_0611_c_1,s_0014_c_1+s_0096_c_1,0,inf
+
+// r_0004::(Acceptor) 1-Oxidoreductase
+r_0004,s_0180_c_1+s_0100_c_1+s_0659_c_1,s_0792_c_1+s_0393_c_1,0,inf
+
+// r_0005::(R)-2-Methyl-3-Oxopropanoyl-Coa Coa-Carbonylmutase
+r_0005,s_0365_c_1,s_0470_c_1,0,inf
+
+// r_0006::(S)-2-Aceto-2-Hydroxybutanoate Pyruvate-Lyase (Carboxylating)
+r_0006,s_0461_c_1+s_0849_c_1,s_0287_c_1+s_0015_c_1,0,inf
+
+// r_0007::(S)-3-Hydroxyisobutyryl-Coa Hydro-Lyase
+r_0007,s_0360_c_1+s_0659_c_1,s_0426_c_1,-inf,inf
+
+// r_0008::(S)-3-Hydroxyisobutyryl-Coa Hydrolase
+r_0008,s_0426_c_1+s_0659_c_1,s_0176_c_1+s_0624_c_1,0,inf
+
+// r_0009::(S)-Aclac Pyruvate-Lyase (Carboxylating)
+r_0009,s_0849_c_1+s_0140_c_1,s_0813_c_1+s_0015_c_1,0,inf
+
+// r_0010::(S)-Methylmalonate Semialdehyde:Nad Oxidoreductase
+r_0010,s_0568_c_1+s_0096_c_1+s_0659_c_1,s_0108_c_1+s_0611_c_1,-inf,inf
+
+// r_0011::(S)-Methylmalonate Semialdehyde:Oxygen Oxidoreductase
+r_0011,s_0108_c_1+s_0872_c_1,s_0568_c_1+s_0869_c_1+s_0659_c_1,-inf,inf
+
+// r_0012::,6-Dihydroxyindole:Oxygen Oxidoreductase
+r_0012,2.0*s_0327_c_1+s_0869_c_1,2.0*s_0158_c_1+2.0*s_0659_c_1,0,inf
+
+// r_0013::1,2-Benzenediol:Oxygen Oxidoreductase
+r_0013,s_0037_c_1+s_0869_c_1,s_0636_c_1+s_0659_c_1,0,inf
+
+// r_0014::1,2-Diacyl-Gl3P Phosphohydrolase
+r_0014,s_0491_c_1+s_0659_c_1,s_0922_c_1+s_0765_c_1,0,inf
+
+// r_0015::1-(5'-Phosphoribosyl)-5-Amino-4-(N-Succinocarboxamide)-Imidazoleamp-Lyase
+r_0015,s_0148_c_1,s_0079_c_1+s_0569_c_1,-inf,inf
+
+// r_0016::1-Acylglycerol-3-Phosphate Acyltransferase
+r_0016,s_0784_c_1+0.025*s_0824_c_1+0.165*s_0127_c_1+0.066*s_0475_c_1+0.099*s_0315_c_1+0.559*s_0258_c_1+0.005*s_0618_c_1+0.045*s_0189_c_1+0.018*s_0546_c_1+0.009*s_0903_c_1+0.008*s_0489_c_1,s_0491_c_1+s_0193_c_1,0,inf
+
+// r_0017::10-Formyltetrahydrofolate ; L-Methionyl-Trna N-Formyltransferase
+r_0017,s_0539_c_1+s_0083_c_1,s_0099_c_1+s_0319_c_1,-inf,inf
+
+// r_0018::1L-Myo-Inositol-1-Phosphate Lyase (Isomerizing)
+r_0018,s_0744_c_1,s_0028_c_1,0,inf
+
+// r_0019::2'-Deoxyadenosine 5'-Monophosphate Phosphohydrolase
+r_0019,s_0768_c_1+s_0659_c_1,s_0508_c_1+s_0765_c_1,0,inf
+
+// r_0020::2'-Deoxycytidine 5'-Monophosphate Phosphohydrolase
+r_0020,s_0957_c_1+s_0659_c_1,s_0686_c_1+s_0765_c_1,0,inf
+
+// r_0021::2'-Deoxyguanosine 5'-Monophosphate Phosphohydrolase
+r_0021,s_0309_c_1+s_0659_c_1,s_0057_c_1+s_0765_c_1,0,inf
+
+// r_0022::2'-Deoxyinosine-5'-Triphosphate Pyrophosphohydrolase
+r_0022,s_0272_c_1+s_0659_c_1,s_0495_c_1+s_0591_c_1,-inf,inf
+
+// r_0023::2-(Alpha-Hydroxyethyl)Thiamine Diphosphate Pyruvate-Lyase (Carboxylating)
+r_0023,s_0849_c_1+s_0029_c_1,s_0015_c_1+s_0140_c_1,-inf,inf
+
+// r_0024::2-(Alpha-Hydroxyethyl)Thiamine Diphosphate Pyruvate-Lyase (Carboxylating)
+r_0024,s_0015_c_1+s_0140_c_1,s_0849_c_1,0,inf
+
+// r_0025::2-(Alpha-Hydroxyethyl)Thiamine Diphosphatelipoamide 2-Oxidoreductase(Decarboxylating And Acceptor-Acetylating)
+r_0025,s_0849_c_1+s_0646_c_1,s_0260_c_1+s_0015_c_1,-inf,inf
+
+// r_0026::2-Aminoadipate Transaminase
+r_0026,s_0436_c_1+s_1217_c_2,s_0255_c_1+s_1040_c_2,0,inf
+
+// r_0027::2-Deoxy-D-Ribose-5-Phosphate Acetaldehyde-Lyase
+r_0027,s_0392_c_1,s_0929_c_1+s_0235_c_1,-inf,inf
+
+// r_0028::2-Methylbacoa(Acceptor) 2,3-Oxidoreductase
+r_0028,s_0357_c_1+s_0100_c_1,s_0738_c_1+s_0792_c_1,-inf,inf
+
+// r_0029::2-Methylbacoa(Acceptor) 2,3-Oxidoreductase
+r_0029,s_0357_c_1+s_0869_c_1,s_0738_c_1+2.0*s_0659_c_1,-inf,inf
+
+// r_0030::2-Oxoglutarate Dehydrogenase E1 Component [Fragment]
+r_0030,s_1217_c_2+s_1139_c_2+s_1030_c_2,s_1146_c_2+s_1161_c_2+s_1017_c_2,0,inf
+
+// r_0031::2-Oxoglutarate Thiamin Diphosphate 2-Oxidoreductase(Decarboxylating And Acceptor-Succinylating)
+r_0031,s_0715_c_1+s_0015_c_1,s_0146_c_1+s_0029_c_1,-inf,inf
+
+// r_0032::24-Dehydrocholesterol Reductase
+r_0032,s_0554_c_1+s_0075_c_1,s_0326_c_1+s_0775_c_1,0,inf
+
+// r_0033::24-Dehydrocholesterol Reductase
+r_0033,s_0915_c_1,s_0177_c_1,0,inf
+
+// r_0034::3' - 5' Bisphosphate Nucleotidase
+r_0034,s_0022_c_1,s_0648_c_1+s_0765_c_1,0,inf
+
+// r_0035::3'-Phosphoadenosine 5'-Phosphosulfate Synthase 1
+r_0035,s_0457_c_1+s_0839_c_1,s_0591_c_1+s_0388_c_1,0,inf
+
+// r_0036::3'-Phosphoadenosine 5'-Phosphosulfate Synthase 2
+r_0036,s_0388_c_1+s_0839_c_1,s_0386_c_1+s_0185_c_1,0,inf
+
+// r_0037::3'-Phosphoadenylylsulfate 2-Aminoacrylate Sulfotransferase
+r_0037,s_0847_c_1+s_0185_c_1,s_0355_c_1+s_0022_c_1,0,inf
+
+// r_0038::3'-Phosphoadenylylsulfate Nucleotidohydrolase
+r_0038,s_0185_c_1+s_0659_c_1,s_0457_c_1+s_0022_c_1,-inf,inf
+
+// r_0039::3,4-Dihydroxymandelaldehyde:Nad+ Oxidoreductase
+r_0039,s_0580_c_1+s_0096_c_1+s_0659_c_1,s_0200_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0040::3,4-Dihydroxymandelaldehyde:Nadp+ Oxidoreductase
+r_0040,s_0580_c_1+s_0075_c_1+s_0659_c_1,s_0200_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0041::3,4-Dihydroxyphenylethyleneglycol:Nad+ Oxidoreductase
+r_0041,s_0900_c_1+s_0096_c_1,s_0580_c_1+s_0611_c_1,-inf,inf
+
+// r_0042::3-Aminopropanoate:2-Oxoglutarate Aminotransferase
+r_0042,s_0577_c_1+s_0715_c_1,s_0517_c_1+s_0679_c_1,-inf,inf
+
+// r_0043::3-Dehydrosphinganine Reductase
+r_0043,s_0036_c_1+s_0775_c_1,s_0363_c_1+s_0075_c_1,0,inf
+
+// r_0044::3-Dehydroxycar4/15/2008Oxygen Oxidoreductase (3-Hydroxylating)
+r_0044,s_0276_c_1,s_0204_c_1,0,inf
+
+// r_0045::3-Hydroxy-2-Methylpropanoyl-Coa Hydrolase
+r_0045,s_0779_c_1+s_0659_c_1,s_0624_c_1+s_0197_c_1,0,inf
+
+// r_0046::3-Hydroxy-3-Methylglutaryl Coenzyme A Synthase
+r_0046,s_1135_c_2+s_1132_c_2,s_1068_c_2+s_1030_c_2,0,inf
+
+// r_0047::3-Hydroxy-3-Methylglutaryl-Coenzyme A Lyase
+r_0047,s_0953_c_1,s_0408_c_1+s_0581_c_1,-inf,inf
+
+// r_0048::3-Hydroxy-3-Methylglutaryl-Coenzyme A Lyase
+r_0048,s_1068_c_2,s_1135_c_2+s_1175_c_2,0,inf
+
+// r_0049::3-Hydroxy-3-Methylglutaryl-Coenzyme A Reductase [Fragment]
+r_0049,s_0953_c_1+2.0*s_0775_c_1,s_0071_c_1+s_0624_c_1+2.0*s_0075_c_1,0,inf
+
+// r_0050::3-Hydroxy-L-Tyrosine Carboxy-Lyase
+r_0050,s_0636_c_1,s_0305_c_1+s_0029_c_1,0,inf
+
+// r_0051::3-Hydroxyan O-Methyltransferase
+r_0051,s_0125_c_1+s_0223_c_1,s_0935_c_1,-inf,inf
+
+// r_0052::3-Hydroxyanthranilate 3,4-Dioxygenase
+r_0052,s_0125_c_1+s_0869_c_1,s_0087_c_1,0,inf
+
+// r_0053::3-Hydroxyisobutyrate Dehydrogenase
+r_0053,s_0176_c_1+s_0096_c_1,s_0568_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0054::3-Hydroxyisopentyl-Coa Hydro-Lyase
+r_0054,s_0697_c_1,s_0738_c_1+s_0659_c_1,-inf,inf
+
+// r_0055::3-Hydroxypalmitoyl-[Acyl-Carrier Protein] Dehydratase
+r_0055,s_0105_c_1,s_0500_c_1,-inf,inf
+
+// r_0056::3-Hydroxypropionyl-Coa Hydro-Lyase
+r_0056,s_0779_c_1,s_0807_c_1+s_0659_c_1,-inf,inf
+
+// r_0057::3-Methoxy-4-Hydroxyphenylacetaldehyde:Nad+ Oxidoreductase
+r_0057,s_0525_c_1+s_0096_c_1+s_0659_c_1,s_0796_c_1+s_0611_c_1+s_0213_c_1,0,inf
+
+// r_0058::3-Methoxy-4-Hydroxyphenylacetaldehyde:Nadp+ Oxidoreductase
+r_0058,s_0525_c_1+s_0075_c_1+s_0659_c_1,s_0796_c_1+s_0775_c_1+s_0213_c_1,0,inf
+
+// r_0059::3-Methoxytyramine:Oxygen Oxidoreductase (Deaminating)(Copper-Containing)
+r_0059,s_0932_c_1+s_0659_c_1+s_0869_c_1,s_0525_c_1+s_0955_c_1+s_0774_c_1,0,inf
+
+// r_0060::3-Methyl-2-Oxopentanoate:Lipoamide Oxidoreductase(Decarboxylating And Acceptor-2-Methylpropanoylating)
+r_0060,s_0324_c_1+s_0646_c_1,s_0567_c_1+s_0029_c_1,0,inf
+
+// r_0061::3-Methyl-2-Oxopentanoate:Lipoamide Oxidoreductase(Decarboxylating And Acceptor-2-Methylpropanoylating)
+r_0061,s_0639_c_1+s_0646_c_1,s_0682_c_1+s_0029_c_1,0,inf
+
+// r_0062::3-Oxoacyl-Acp Synthase, Mitochondrial
+r_0062,s_1096_c_2+s_1207_c_2,s_1008_c_2+s_1146_c_2+s_1162_c_2,0,inf
+
+// r_0063::3-Oxoacyl-Acp Synthase, Mitochondrial
+r_0063,s_1006_c_2+s_1207_c_2,s_1051_c_2+s_1162_c_2,0,inf
+
+// r_0064::3-Oxoacyl-Acp Synthase, Mitochondrial
+r_0064,s_1211_c_2+s_1207_c_2,s_1202_c_2+s_1146_c_2+s_1162_c_2,0,inf
+
+// r_0065::3-Oxoacyl-Acp Synthase, Mitochondrial
+r_0065,s_1172_c_2+s_1207_c_2,s_1038_c_2+s_1146_c_2+s_1162_c_2,0,inf
+
+// r_0066::3-Oxoacyl-Acp Synthase, Mitochondrial
+r_0066,s_1129_c_2+s_1207_c_2,s_1186_c_2+s_1146_c_2+s_1162_c_2,0,inf
+
+// r_0067::3-Oxoacyl-Acp Synthase, Mitochondrial
+r_0067,s_1158_c_2+s_1207_c_2,s_1015_c_2+s_1146_c_2+s_1162_c_2,0,inf
+
+// r_0068::3-Oxoacyl-Acp Synthase, Mitochondrial
+r_0068,s_1156_c_2+s_1207_c_2,s_1004_c_2+s_1146_c_2+s_1162_c_2,0,inf
+
+// r_0069::3-Oxoacyl-Acp Synthase, Mitochondrial
+r_0069,s_1020_c_2+s_1207_c_2,s_1090_c_2+s_1146_c_2+s_1162_c_2,0,inf
+
+// r_0070::3-Oxoacyl-Acp Synthase, Mitochondrial / Acetyl Transacylase/ Fatty Acid Synthase
+r_0070,s_0408_c_1+s_0193_c_1,s_0533_c_1+s_0624_c_1,-inf,inf
+
+// r_0071::3-Phospho-D-Glycerate 1,2-Phosphomutase
+r_0071,s_0818_c_1+s_0659_c_1,s_0514_c_1+s_0765_c_1,-inf,inf
+
+// r_0072::3-Ureidoisobutyrate Amidohydrolase
+r_0072,s_0256_c_1+s_0659_c_1,s_0063_c_1+s_0029_c_1+s_0774_c_1,0,inf
+
+// r_0073::4--Hydroxyphenylpyruvic Acid Dioxygenase:Oxygen Oxidoreductase (Hydroxylating,Decarboxylating)
+r_0073,s_0944_c_1+s_0869_c_1,s_0251_c_1+s_0029_c_1,-inf,inf
+
+// r_0074::4-[(1R)-2-Amino-1-Hydroxyethyl]-1,2-Benzenediol:Oxygenoxidoreductase(Deaminating)(Flavin-Containing)
+r_0074,s_0916_c_1+s_0659_c_1+s_0869_c_1,s_0580_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0075::4-Hydroxyphenylpyruvate Dioxygenase
+r_0075,s_0203_c_1+s_0869_c_1,s_0131_c_1+s_0029_c_1,0,inf
+
+// r_0076::4-Methyl-2-Oxopentanoate:Lipoamide Oxidoreductase(Decarboxylating And Acceptor-2-Methylpropanoylating)
+r_0076,s_0632_c_1+s_0646_c_1,s_0220_c_1+s_0029_c_1,0,inf
+
+// r_0077::4-Trimethylammonioba: Nad 1-Oxidoreductase
+r_0077,s_0302_c_1+s_0096_c_1+s_0659_c_1,s_0371_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0078::4-Trimethylammoniobutanoate,Akg4/15/2008 Oxygen Oxidoreductase (3-Hydroxylating)
+r_0078,s_0371_c_1+s_0715_c_1+s_0869_c_1,s_0204_c_1+s_0541_c_1+s_0029_c_1,0,inf
+
+// r_0079::4Alpha-Methylcholesta-8-En-3Beta-Ol Delta7-Delta8-Isomerase
+r_0079,s_0398_c_1,s_0155_c_1,0,inf
+
+// r_0080::5' Nucleotidase
+r_0080,s_0449_c_1,s_0334_c_1+s_0765_c_1,0,inf
+
+// r_0081::5' Nucleotidase
+r_0081,s_0982_c_1,s_0756_c_1+s_0765_c_1,0,inf
+
+// r_0082::5',3'-Nucleotidase, Mitochondrial
+r_0082,s_0389_c_1+s_0659_c_1,s_0476_c_1+s_0765_c_1,-inf,inf
+
+// r_0083::5',3'-Nucleotidase, Mitochondrial
+r_0083,s_0075_c_1+s_0659_c_1,s_0765_c_1+s_0096_c_1,-inf,inf
+
+// r_0084::5'-Phosphoribosyl N-Formylglycinamide (Fgar) Amidotransferase
+r_0084,s_0838_c_1+s_0839_c_1+s_0425_c_1,s_0679_c_1+s_0386_c_1+s_0765_c_1+s_0951_c_1,0,inf
+
+// r_0085::5,10-Methylenetetrahydrofolate Reductase
+r_0085,s_0080_c_1+s_0075_c_1,s_0914_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0086::5,10-Methylenetetrahydrofolate: Glycine Hydroxymethyltransferase
+r_0086,s_0378_c_1,s_0302_c_1+s_0316_c_1,-inf,inf
+
+// r_0087::5,6,7,8-Tetrahydrofolate Nadp Oxidoreductase
+r_0087,s_0099_c_1+s_0075_c_1,s_0891_c_1+s_0775_c_1,-inf,inf
+
+// r_0088::5,6-Dihydrothymine Amidohydrolase
+r_0088,s_0586_c_1+s_0659_c_1,s_0256_c_1,-inf,inf
+
+// r_0089::5,6-Dihydrothymine:Nadp+ Oxidoreductase
+r_0089,s_0586_c_1+s_0075_c_1,s_0246_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0090::5,6-Dihydrouracil Amidohydrolase
+r_0090,s_0897_c_1+s_0659_c_1,s_0181_c_1,-inf,inf
+
+// r_0091::5-Aminolevulinate Synthase
+r_0091,s_0470_c_1+s_0316_c_1,s_0321_c_1+s_0029_c_1+s_0624_c_1,0,inf
+
+// r_0092::5-Aminolevulinate Synthase
+r_0092,s_0408_c_1+s_0316_c_1,s_0624_c_1+s_0029_c_1+s_0505_c_1,0,inf
+
+// r_0093::5-Hydroxy-L-Tryptophan Decarboxy-Lyase
+r_0093,s_0145_c_1,s_0814_c_1+s_0029_c_1,-inf,inf
+
+// r_0094::5-Hydroxy-L-Tryptophan:Oxygen 2,3-Dioxygenase (Indole-Decyclizing)
+r_0094,s_0145_c_1+s_0869_c_1,s_0549_c_1,-inf,inf
+
+// r_0095::5-Hydroxykynurenamine Decarboxy-Lyase
+r_0095,s_0829_c_1+s_0029_c_1,s_0863_c_1,-inf,inf
+
+// r_0096::5-Hydroxytryptamine: Oxygen Oxidoreductase(Deaminating)(Flavin-Containing)
+r_0096,s_0814_c_1+s_0659_c_1+s_0869_c_1,s_0376_c_1+s_0774_c_1+s_0955_c_1,-inf,inf
+
+// r_0097::5-Oxoproline Amidohydrolase (atp-Hydrolysing)
+r_0097,s_0839_c_1+s_0440_c_1+2.0*s_0659_c_1,s_0386_c_1+s_0765_c_1+s_0679_c_1,-inf,inf
+
+// r_0098::6-Phosphofructo-2-Kinase/Fructose-2,6-Biphosphatase 2
+r_0098,s_0839_c_1+s_0743_c_1,s_0386_c_1+s_0855_c_1,0,inf
+
+// r_0099::6-Phosphogluconate Dehydrogenase, Decarboxylating
+r_0099,s_0973_c_1+s_0075_c_1,s_0291_c_1+s_0029_c_1+s_0775_c_1,-inf,inf
+
+// r_0100::6-Phosphogluconolactonase
+r_0100,s_0273_c_1,s_0973_c_1,0,inf
+
+// r_0101::6-Pyruvoyltetrahydropterin Synthase
+r_0101,s_0279_c_1,s_0395_c_1+3.0*s_0765_c_1,0,inf
+
+// r_0102::7-Dehydrocholesterol Reductase
+r_0102,s_0513_c_1+s_0775_c_1,s_0326_c_1+s_0075_c_1,0,inf
+
+// r_0103::Aasp Amidohydrolase
+r_0103,s_0787_c_1+s_0659_c_1,s_0685_c_1+s_0746_c_1,-inf,inf
+
+// r_0104::Acetaldehyde Nadp Oxidoreductase
+r_0104,s_0235_c_1+s_0075_c_1+s_0659_c_1,s_0685_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0105::Acetoacetate Succinyl-Coa Transferase
+r_0105,s_1017_c_2+s_1175_c_2,s_1075_c_2+s_1132_c_2,-inf,inf
+
+// r_0106::Acetoacetyl-Coa Synthetase
+r_0106,s_0581_c_1+s_0839_c_1+s_0624_c_1,s_0974_c_1+s_0648_c_1+s_0591_c_1,0,inf
+
+// r_0107::Acetyl Coa Carboxylase
+r_0107,s_0408_c_1+s_0839_c_1+s_0029_c_1,s_0970_c_1+s_0386_c_1+s_0765_c_1,-inf,inf
+
+// r_0108::Acetyl-Coa C-Acetyltransferase, Acetoacetyl-Coa Thiolase
+r_0108,2.0*s_0408_c_1,s_0624_c_1+s_0974_c_1,-inf,inf
+
+// r_0109::Acetyl-Coa C-Acetyltransferase, Acetoacetyl-Coa Thiolase (Mitoch)
+r_0109,2.0*s_1135_c_2,s_1030_c_2+s_1132_c_2,-inf,inf
+
+// r_0110::Acetyl-Coa C-Acyltransferase
+r_0110,s_0086_c_1+s_0624_c_1,s_0408_c_1+s_0126_c_1,0,inf
+
+// r_0111::Acetyl-Coadihydrolipoamide S-Acetyltransferase
+r_0111,s_0408_c_1+s_0864_c_1,s_0624_c_1+s_0260_c_1,-inf,inf
+
+// r_0112::Acetyl-Coenzyme A Acetyltransferase 1
+r_0112,s_0408_c_1+s_0485_c_1,s_0624_c_1+s_0141_c_1,-inf,inf
+
+// r_0113::Acetyl-Coenzyme A Acyltransferase 1A
+r_0113,s_0668_c_1+s_0408_c_1,s_0624_c_1+s_0899_c_1,-inf,inf
+
+// r_0114::Acetyl-Coenzyme A Acyltransferase 1A
+r_0114,s_0666_c_1+s_0408_c_1,s_0624_c_1+s_0458_c_1,-inf,inf
+
+// r_0115::Acetyl-Coenzyme A Acyltransferase 1A
+r_0115,s_0662_c_1+s_0408_c_1,s_0624_c_1+s_0492_c_1,-inf,inf
+
+// r_0116::Acetyl-Coenzyme A Acyltransferase 1A
+r_0116,s_0671_c_1+s_0408_c_1,s_0624_c_1+s_0540_c_1,-inf,inf
+
+// r_0117::Acetyl-Coenzyme A Acyltransferase 1A
+r_0117,s_0664_c_1+s_0408_c_1,s_0624_c_1+s_0439_c_1,-inf,inf
+
+// r_0118::Acetyl-Coenzyme A Acyltransferase 2 (Mitochondrial3-Oxoacyl-Coenzyme A Thiolase)
+r_0118,s_1135_c_2+s_1134_c_2,s_1169_c_2,0,inf
+
+// r_0119::Acetyl-Coenzyme A Acyltransferase 2 (Mitochondrial3-Oxoacyl-Coenzyme A Thiolase)
+r_0119,s_1093_c_2+s_1135_c_2,s_1030_c_2+s_1145_c_2,0,inf
+
+// r_0120::Acetyl-Coenzyme A Acyltransferase 2 (Mitochondrial3-Oxoacyl-Coenzyme A Thiolase)
+r_0120,s_1114_c_2+s_1135_c_2,s_1030_c_2+s_1032_c_2,0,inf
+
+// r_0121::Acetyl-Coenzyme A Acyltransferase 2 (Mitochondrial3-Oxoacyl-Coenzyme A Thiolase)
+r_0121,s_1100_c_2+s_1135_c_2,s_1030_c_2+s_1167_c_2,0,inf
+
+// r_0122::Acetyl-Coenzyme A Acyltransferase 2 (Mitochondrial3-Oxoacyl-Coenzyme A Thiolase)
+r_0122,s_1136_c_2+s_1135_c_2,s_1030_c_2+s_1046_c_2,0,inf
+
+// r_0123::Acetyl-Coenzyme A Carboxylase Beta
+r_0123,s_0839_c_1+s_0408_c_1+s_0583_c_1,s_0386_c_1+s_0765_c_1+s_0970_c_1,-inf,inf
+
+// r_0124::Acetyl-Coenzyme A Dehydrogenase, Medium Chain
+r_0124,s_0807_c_1,s_0126_c_1,-inf,inf
+
+// r_0125::Acetyl-Coenzyme A Dehydrogenase, Medium Chain
+r_0125,s_0299_c_1+s_1141_c_2,s_0360_c_1+s_1085_c_2,-inf,inf
+
+// r_0126::Acetyl-Coenzyme A Dehydrogenase, Medium Chain
+r_0126,s_0318_c_1+s_1141_c_2,s_0738_c_1+s_1085_c_2,-inf,inf
+
+// r_0127::Acetyl-Coenzyme A Dehydrogenase, Short Chain
+r_0127,s_0485_c_1+s_0096_c_1,s_0482_c_1+s_0611_c_1,-inf,inf
+
+// r_0128::Acetyl-Coenzyme A Dehydrogenase, Short Chain
+r_0128,s_0299_c_1+s_0869_c_1,s_0360_c_1,0,inf
+
+// r_0129::Acetyl-Coenzyme A Dehydrogenase, Short Chain
+r_0129,s_0318_c_1+s_0869_c_1,s_0738_c_1,0,inf
+
+// r_0130::Acetyl-Coenzyme A Synthetase 1 (Amp Forming)
+r_0130,s_0839_c_1+s_0685_c_1+s_0624_c_1,s_0648_c_1+s_0591_c_1+s_0408_c_1,0,inf
+
+// r_0131::Acetyl-Coenzyme A Synthetase 1 (Amp Forming)
+r_0131,s_0839_c_1+s_0588_c_1+s_0624_c_1,s_0648_c_1+s_0591_c_1+s_0126_c_1,-inf,inf
+
+// r_0132::Acetyl-Coenzyme A Synthetase 1 (Amp Forming)
+r_0132,s_0626_c_1+s_0624_c_1,s_0648_c_1+s_0126_c_1,-inf,inf
+
+// r_0133::Acetyl-Coenzyme A Synthetase 1 (Amp Forming)
+r_0133,s_0839_c_1+s_0588_c_1,s_0591_c_1+s_0626_c_1,-inf,inf
+
+// r_0134::Acetylcholinesterase
+r_0134,s_0008_c_1,s_0014_c_1+s_0685_c_1,0,inf
+
+// r_0135::Acetylphosphatase
+r_0135,s_0962_c_1,s_0685_c_1+s_0765_c_1,0,inf
+
+// r_0136::Acid Beta Glucosidase
+r_0136,s_0123_c_1,s_0092_c_1+s_0548_c_1,0,inf
+
+// r_0137::Acid Phosphatase 5, Tartrate Resistant
+r_0137,s_0528_c_1,s_0927_c_1+s_0765_c_1,0,inf
+
+// r_0138::Acid Sphingomyelinase-Like Phosphodiesterase 3A
+r_0138,s_0660_c_1+s_0275_c_1,s_0713_c_1,-inf,inf
+
+// r_0139::Aconitase
+r_0139,s_1099_c_2,s_1214_c_2,-inf,inf
+
+// r_0140::Aconitase
+r_0140,s_0300_c_1,s_0566_c_1,-inf,inf
+
+// r_0141::Acyl-Coa Synthetase Long-Chain Family Member 1
+r_0141,s_0839_c_1+s_0604_c_1+s_0624_c_1,s_0648_c_1+s_0478_c_1+s_0591_c_1,-inf,inf
+
+// r_0142::Acyl-Coa Synthetase Long-Chain Family Member 1
+r_0142,s_0839_c_1+s_0658_c_1+s_0624_c_1,s_0648_c_1+s_0248_c_1+s_0591_c_1,-inf,inf
+
+// r_0143::Acyl-Coa Synthetase Long-Chain Family Member 2
+r_0143,s_0839_c_1+s_0409_c_1+s_0624_c_1,s_0648_c_1+s_0662_c_1+s_0591_c_1,-inf,inf
+
+// r_0144::Acyl-Coa Synthetase Long-Chain Family Member 2
+r_0144,s_0839_c_1+s_0575_c_1+s_0624_c_1,s_0648_c_1+s_0277_c_1+s_0591_c_1,-inf,inf
+
+// r_0145::Acyl-Coa Synthetase Long-Chain Family Member 3
+r_0145,s_0839_c_1+s_0590_c_1+s_0624_c_1,s_0648_c_1+s_0666_c_1+s_0591_c_1,-inf,inf
+
+// r_0146::Acyl-Coa Synthetase Long-Chain Family Member 3
+r_0146,s_0839_c_1+s_0878_c_1+s_0624_c_1,s_0648_c_1+s_0589_c_1+s_0591_c_1,-inf,inf
+
+// r_0147::Acyl-Coa Synthetase Long-Chain Family Member 4
+r_0147,s_0839_c_1+s_0732_c_1+s_0624_c_1,s_0648_c_1+s_0285_c_1+s_0591_c_1,-inf,inf
+
+// r_0148::Acyl-Coa Synthetase Long-Chain Family Member 4
+r_0148,s_0839_c_1+s_0804_c_1+s_0624_c_1,s_0648_c_1+s_0259_c_1+s_0591_c_1,-inf,inf
+
+// r_0149::Acyl-Coenzyme A Dehydrogenase, Long-Chain
+r_0149,s_0478_c_1+s_0100_c_1,s_0792_c_1+s_0163_c_1,0,inf
+
+// r_0150::Acyl-Coenzyme A Dehydrogenase, Long-Chain
+r_0150,s_0668_c_1+s_0100_c_1,s_0301_c_1+s_0792_c_1,0,inf
+
+// r_0151::Acyl-Coenzyme A Dehydrogenase, Long-Chain
+r_0151,s_0666_c_1+s_0100_c_1,s_0375_c_1+s_0792_c_1,0,inf
+
+// r_0152::Acyl-Coenzyme A Dehydrogenase, Long-Chain
+r_0152,s_0662_c_1+s_0100_c_1,s_0107_c_1+s_0792_c_1,0,inf
+
+// r_0153::Acyl-Coenzyme A Dehydrogenase, Long-Chain
+r_0153,s_0664_c_1+s_0100_c_1,s_0199_c_1+s_0792_c_1,0,inf
+
+// r_0154::Acyl-Coenzyme A Dehydrogenase, Long-Chain
+r_0154,s_0671_c_1+s_0100_c_1,s_0792_c_1+s_0452_c_1,0,inf
+
+// r_0155::Acyl-Coenzyme A Dehydrogenase, Medium Chain
+r_0155,s_0485_c_1+s_0100_c_1,s_0792_c_1+s_0432_c_1,0,inf
+
+// r_0156::Acyldihydroxyacetonephosphate Reductase
+r_0156,s_0654_c_1+s_0775_c_1,s_0784_c_1+s_0075_c_1,0,inf
+
+// r_0157::Acylphosphatase 1, Erythrocyte (Common) Type
+r_0157,s_0866_c_1+s_0659_c_1,s_0514_c_1+s_0765_c_1,0,inf
+
+// r_0158::Adenosine 5'-Monophosphate Phosphohydrolase
+r_0158,s_0648_c_1+s_0659_c_1,s_0765_c_1+s_0162_c_1,0,inf
+
+// r_0159::Adenosine Deaminase
+r_0159,s_0162_c_1,s_0661_c_1+s_0774_c_1,0,inf
+
+// r_0160::Adenosine Kinase
+r_0160,s_0162_c_1+s_0839_c_1,s_0648_c_1+s_0386_c_1,0,inf
+
+// r_0161::Adenosine:Orthophosphate Ribosyltransferase
+r_0161,s_0773_c_1+s_0723_c_1+s_0659_c_1,s_0765_c_1+s_0162_c_1,-inf,inf
+
+// r_0162::Adenylate Cyclase 6
+r_0162,s_0839_c_1,s_0238_c_1+s_0591_c_1,0,inf
+
+// r_0163::Adenylate Kinase 2
+r_0163,s_1079_c_2+s_1034_c_2,2.0*s_1184_c_2,-inf,inf
+
+// r_0164::Adenylate Kinase 2
+r_0164,s_1079_c_2+s_1197_c_2,s_1184_c_2+s_1187_c_2,-inf,inf
+
+// r_0165::Adenylate Kinase 4
+r_0165,s_1081_c_2+s_1034_c_2,s_1184_c_2+s_1185_c_2,-inf,inf
+
+// r_0166::Adenylate Kinase Isoenzyme 1
+r_0166,s_0839_c_1+s_0768_c_1,s_0386_c_1+s_0078_c_1,-inf,inf
+
+// r_0167::Adenylate Kinase Isoenzyme 5
+r_0167,s_0844_c_1+s_0648_c_1,s_0386_c_1+s_0284_c_1,-inf,inf
+
+// r_0168::Adenylate Kinase Isoenzyme 5
+r_0168,s_0844_c_1+s_0650_c_1,s_0282_c_1+s_0284_c_1,-inf,inf
+
+// r_0169::Adenylate Kinase Isoenzyme 5
+r_0169,s_0844_c_1+s_0957_c_1,s_0245_c_1+s_0284_c_1,-inf,inf
+
+// r_0170::Adenylosuccinate Synthetase 1, Muscle
+r_0170,s_0644_c_1+s_0844_c_1+s_0746_c_1,s_0284_c_1+s_0765_c_1+s_0954_c_1,0,inf
+
+// r_0171::Adp Diphosphohydrolase
+r_0171,s_0386_c_1,s_0648_c_1+s_0765_c_1,0,inf
+
+// r_0172::Adp Diphosphohydrolase
+r_0172,s_0386_c_1+s_0659_c_1,s_0648_c_1+s_0765_c_1,-inf,inf
+
+// r_0173::Adp,atp Carrier Protein, Heart/Skeletal Muscle Isoform T1
+r_0173,s_0386_c_1+s_1079_c_2+s_0765_c_1,s_1001_c_2+s_1184_c_2+s_0839_c_1+s_1041_c_2,0,inf
+
+// r_0174::Adp:Polynucleotide Adenylyltransferase
+r_0174,s_0530_c_1+s_0765_c_1,s_0530_c_1+s_0386_c_1,-inf,inf
+
+// r_0175::ADPNb
+r_0175,s_0426_c_1,s_0281_c_1,-inf,inf
+
+// r_0176::Adprib Ribophosphohydrolase
+r_0176,s_0254_c_1+s_0659_c_1,s_0648_c_1+s_0887_c_1,-inf,inf
+
+// r_0177::Aka4/15/2008 Lipoamde 2-Oxidoreductase(Decarboxylating And Acceptor-Succinylating)
+r_0177,s_0255_c_1+s_0646_c_1,s_0067_c_1+s_0029_c_1,0,inf
+
+// r_0178::Akg Aminotransferase
+r_0178,s_0778_c_1+s_0715_c_1,s_0936_c_1+s_0679_c_1,-inf,inf
+
+// r_0179::Alanine Aminotransferase
+r_0179,s_0140_c_1+s_0679_c_1,s_0715_c_1+s_0349_c_1,-inf,inf
+
+// r_0180::Alanine Transaminase
+r_0180,s_0349_c_1+s_0715_c_1,s_0140_c_1+s_0679_c_1,-inf,inf
+
+// r_0181::Alanine-Glyoxylate Aminotransferase
+r_0181,s_0140_c_1+s_0316_c_1,s_0349_c_1+s_0532_c_1,-inf,inf
+
+// r_0182::Alanine-Glyoxylate Aminotransferase
+r_0182,s_1154_c_2+s_1033_c_2,s_1009_c_2+s_1193_c_2,-inf,inf
+
+// r_0183::Alanyl (Membrane) Aminopeptidase
+r_0183,s_0322_c_1,s_0316_c_1+s_0531_c_1,0,inf
+
+// r_0184::Alcohol Dehydrogenase / Formaldehyde Dehydrogenase (Glutathione)
+r_0184,s_0791_c_1+s_0782_c_1+s_0096_c_1,s_0578_c_1+s_0611_c_1,-inf,inf
+
+// r_0185::Alcohol Dehydrogenase / Formaldehyde Dehydrogenase (Glutathione)
+r_0185,s_0534_c_1+s_0096_c_1,s_0573_c_1+s_0611_c_1,-inf,inf
+
+// r_0186::Alcohol Dehydrogenase 1, Complex
+r_0186,s_0876_c_1+s_0096_c_1,s_0235_c_1+s_0611_c_1,0,inf
+
+// r_0187::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0187,s_0991_c_2+s_1139_c_2,s_1161_c_2+s_1023_c_2,0,inf
+
+// r_0188::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0188,s_1194_c_2+s_1181_c_2,s_1133_c_2+s_1002_c_2,0,inf
+
+// r_0189::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0189,s_1016_c_2+s_1139_c_2,s_1028_c_2+s_1161_c_2,0,inf
+
+// r_0190::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0190,s_1026_c_2+s_1139_c_2,s_1144_c_2+s_1161_c_2,-inf,inf
+
+// r_0191::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0191,s_1060_c_2+s_1139_c_2,s_1178_c_2+s_1161_c_2,0,inf
+
+// r_0192::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0192,s_1157_c_2+s_1139_c_2,s_1127_c_2+s_1161_c_2,-inf,inf
+
+// r_0193::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0193,s_1115_c_2+s_1161_c_2,s_1176_c_2+s_1139_c_2,-inf,inf
+
+// r_0194::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0194,s_1059_c_2+s_1139_c_2,s_1177_c_2+s_1161_c_2,0,inf
+
+// r_0195::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0195,s_1044_c_2+s_1139_c_2,s_1087_c_2+s_1161_c_2,0,inf
+
+// r_0196::Aldehyde Dehydrogenase 2, Mitochondrial
+r_0196,s_0568_c_1+s_1139_c_2+s_1030_c_2,s_0365_c_1+s_1161_c_2,0,inf
+
+// r_0197::Aldehyde Dehydrogenase Family 1, Subfamily A1
+r_0197,s_0881_c_1+s_0611_c_1,s_0132_c_1+s_0096_c_1,-inf,inf
+
+// r_0198::Aldehyde Dehydrogenase Family 1, Subfamily A1
+r_0198,s_0501_c_1+s_0096_c_1,s_0536_c_1+s_0611_c_1,0,inf
+
+// r_0199::Aldehyde Dehydrogenase Family 1, Subfamily A1
+r_0199,s_0235_c_1+s_0096_c_1,s_0611_c_1+s_0685_c_1,0,inf
+
+// r_0200::Aldehyde Dehydrogenase Family 1, Subfamily A1
+r_0200,s_0529_c_1+s_0096_c_1,s_0577_c_1+s_0611_c_1,0,inf
+
+// r_0201::Aldehyde Dehydrogenase Family 1, Subfamily A1
+r_0201,s_0609_c_1+s_0096_c_1,s_0353_c_1+s_0611_c_1,-inf,inf
+
+// r_0202::Aldehyde Dehydrogenase Family 1, Subfamily A1
+r_0202,s_0625_c_1+s_0096_c_1,s_0403_c_1+s_0611_c_1,0,inf
+
+// r_0203::Aldehyde Dehydrogenase Family 1, Subfamily A1
+r_0203,s_0568_c_1+s_0096_c_1+s_0624_c_1,s_0365_c_1+s_0611_c_1,0,inf
+
+// r_0204::Aldehyde Dehydrogenase Family 1, Subfamily A1
+r_0204,s_0594_c_1+s_0075_c_1,s_0778_c_1+s_0775_c_1,0,inf
+
+// r_0205::Aldehyde Dehydrogenase Family 1, Subfamily A2
+r_0205,s_0376_c_1+s_0096_c_1,s_0374_c_1+s_0611_c_1,0,inf
+
+// r_0206::Aldehyde Dehydrogenase Family 1, Subfamily A2
+r_0206,s_0993_c_2+s_1139_c_2,s_0992_c_2+s_1161_c_2,0,inf
+
+// r_0207::Aldehyde Dehydrogenase Family 1, Subfamily A2
+r_0207,s_0572_c_1+s_0096_c_1,s_0781_c_1+s_0611_c_1,-inf,inf
+
+// r_0208::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0208,s_0296_c_1+s_0096_c_1,s_0294_c_1+s_0611_c_1,0,inf
+
+// r_0209::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0209,s_0802_c_1+s_0096_c_1,s_0007_c_1+s_0611_c_1,-inf,inf
+
+// r_0210::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0210,s_0802_c_1+s_0075_c_1+s_0659_c_1,s_0007_c_1+s_0775_c_1,-inf,inf
+
+// r_0211::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0211,s_0937_c_1+s_0096_c_1+s_0659_c_1,s_0056_c_1+s_0611_c_1+s_0213_c_1,0,inf
+
+// r_0212::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0212,s_0937_c_1+s_0075_c_1+s_0659_c_1,s_0056_c_1+s_0775_c_1+s_0213_c_1,0,inf
+
+// r_0213::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0213,s_0620_c_1+s_0096_c_1+s_0659_c_1,s_0811_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0214::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0214,s_0620_c_1+s_0075_c_1+s_0659_c_1,s_0811_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0215::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0215,s_0133_c_1+s_0096_c_1+s_0659_c_1,s_0729_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0216::Aldehyde Dehydrogenase Family 3, Subfamily A1
+r_0216,s_0133_c_1+s_0075_c_1+s_0659_c_1,s_0729_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0217::Aldehyde Dehydrogenase Family 3, Subfamily A2
+r_0217,s_0304_c_1+s_0096_c_1,s_0437_c_1+s_0611_c_1,0,inf
+
+// r_0218::Aldehyde Oxidase 1
+r_0218,s_0376_c_1+s_0869_c_1,s_0374_c_1+s_0955_c_1,0,inf
+
+// r_0219::Aldehyde Oxidase 1
+r_0219,2.0*s_0763_c_1+2.0*s_0869_c_1,s_0119_c_1+s_0229_c_1+2.0*s_0955_c_1,0,inf
+
+// r_0220::Aldehyde Oxidase 1
+r_0220,s_0049_c_1+s_0869_c_1+s_0659_c_1,s_0288_c_1+s_0872_c_1,0,inf
+
+// r_0221::Aldehyde Oxidase 1
+r_0221,s_0394_c_1+s_0869_c_1+s_0659_c_1,s_0017_c_1+s_0955_c_1,0,inf
+
+// r_0222::aldO-Keto Reductase Family 1, Member A4 (Aldehyde Reductase)
+r_0222,s_0235_c_1+s_0775_c_1,s_0876_c_1+s_0075_c_1,0,inf
+
+// r_0223::aldO-Keto Reductase Family 1, Member A4 (Aldehyde Reductase)
+r_0223,s_0880_c_1+s_0775_c_1,s_0848_c_1+s_0075_c_1,0,inf
+
+// r_0224::aldO-Keto Reductase Family 1, Member A4 (Aldehyde Reductase)
+r_0224,s_0377_c_1+s_0775_c_1,s_0170_c_1+s_0075_c_1,0,inf
+
+// r_0225::aldO-Keto Reductase Family 1, Member A4 (Aldehyde Reductase)
+r_0225,s_0132_c_1+s_0611_c_1,s_0908_c_1+s_0096_c_1,0,inf
+
+// r_0226::aldO-Keto Reductase Family 1, Member B3 (aldOse Reductase)
+r_0226,s_0170_c_1+s_0096_c_1,s_0377_c_1+s_0611_c_1,0,inf
+
+// r_0227::aldO-Keto Reductase Family 1, Member B3 (aldOse Reductase)
+r_0227,s_0548_c_1+s_0775_c_1,s_0035_c_1+s_0075_c_1,0,inf
+
+// r_0228::aldO-Keto Reductase Family 1, Member B3 (aldOse Reductase)
+r_0228,s_0359_c_1+s_0775_c_1,s_0484_c_1+s_0075_c_1,0,inf
+
+// r_0229::aldO-Keto Reductase Family 1, Member B7
+r_0229,s_0035_c_1+s_0096_c_1,s_0548_c_1+s_0611_c_1,0,inf
+
+// r_0230::aldO-Keto Reductase Family 1, Member B7
+r_0230,s_0484_c_1+s_0096_c_1,s_0359_c_1+s_0611_c_1,0,inf
+
+// r_0231::aldOlase 1, A Isoform
+r_0231,s_0283_c_1,s_0414_c_1+s_0929_c_1,-inf,inf
+
+// r_0232::aldOlase 1, A Isoform
+r_0232,s_0027_c_1,s_0414_c_1+s_0132_c_1,-inf,inf
+
+// r_0233::Alkaline Phosphatase 2, Liver
+r_0233,s_0414_c_1,s_0928_c_1+s_0765_c_1,0,inf
+
+// r_0234::Alkaline Phosphatase 5
+r_0234,s_0279_c_1,s_0196_c_1+3.0*s_0765_c_1,0,inf
+
+// r_0235::Allantoicase
+r_0235,s_0859_c_1,s_0542_c_1+s_0323_c_1,-inf,inf
+
+// r_0236::ALOXE3
+r_0236,s_0503_c_1+s_0715_c_1+s_0774_c_1,s_0711_c_1+2.0*s_0869_c_1,-inf,inf
+
+// r_0237::Alpha-D-Glucose 1-Epimerase
+r_0237,s_0548_c_1,s_0250_c_1,-inf,inf
+
+// r_0238::Alpha-D-Glucose 6-Phosphate Ketol-Isomerase
+r_0238,s_0744_c_1,s_0055_c_1,-inf,inf
+
+// r_0239::Alpha-D-Glucose-1-Phosphate Uridylyltransferase
+r_0239,s_0830_c_1+s_0280_c_1,s_0591_c_1+s_0557_c_1,-inf,inf
+
+// r_0240::Alpha-D-Glucoside Glucohydrolase
+r_0240,s_0912_c_1+s_0659_c_1,s_0767_c_1+s_0548_c_1,-inf,inf
+
+// r_0241::Ama-6-Semialdehyde: Nad 6-Oxidoreductase
+r_0241,s_0058_c_1+s_0096_c_1+s_0659_c_1,s_0436_c_1+s_0611_c_1+s_0213_c_1,0,inf
+
+// r_0242::Ama-6-Semialdehyde:Nad(P)+ 6-Oxidoreductase
+r_0242,s_0547_c_1+s_0775_c_1+s_0213_c_1,s_0058_c_1+s_0264_c_1+s_0075_c_1,-inf,inf
+
+// r_0243::Ama-6-Semialdehyde:Nad(P)+ 6-Oxidoreductase
+r_0243,s_0436_c_1+s_0839_c_1,s_0400_c_1+s_0591_c_1,-inf,inf
+
+// r_0244::Ama-6-Semialdehyde:Nad(P)+ 6-Oxidoreductase
+r_0244,s_0400_c_1+s_0264_c_1,s_0547_c_1+s_0648_c_1,-inf,inf
+
+// r_0245::Amidophosphoribosyltransferase
+r_0245,s_0616_c_1+s_0425_c_1,s_0591_c_1+s_0679_c_1+s_0412_c_1,0,inf
+
+// r_0246::Amine Oxidase, Copper Containing 3
+r_0246,s_0505_c_1+s_0869_c_1,s_0144_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0247::Amine Oxidase, Copper Containing 3
+r_0247,s_0909_c_1+s_0869_c_1,s_0594_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0248::Amine Oxidase, Copper Containing 3
+r_0248,s_0174_c_1+s_0869_c_1,s_0304_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0249::Amine Oxidase, Copper Containing 3
+r_0249,s_0225_c_1+s_0869_c_1,s_0529_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0250::Amine Oxidase, Copper Containing 3
+r_0250,s_0305_c_1+s_0659_c_1+s_0869_c_1,s_0620_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0251::Amine Oxidase, Copper Containing 3/Monoamine Oxidase B
+r_0251,s_0165_c_1,s_0802_c_1+s_0774_c_1,0,inf
+
+// r_0252::Amine:Oxygen Oxidoreductase (Deaminating) (Flavin-Containing)
+r_0252,s_0829_c_1+s_0659_c_1+s_0869_c_1,s_0142_c_1+s_0774_c_1+s_0955_c_1+s_0659_c_1,-inf,inf
+
+// r_0253::Amine:Oxygen Oxidoreductase (Deaminating) (Flavin-Containing)
+r_0253,s_0771_c_1+s_0869_c_1,s_0031_c_1+s_0774_c_1+s_0955_c_1,-inf,inf
+
+// r_0254::Aminoacylase 1
+r_0254,s_0166_c_1+s_0659_c_1,s_0685_c_1+s_0526_c_1,0,inf
+
+// r_0255::Aminoadipate Aminotransferase
+r_0255,s_0042_c_1+s_0715_c_1,s_0157_c_1+s_0679_c_1,-inf,inf
+
+// r_0256::Aminoadipate Aminotransferase
+r_0256,s_0707_c_1+s_0715_c_1,s_0167_c_1+s_0679_c_1,-inf,inf
+
+// r_0257::Aminocarboxymuconate-Semialdehyde Decarboxylase
+r_0257,s_0087_c_1,s_0029_c_1+s_0749_c_1,0,inf
+
+// r_0258::Aminolevulinate, Delta-, Dehydratase
+r_0258,2.0*s_0321_c_1,s_0102_c_1,0,inf
+
+// r_0259::Aminopeptidase / Proline Iminopeptidase
+r_0259,s_0812_c_1,s_0629_c_1+s_1220_c_1,0,inf
+
+// r_0260::Ammonia Ligase (Adp-Forming,Carbamate-Phosphorylating)
+r_0260,2.0*s_0839_c_1+s_0774_c_1+s_0029_c_1+s_0659_c_1,2.0*s_0386_c_1+s_0765_c_1+s_0033_c_1,-inf,inf
+
+// r_0261::Ammonia Ligase(Adp-Forming)
+r_0261,s_0839_c_1+s_0830_c_1+s_0774_c_1,s_0386_c_1+s_0765_c_1+s_0841_c_1,0,inf
+
+// r_0262::Amp Deaminase 3
+r_0262,s_0648_c_1,s_0644_c_1+s_0774_c_1,0,inf
+
+// r_0263::Amp:Pyrophosphate Phosphoribosyltransferase
+r_0263,s_0773_c_1+s_0616_c_1,s_0591_c_1+s_0648_c_1,0,inf
+
+// r_0264::Amylase 1, Salivary
+r_0264,s_0021_c_1,s_0519_c_1,-inf,inf
+
+// r_0265::Ana9-Phosphate Pyruvate-Lyase (Pyruvate-Phosphorylating)
+r_0265,s_0865_c_1+s_0765_c_1,s_0005_c_1+s_0368_c_1+s_0659_c_1,-inf,inf
+
+// r_0266::Anapyruvate-Lyase (Pyruvate-Phosphorylating)
+r_0266,s_0354_c_1+s_0765_c_1,s_0660_c_1+s_0368_c_1+s_0659_c_1,-inf,inf
+
+// r_0267::Antrna Ligase (Amp-Forming)
+r_0267,s_0839_c_1+s_0612_c_1+s_0292_c_1,s_0648_c_1+s_0591_c_1+s_0041_c_1,-inf,inf
+
+// r_0268::Aprut:Oxygen Oxidoreductase(Deaminating)(Flavin-Containing)
+r_0268,s_0231_c_1+s_0659_c_1+s_0869_c_1,s_0760_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0269::Arg,Nadph:Oxygen Oxidoreductase (Nitric-Oxide-Forming)
+r_0269,s_0004_c_1+s_0869_c_1+s_0775_c_1,s_0113_c_1+s_0075_c_1+s_0659_c_1,-inf,inf
+
+// r_0270::Arg:Atrna Ligase (Amp-Forming)
+r_0270,s_0839_c_1+s_0004_c_1+s_0202_c_1,s_0648_c_1+s_0591_c_1+s_0934_c_1,-inf,inf
+
+// r_0271::Arginase 1, Liver
+r_0271,s_0004_c_1,s_0526_c_1+s_0323_c_1,0,inf
+
+// r_0272::Arginine Decarboxylase
+r_0272,s_0004_c_1,s_0695_c_1+s_0029_c_1,-inf,inf
+
+// r_0273::Argininosuccinate Lyase
+r_0273,s_0079_c_1+s_0004_c_1,s_0340_c_1,-inf,inf
+
+// r_0274::Argininosuccinate Synthetase 1
+r_0274,s_0720_c_1+s_0746_c_1+s_0839_c_1,s_0648_c_1+s_0591_c_1+s_0340_c_1,-inf,inf
+
+// r_0275::Aryl-Formylamine Amidohydrolase
+r_0275,s_0549_c_1+s_0659_c_1,s_0863_c_1+s_0576_c_1,-inf,inf
+
+// r_0276::Arylalkylamine N-Acetyltransferase
+r_0276,s_0408_c_1+s_0814_c_1,s_0624_c_1+s_0032_c_1,0,inf
+
+// r_0277::Arylformamidase
+r_0277,s_0518_c_1+s_0659_c_1,s_0576_c_1+s_0222_c_1,-inf,inf
+
+// r_0278::Asparagine Synthase
+r_0278,s_0746_c_1+s_0425_c_1+s_0839_c_1,s_0612_c_1+s_0679_c_1+s_0648_c_1+s_0591_c_1,-inf,inf
+
+// r_0279::Asparagine-Trna Ligase
+r_0279,s_0612_c_1+s_0292_c_1+s_0839_c_1,s_0041_c_1+s_0648_c_1+s_0591_c_1,0,inf
+
+// r_0280::Aspartate Carbamoyltransferase
+r_0280,s_0746_c_1+s_0033_c_1,s_0135_c_1+s_0765_c_1,0,inf
+
+// r_0281::atp 1-Phosphatidyl-1D-Myo-Inositol-4,5-Bisphosphate 3-Phosphotransferase
+r_0281,s_0839_c_1+s_0379_c_1,s_0386_c_1+s_0890_c_1,0,inf
+
+// r_0282::atp 1D-Myo-Inositol-1,4,5-Trisphosphate 3-Phosphotransferase
+r_0282,s_0839_c_1+s_0402_c_1,s_0386_c_1+s_0306_c_1,0,inf
+
+// r_0283::atp 1D-Myo-Inositol-1,4,5-Trisphosphate 6-Phosphotransferase
+r_0283,s_0839_c_1+s_0402_c_1,s_0386_c_1+s_0387_c_1,0,inf
+
+// r_0284::atp 1D-Myo-Inositol-1,4,5-Trisphosphate 6-Phosphotransferase
+r_0284,s_0839_c_1+s_0387_c_1,s_0386_c_1+s_0714_c_1,0,inf
+
+// r_0285::atp D-Glucose 6-Phosphotransferase
+r_0285,s_0839_c_1+s_0250_c_1,s_0386_c_1+s_0055_c_1,-inf,inf
+
+// r_0286::atp Fmn Adenylyltransferase
+r_0286,s_0528_c_1+s_0839_c_1,s_0100_c_1+s_0591_c_1,0,inf
+
+// r_0287::atp Fmn Adenylyltransferase
+r_0287,s_1000_c_2+s_1079_c_2,s_1141_c_2+s_1137_c_2,0,inf
+
+// r_0288::atp-Citrate (Pro-S-)-Lyase
+r_0288,s_0408_c_1+s_0503_c_1,s_0624_c_1+s_0300_c_1,0,inf
+
+// r_0289::atp: D-Fructose 6-Phosphotransferase
+r_0289,s_0839_c_1+s_0767_c_1,s_0386_c_1+s_0743_c_1,-inf,inf
+
+// r_0290::atp:Amp Phosphotransferase
+r_0290,s_0839_c_1+s_0648_c_1,2.0*s_0386_c_1,-inf,inf
+
+// r_0291::atp:Cmp Phosphotransferase
+r_0291,s_0839_c_1+s_0650_c_1,s_0386_c_1+s_0282_c_1,-inf,inf
+
+// r_0292::atp:Cytidine 5'-Phosphotransferase
+r_0292,s_0930_c_1+s_0839_c_1,s_0386_c_1+s_0650_c_1,0,inf
+
+// r_0293::atp:Dcmp Phosphotransferase
+r_0293,s_0839_c_1+s_0957_c_1,s_0386_c_1+s_0245_c_1,-inf,inf
+
+// r_0294::atp:Deoxyuridine 5'-Phosphotransferase
+r_0294,s_0405_c_1+s_0839_c_1,s_0681_c_1+s_0386_c_1,0,inf
+
+// r_0295::atp:Deoxyuridine 5'-Phosphotransferase, Mitochondrial
+r_0295,s_1215_c_2+s_1079_c_2,s_1076_c_2+s_1184_c_2,0,inf
+
+// r_0296::atp:Dgmp Phosphotransferase
+r_0296,s_0309_c_1+s_0839_c_1,s_0613_c_1+s_0386_c_1,-inf,inf
+
+// r_0297::atp:Gmp Phosphotransferase
+r_0297,s_0653_c_1+s_0839_c_1,s_0284_c_1+s_0386_c_1,-inf,inf
+
+// r_0298::atp:Nucleoside-Diphosphate Phosphatransferase
+r_0298,s_0839_c_1+s_0386_c_1,s_0386_c_1+s_0839_c_1,-inf,inf
+
+// r_0299::atp:Polynucleotide Adenylyltransferase
+r_0299,s_0839_c_1+s_0530_c_1,s_0591_c_1+s_0530_c_1,-inf,inf
+
+// r_0300::atp:Thymidine 5'-Phosphotransferase
+r_0300,s_0149_c_1+s_0839_c_1,s_0386_c_1+s_0712_c_1,0,inf
+
+// r_0301::atp:Thymidine 5'-Phosphotransferase, Mitochondrial
+r_0301,s_1165_c_2+s_1079_c_2,s_1184_c_2+s_1095_c_2,0,inf
+
+// r_0302::atp:Ump Phosphotransferase
+r_0302,s_0839_c_1+s_0642_c_1,s_0386_c_1+s_0275_c_1,-inf,inf
+
+// r_0303::atp:Uridine 5'-Phosphotransferase
+r_0303,s_0780_c_1+s_0839_c_1,s_0386_c_1+s_0642_c_1,0,inf
+
+// r_0304::B-Ketoacyl-Acp Synthase I (C14,1)
+r_0304,s_0533_c_1+6.0*s_0195_c_1+11.0*s_0775_c_1,11.0*s_0075_c_1+s_0179_c_1+6.0*s_0029_c_1+6.0*s_0193_c_1,0,inf
+
+// r_0305::B-Ketoacyl-Acp Synthase I (C16,1)
+r_0305,s_0533_c_1+7.0*s_0195_c_1+13.0*s_0775_c_1,13.0*s_0075_c_1+s_0475_c_1+7.0*s_0029_c_1+7.0*s_0193_c_1,0,inf
+
+// r_0306::B-Ketoacyl-Acp Synthase I (C18,0)
+r_0306,s_0533_c_1+8.0*s_0195_c_1+16.0*s_0775_c_1,16.0*s_0075_c_1+s_0315_c_1+8.0*s_0029_c_1+8.0*s_0193_c_1,0,inf
+
+// r_0307::B-Ketoacyl-Acp Synthase I (C18,1)
+r_0307,s_0533_c_1+8.0*s_0195_c_1+15.0*s_0775_c_1,15.0*s_0075_c_1+s_0258_c_1+8.0*s_0029_c_1+8.0*s_0193_c_1,0,inf
+
+// r_0308::B-Ketoacyl-Acp Synthase I (C18,2)
+r_0308,s_0533_c_1+8.0*s_0195_c_1+14.0*s_0775_c_1,14.0*s_0075_c_1+s_0618_c_1+8.0*s_0029_c_1+8.0*s_0193_c_1,0,inf
+
+// r_0309::B4-[(1R)-1-Hydroxy-2-(Methylamino)Ethyl]-1,2-Benzenediol:Oxygen Oxidoreductase(Deaminating)(Flavin-Containing)
+r_0309,s_0219_c_1+s_0659_c_1+s_0869_c_1,s_0580_c_1+s_0446_c_1+s_0955_c_1,0,inf
+
+// r_0310::Beta-1,4-Galactosyltransferase
+r_0310,s_0346_c_1+s_0548_c_1,s_0275_c_1+s_0237_c_1,0,inf
+
+// r_0311::Beta-1,4-Galactosyltransferase
+r_0311,s_0143_c_1+s_0346_c_1,s_0901_c_1+s_0275_c_1,0,inf
+
+// r_0312::Beta-Carotene 9', 10'-Dioxygenase 2
+r_0312,s_0869_c_1+2.0*s_0152_c_1,2.0*s_0243_c_1+2.0*s_0029_c_1,-inf,inf
+
+// r_0313::Beta-D-Glucose 6-Phosphate Ketol-Isomerase
+r_0313,s_0055_c_1,s_0743_c_1,-inf,inf
+
+// r_0314::Beta-Glucuronidase Structural
+r_0314,s_0597_c_1,s_0182_c_1,0,inf
+
+// r_0315::Betaine-Homocysteine Methyltransferase
+r_0315,s_0393_c_1+s_0424_c_1,s_0926_c_1+s_0391_c_1,0,inf
+
+// r_0316::Bifunctional Methylenetetrahydrofolate Dehydrogenase/Cyclohydrolase, Mitochondrial [Precursor]
+r_0316,s_1174_c_2+s_1139_c_2,s_1018_c_2+s_1161_c_2,0,inf
+
+// r_0317::Bifunctional Purine Biosynthesis Protein Purh/ Imp 1,2-Hydrolase (Decyclizing)
+r_0317,s_0569_c_1+s_0083_c_1,s_0099_c_1+s_0247_c_1,0,inf
+
+// r_0318::Bifunctional Purine Biosynthesis Protein Purh/ Imp 1,2-Hydrolase (Decyclizing)
+r_0318,s_0247_c_1,s_0644_c_1,-inf,inf
+
+// r_0319::Biliverdin Reductase A
+r_0319,s_0565_c_1+s_0611_c_1+s_0213_c_1,s_0052_c_1+s_0096_c_1,0,inf
+
+// r_0320::Biliverdin Reductase A
+r_0320,s_0565_c_1+s_0775_c_1+s_0213_c_1,s_0052_c_1+s_0075_c_1,0,inf
+
+// r_0321::Bis(5'-Nucleosidyl)-Tetraphosphatase
+r_0321,s_0960_c_1,s_0844_c_1+s_0653_c_1,0,inf
+
+// r_0322::Bis(5'-Nucleosidyl)-Tetraphosphatase
+r_0322,s_0544_c_1,s_0830_c_1+s_0642_c_1,0,inf
+
+// r_0323::Bisphosphate 3'-Nucleotidase 1
+r_0323,s_0185_c_1+s_0659_c_1,s_0388_c_1+s_0765_c_1,0,inf
+
+// r_0324::Bisphosphoglycerate Mutase / Phosphoglycerate Mutase / Bisphosphoglycerate Phosphatase
+r_0324,s_0866_c_1,s_0818_c_1,0,inf
+
+// r_0325::Bisphosphoglycerate Mutase / Phosphoglycerate Mutase / Bisphosphoglycerate Phosphatase
+r_0325,s_0514_c_1,s_0093_c_1,-inf,inf
+
+// r_0326::Bloom Syndrome Homolog (Human)
+r_0326,s_1219_c_1+s_0839_c_1,s_0257_c_1+s_0386_c_1+s_0765_c_1,0,inf
+
+// r_0327::Bloom Syndrome Homolog (Human)
+r_0327,s_0675_c_1,s_0196_c_1+s_0765_c_1,0,inf
+
+// r_0328::Bone Marrow Stromal Cell Antigen 1
+r_0328,s_0075_c_1+s_0659_c_1,s_0072_c_1+s_0905_c_1,0,inf
+
+// r_0329::Branched Chain Aminotransferase 1, Cytosolic
+r_0329,s_0715_c_1+s_0487_c_1,s_0596_c_1+s_0679_c_1,-inf,inf
+
+// r_0330::Branched Chain Aminotransferase 1, Cytosolic
+r_0330,s_0715_c_1+s_0066_c_1,s_0445_c_1+s_0679_c_1,-inf,inf
+
+// r_0331::Branched Chain Aminotransferase 1, Cytosolic
+r_0331,s_0715_c_1+s_0366_c_1,s_0438_c_1+s_0679_c_1,-inf,inf
+
+// r_0332::Branched Chain Ketoacid Dehydrogenase E1, Alpha Polypeptide
+r_0332,s_0596_c_1+s_0624_c_1+s_1139_c_2,s_0318_c_1+s_1146_c_2+s_1161_c_2,0,inf
+
+// r_0333::Branched Chain Ketoacid Dehydrogenase E1, Alpha Polypeptide
+r_0333,s_0445_c_1+s_0624_c_1+s_1139_c_2,s_0299_c_1+s_1146_c_2+s_1161_c_2,0,inf
+
+// r_0334::Branched Chain Ketoacid Dehydrogenase E1, Alpha Polypeptide
+r_0334,s_0438_c_1+s_0624_c_1+s_1139_c_2,s_0318_c_1+s_1146_c_2+s_1161_c_2,0,inf
+
+// r_0335::C20,1
+r_0335,s_0533_c_1+9.0*s_0195_c_1+17.0*s_0775_c_1,17.0*s_0075_c_1+s_0189_c_1+9.0*s_0029_c_1+9.0*s_0193_c_1,0,inf
+
+// r_0336::C20,2
+r_0336,s_0533_c_1+9.0*s_0195_c_1+16.0*s_0775_c_1,16.0*s_0075_c_1+s_0546_c_1+9.0*s_0029_c_1+9.0*s_0193_c_1,0,inf
+
+// r_0337::C20,3
+r_0337,s_0533_c_1+9.0*s_0195_c_1+15.0*s_0775_c_1,15.0*s_0075_c_1+s_0903_c_1+9.0*s_0029_c_1+9.0*s_0193_c_1,0,inf
+
+// r_0338::C22,1
+r_0338,s_0533_c_1+10.0*s_0195_c_1+19.0*s_0775_c_1,19.0*s_0075_c_1+s_0489_c_1+10.0*s_0029_c_1+10.0*s_0193_c_1,0,inf
+
+// r_0339::Carbamoylphosphate Synthetase I
+r_0339,2.0*s_1079_c_2+s_1146_c_2+s_1066_c_2,2.0*s_1184_c_2+s_1041_c_2+s_1122_c_2,0,inf
+
+// r_0340::Carbamoylphosphate Synthetase Ii
+r_0340,2.0*s_0839_c_1+s_0029_c_1+s_0425_c_1,2.0*s_0386_c_1+s_0765_c_1+s_0033_c_1+s_0679_c_1,0,inf
+
+// r_0341::Carbonic Anhydrase 4
+r_0341,s_0029_c_1,s_0191_c_1,0,inf
+
+// r_0342::Carbonic Anhydrase 5A, Mitochondrial
+r_0342,s_1146_c_2,s_1142_c_2,0,inf
+
+// r_0343::Carboxyl Ester Lipase
+r_0343,s_0877_c_1,s_0326_c_1+s_0509_c_1,0,inf
+
+// r_0344::Carboxyl Ester Lipase
+r_0344,s_0727_c_1,s_0922_c_1+s_0509_c_1,0,inf
+
+// r_0345::Cardiolipin Synthase
+r_0345,s_0996_c_2+s_1077_c_2,s_1163_c_2+s_1159_c_2,0,inf
+
+// r_0346::Cardiolipin Synthase
+r_0346,s_0861_c_1+s_0048_c_1,s_0650_c_1+s_0906_c_1,0,inf
+
+// r_0347::Carnitine Acetyltransferase
+r_0347,s_0408_c_1+s_0204_c_1,s_0624_c_1+s_0465_c_1,-inf,inf
+
+// r_0348::Carnitine Acetyltransferase
+r_0348,s_1135_c_2+s_1083_c_2,s_1030_c_2+s_1213_c_2,-inf,inf
+
+// r_0349::Carnitine Palmitoyltransferase 1A, Liver
+r_0349,s_0478_c_1+s_0204_c_1,s_0624_c_1+s_0040_c_1,-inf,inf
+
+// r_0350::Carnitine Palmitoyltransferase 2
+r_0350,s_1083_c_2+s_1031_c_2,s_1073_c_2+s_1030_c_2,-inf,inf
+
+// r_0351::Catalase 1
+r_0351,2.0*s_0955_c_1,s_0869_c_1+2.0*s_0659_c_1,0,inf
+
+// r_0352::Cd38 Antigen
+r_0352,s_0096_c_1,s_0072_c_1+s_0254_c_1,-inf,inf
+
+// r_0353::Cdp Diphosphohydrolase
+r_0353,s_0282_c_1,s_0650_c_1+s_0765_c_1,0,inf
+
+// r_0354::Cdp-Diacylglycerol Inositol Phosphatidyltransferase
+r_0354,s_0861_c_1+s_0755_c_1,s_0650_c_1+s_0332_c_1,0,inf
+
+// r_0355::CDS2
+r_0355,s_1121_c_2+s_1080_c_2,s_0996_c_2+s_1137_c_2,-inf,inf
+
+// r_0356::Ceramide Choline Phosphotransferase
+r_0356,s_0092_c_1+s_0064_c_1,s_0134_c_1,0,inf
+
+// r_0357::Ceruloplasmin
+r_0357,s_0869_c_1+4.0*s_0034_c_1+4.0*s_0213_c_1,4.0*s_0471_c_1+2.0*s_0659_c_1,0,inf
+
+// r_0358::Chitinase 1 (Chitotriosidase)
+r_0358,s_0619_c_1+s_0659_c_1,s_0069_c_1+s_0171_c_1,0,inf
+
+// r_0359::Choline Kinase
+r_0359,s_0839_c_1+s_0014_c_1,s_0386_c_1+s_0690_c_1,0,inf
+
+// r_0360::Choline Kinase-Like
+r_0360,s_0014_c_1+s_0839_c_1,s_0690_c_1+s_0386_c_1,0,inf
+
+// r_0361::Chondroitin 4-O-Sulfotransferase 3
+r_0361,s_0185_c_1+s_0350_c_1,s_0022_c_1+s_0091_c_1,-inf,inf
+
+// r_0362::Citrate Hydro-Lyase (Aconitase1)
+r_0362,s_0300_c_1,s_0948_c_1+s_0659_c_1,-inf,inf
+
+// r_0363::Citrate Oxaloacetate-Lyase ((Pro-3S)-Ch2Coo- -> Acetyl-Coa)
+r_0363,s_0300_c_1,s_0685_c_1+s_0503_c_1,-inf,inf
+
+// r_0364::Citrate Synthase
+r_0364,s_1135_c_2+s_1206_c_2,s_1030_c_2+s_1099_c_2,0,inf
+
+// r_0365::Cmp-N-Acetylneuraminate Monooxygenase
+r_0365,s_0564_c_1+2.0*s_0045_c_1+s_0869_c_1+2.0*s_0213_c_1,s_0184_c_1+2.0*s_0122_c_1+s_0659_c_1,-inf,inf
+
+// r_0366::Coenzyme Q2 Homolog, Prenyltransferase
+r_0366,s_0693_c_1+s_0467_c_1,s_0587_c_1+s_0591_c_1,0,inf
+
+// r_0367::Coenzyme Q5 Homolog, Methyltransferase
+r_0367,s_0879_c_1+s_0969_c_1,s_0429_c_1+s_0419_c_1,0,inf
+
+// r_0368::Coproporphyrinogen Oxidase
+r_0368,s_0995_c_2+s_1216_c_2,2.0*s_1146_c_2+s_1190_c_2,0,inf
+
+// r_0369::CPPTRA
+r_0369,s_0469_c_1,s_1216_c_2,-inf,inf
+
+// r_0370::Creatine Kinase, Brain
+r_0370,s_0839_c_1+s_0673_c_1,s_0386_c_1+s_0938_c_1,-inf,inf
+
+// r_0371::Creatine Kinase, Mitochondrial 1, Ubiquitous
+r_0371,s_1079_c_2+s_1110_c_2,s_1184_c_2+s_1179_c_2,-inf,inf
+
+// r_0372::Ctp Diphosphohydrolase
+r_0372,s_0841_c_1,s_0282_c_1+s_0765_c_1,0,inf
+
+// r_0373::Ctp-N-Acylneuraminate Cytidylyltransferase
+r_0373,s_0841_c_1+s_0354_c_1,s_0591_c_1+s_0564_c_1,-inf,inf
+
+// r_0374::Ctp-N-Acylneuraminate Cytidylyltransferase
+r_0374,s_0841_c_1+s_0206_c_1,s_0591_c_1+s_0184_c_1,-inf,inf
+
+// r_0375::CTPTRA1
+r_0375,s_0841_c_1,s_1080_c_2,-inf,inf
+
+// r_0376::CTPTRA2
+r_0376,s_0004_c_1,s_1036_c_2,-inf,inf
+
+// r_0377::CTPTRA3
+r_0377,s_0013_c_1,s_1117_c_2,-inf,inf
+
+// r_0378::CTPTRA4
+r_0378,s_0955_c_1,s_1105_c_2,-inf,inf
+
+// r_0379::Cys L-Homocysteine-Lyase (Deaminating)
+r_0379,s_0754_c_1+s_0659_c_1,s_0286_c_1+s_0140_c_1+s_0774_c_1,-inf,inf
+
+// r_0380::Cys Trna(Cys) Ligase (Amp-Forming)
+r_0380,s_0839_c_1+s_0754_c_1+s_0842_c_1,s_0648_c_1+s_0591_c_1+s_0160_c_1,-inf,inf
+
+// r_0381::CYS3
+r_0381,s_0634_c_1,s_0140_c_1+s_0678_c_1,0,inf
+
+// r_0382::Cystathionine Beta-Synthase
+r_0382,s_0562_c_1+s_0424_c_1,s_0794_c_1,0,inf
+
+// r_0383::Cystathionine Gamma-Lyase
+r_0383,s_0794_c_1,s_0754_c_1+s_0774_c_1+s_0461_c_1,-inf,inf
+
+// r_0384::Cysteine Dioxygenase
+r_0384,s_0754_c_1+s_0869_c_1,s_0556_c_1,0,inf
+
+// r_0385::Cytd Aminohydrolase
+r_0385,s_0930_c_1+s_0659_c_1,s_0780_c_1+s_0774_c_1,0,inf
+
+// r_0386::Cytdine 5'-Monophosphate Phosphohydrolase
+r_0386,s_0650_c_1+s_0659_c_1,s_0930_c_1+s_0765_c_1,0,inf
+
+// r_0387::Cytidine 5'-Triphosphate Synthase
+r_0387,s_0830_c_1+s_0425_c_1+s_0839_c_1,s_0679_c_1+s_0841_c_1+s_0386_c_1+s_0765_c_1,0,inf
+
+// r_0388::Cytochrome B5 Reductase 3
+r_0388,s_0611_c_1+2.0*s_0122_c_1,s_0096_c_1+2.0*s_0045_c_1,-inf,inf
+
+// r_0389::Cytochrome C Oxidase, Subunit Iva
+r_0389,s_0995_c_2+4.0*s_1098_c_2+6.0*s_1001_c_2,4.0*s_1062_c_2,0,inf
+
+// r_0390::Cytochrome P450, 24
+r_0390,s_0725_c_1,s_0801_c_1,0,inf
+
+// r_0391::Cytochrome P450, 39A1 (Oxysterol 7Alpha-Hydroxylase)
+r_0391,s_0251_c_1,s_0704_c_1,0,inf
+
+// r_0392::Cytochrome P450, 39A1 (Oxysterol 7Alpha-Hydroxylase)
+r_0392,s_1119_c_2+s_0995_c_2,s_1189_c_2,0,inf
+
+// r_0393::Cytochrome P450, 7A1
+r_0393,s_0326_c_1+s_0869_c_1+s_0775_c_1,s_0384_c_1+s_0075_c_1,0,inf
+
+// r_0394::Cytochrome P450, 7B1
+r_0394,s_0320_c_1+s_0869_c_1,s_0483_c_1,0,inf
+
+// r_0395::Cytochrome P450, 7B1
+r_0395,s_0999_c_2+s_0995_c_2,s_1086_c_2,0,inf
+
+// r_0396::Cytochrome P450, 7B1
+r_0396,s_0326_c_1+s_0869_c_1+s_0775_c_1,s_0553_c_1+s_0075_c_1,0,inf
+
+// r_0397::Cytochrome P450, 7B1
+r_0397,s_0106_c_1+s_0869_c_1+s_0775_c_1,s_0820_c_1+s_0075_c_1,0,inf
+
+// r_0398::Cytochrome P450, 7B1
+r_0398,s_0380_c_1+s_0869_c_1+s_0775_c_1,s_0172_c_1+s_0075_c_1,0,inf
+
+// r_0399::D-3-Phosphoglycerate Dehydrogenase [Fragment]
+r_0399,s_0514_c_1+s_0096_c_1,s_0611_c_1+s_0313_c_1,-inf,inf
+
+// r_0400::D-Amino Acid Oxidase
+r_0400,s_0316_c_1+s_0869_c_1,s_0532_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0401::D-Amino Acid Oxidase
+r_0401,s_0762_c_1+s_0869_c_1,s_0706_c_1+s_0955_c_1,0,inf
+
+// r_0402::D-Amino Acid Oxidase
+r_0402,s_0526_c_1+s_0869_c_1,s_0856_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0403::D-Amino Acid Oxidase
+r_0403,s_0004_c_1+s_0869_c_1,s_0190_c_1+s_0955_c_1+s_0774_c_1,0,inf
+
+// r_0404::D-Fructose 2-Phosphate Phosphatase
+r_0404,s_0372_c_1+s_0659_c_1,s_0767_c_1+s_0765_c_1,-inf,inf
+
+// r_0405::D-Glucose 6-Phosphotransferase
+r_0405,s_0839_c_1+s_0893_c_1,s_0386_c_1+s_0115_c_1,-inf,inf
+
+// r_0406::D-Glyceraldehyde-3-Phosphate, Nadp Oxidoreductase(Phosphorylating)
+r_0406,s_0929_c_1+s_0765_c_1+s_0075_c_1,s_0866_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0407::D-Mannose-6-Phosphate Ketol-Isomerase
+r_0407,s_0115_c_1,s_0743_c_1,-inf,inf
+
+// r_0408::D-Proline:Oxygen Oxidoreductase (Deaminating)
+r_0408,s_0831_c_1+s_0869_c_1,s_0348_c_1+s_0955_c_1,0,inf
+
+// r_0409::D-Ribose 5-Phosphotransferase
+r_0409,s_0839_c_1+s_0173_c_1,s_0386_c_1+s_0887_c_1,-inf,inf
+
+// r_0410::D-Tagatose 6-Phosphate 1-Phosphotransferase
+r_0410,s_0841_c_1+s_0803_c_1,s_0282_c_1+s_0062_c_1,-inf,inf
+
+// r_0411::D-Tagatose 6-Phosphate 1-Phosphotransferase
+r_0411,s_0830_c_1+s_0803_c_1,s_0275_c_1+s_0062_c_1,-inf,inf
+
+// r_0412::D-Tagatose 6-Phosphate 1-Phosphotransferase
+r_0412,s_0832_c_1+s_0803_c_1,s_0383_c_1+s_0062_c_1,-inf,inf
+
+// r_0413::DAO14
+r_0413,s_0856_c_1,s_0348_c_1,-inf,inf
+
+// r_0414::DAO16
+r_0414,s_0190_c_1,s_0856_c_1+s_0323_c_1,0,inf
+
+// r_0415::Datp:Cytidine 5'-Phosphotransferase
+r_0415,s_0020_c_1+s_0930_c_1,s_0078_c_1+s_0650_c_1,-inf,inf
+
+// r_0416::Datp:Dgmp Phosphotransferase
+r_0416,s_0653_c_1+s_0020_c_1,s_0284_c_1+s_0078_c_1,-inf,inf
+
+// r_0417::Datp:Pyruvate O2-Phosphotransferase
+r_0417,s_0020_c_1+s_0140_c_1,s_0078_c_1+s_0368_c_1,-inf,inf
+
+// r_0418::Datp:Uridine 5'-Phosphotransferase
+r_0418,s_0020_c_1+s_0780_c_1,s_0078_c_1+s_0642_c_1,-inf,inf
+
+// r_0419::Dctp:Cytidine 5'-Phosphotransferase
+r_0419,s_0633_c_1+s_0930_c_1,s_0245_c_1+s_0650_c_1,-inf,inf
+
+// r_0420::Dctp:Uridine 5'-Phosphotransferase
+r_0420,s_0633_c_1+s_0780_c_1,s_0245_c_1+s_0642_c_1,-inf,inf
+
+// r_0421::DDHD1
+r_0421,s_0281_c_1+s_0659_c_1,s_0507_c_1,-inf,inf
+
+// r_0422::Delta8,24-Cholestadien-3Beta-Ol Delta7-Delta8-Isomerase
+r_0422,s_0733_c_1,s_0554_c_1,-inf,inf
+
+// r_0423::Deoxyadenosine 5'-Triphosphate:Dna Deoxynucleotidyltransferase (Dna-Directed)
+r_0423,s_0020_c_1+s_0356_c_1,s_0591_c_1+s_0356_c_1,-inf,inf
+
+// r_0424::Deoxyadenosine Deaminase
+r_0424,s_0508_c_1,s_0585_c_1+s_0774_c_1,0,inf
+
+// r_0425::Deoxyadenosine:Orthophosphate Ribosyltransferase
+r_0425,s_0508_c_1+s_0765_c_1+s_0659_c_1,s_0773_c_1+s_0373_c_1,-inf,inf
+
+// r_0426::Deoxycytd Aminohydrolase
+r_0426,s_0686_c_1+s_0659_c_1,s_0405_c_1+s_0774_c_1,0,inf
+
+// r_0427::Deoxycytidine Kinase
+r_0427,s_0839_c_1+s_0162_c_1,s_0386_c_1+s_0648_c_1,-inf,inf
+
+// r_0428::Deoxycytidine Kinase
+r_0428,s_0686_c_1+s_0839_c_1,s_0957_c_1+s_0386_c_1,0,inf
+
+// r_0429::Deoxyguanosine 5'-Triphosphate:Dna Deoxynucleotidyltransferase (Dna-Directed)
+r_0429,s_0551_c_1+s_0356_c_1,s_0591_c_1+s_0356_c_1,-inf,inf
+
+// r_0430::Deoxyguanosine Kinase
+r_0430,s_1079_c_2+s_1082_c_2,s_1184_c_2+s_1195_c_2,-inf,inf
+
+// r_0431::Deoxyguanosine Kinase
+r_0431,s_0839_c_1+s_0057_c_1,s_0386_c_1+s_0309_c_1,-inf,inf
+
+// r_0432::Deoxyguanosine:Orthophosphate Ribosyltransferase
+r_0432,s_0057_c_1+s_0765_c_1+s_0659_c_1,s_0226_c_1+s_0373_c_1,-inf,inf
+
+// r_0433::Deoxyinosine:Orthophosphate Ribosyltransferase
+r_0433,s_0585_c_1+s_0765_c_1+s_0659_c_1,s_0493_c_1+s_0373_c_1,-inf,inf
+
+// r_0434::Deoxyribokinase
+r_0434,s_0392_c_1+s_0386_c_1,s_0333_c_1+s_0839_c_1,-inf,inf
+
+// r_0435::Deoxythymidine 5'-Monophosphate Kinase
+r_0435,s_0712_c_1+s_0839_c_1,s_0386_c_1+s_0896_c_1,-inf,inf
+
+// r_0436::Deoxyuridine 5'-Monophosphate Phosphohydrolase
+r_0436,s_0681_c_1+s_0659_c_1,s_0405_c_1+s_0765_c_1,0,inf
+
+// r_0437::Dephosphocoa Kinase
+r_0437,s_0310_c_1+s_0839_c_1,s_0386_c_1+s_0624_c_1,0,inf
+
+// r_0438::Dextrin 6-Alpha-D-Glucanohydrolase
+r_0438,s_0021_c_1,s_0548_c_1,0,inf
+
+// r_0439::Dgtp Diphosphohydrolase
+r_0439,s_0551_c_1+s_0659_c_1,s_0309_c_1+s_0591_c_1,-inf,inf
+
+// r_0440::Dgtp:Cytidine 5'-Phosphotransferase
+r_0440,s_0551_c_1+s_0930_c_1,s_0613_c_1+s_0650_c_1,-inf,inf
+
+// r_0441::Dgtp:Pyruvate O2-Phosphotransferase
+r_0441,s_0551_c_1+s_0140_c_1,s_0613_c_1+s_0368_c_1,-inf,inf
+
+// r_0442::Dgtp:Uridine 5'-Phosphotransferase
+r_0442,s_0551_c_1+s_0780_c_1,s_0613_c_1+s_0642_c_1,-inf,inf
+
+// r_0443::Diacylglycerol Acyltransferase 1
+r_0443,s_0922_c_1+0.025*s_0824_c_1+0.165*s_0127_c_1+0.066*s_0475_c_1+0.099*s_0315_c_1+0.559*s_0258_c_1+0.005*s_0618_c_1+0.045*s_0189_c_1+0.018*s_0546_c_1+0.009*s_0903_c_1+0.008*s_0489_c_1,s_0727_c_1+s_0193_c_1,0,inf
+
+// r_0444::Diacylglycerol Cholinephosphotransferase
+r_0444,s_0064_c_1+s_0922_c_1,s_0677_c_1+s_0650_c_1,0,inf
+
+// r_0445::Diacylglycerol Kinase Zeta
+r_0445,s_0491_c_1+s_0386_c_1,s_0922_c_1+s_0839_c_1,0,inf
+
+// r_0446::Diacylglycerol Kinase, Alpha (80 Kda)
+r_0446,s_0922_c_1+s_0839_c_1,s_0491_c_1+s_0386_c_1,0,inf
+
+// r_0447::Diacylglycerol Pyrophosphate Phosphatase
+r_0447,s_0491_c_1,s_0922_c_1+s_0765_c_1,0,inf
+
+// r_0448::Dihydrofolate Nad Oxidoreductase
+r_0448,s_0417_c_1+s_0096_c_1,s_0891_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0449::Dihydrofolate Reductase
+r_0449,s_0417_c_1+s_0775_c_1,s_0075_c_1+s_0099_c_1,0,inf
+
+// r_0450::Dihydrofolate Reductase
+r_0450,s_0096_c_1+s_0099_c_1,s_0417_c_1+s_0611_c_1,0,inf
+
+// r_0451::Dihydrofolate Reductase
+r_0451,s_0891_c_1+s_0775_c_1,s_0417_c_1+s_0075_c_1,-inf,inf
+
+// r_0452::Dihydrofolate Reductase
+r_0452,s_0891_c_1+s_0611_c_1,s_0099_c_1+s_0096_c_1,0,inf
+
+// r_0453::Dihydrolipoamide Branched Chain Transacylase E2
+r_0453,s_0567_c_1+s_0624_c_1,s_0357_c_1+s_0864_c_1,0,inf
+
+// r_0454::Dihydrolipoamide Branched Chain Transacylase E2
+r_0454,s_0682_c_1+s_0624_c_1,s_0299_c_1+s_0864_c_1,0,inf
+
+// r_0455::Dihydrolipoamide Branched Chain Transacylase E2
+r_0455,s_0220_c_1+s_0624_c_1,s_0318_c_1+s_0864_c_1,0,inf
+
+// r_0456::Dihydrolipoamide Branched Chain Transacylase E2
+r_0456,s_0174_c_1+s_1135_c_2,s_0427_c_1+s_1030_c_2,0,inf
+
+// r_0457::Dihydrolipoamide Branched Chain Transacylase E2
+r_0457,s_0538_c_1+s_1118_c_2,s_0885_c_1+s_1030_c_2,0,inf
+
+// r_0458::Dihydrolipoamide Branched Chain Transacylase E2
+r_0458,s_1058_c_2+s_1135_c_2,s_0241_c_1+s_1030_c_2,-inf,inf
+
+// r_0459::Dihydrolipoamide Branched Chain Transacylase E2
+r_0459,s_1065_c_2+s_1135_c_2,s_1151_c_2+s_1030_c_2,0,inf
+
+// r_0460::Dihydrolipoamide Dehydrogenase
+r_0460,s_1078_c_2+s_1139_c_2,s_1102_c_2+s_1161_c_2,-inf,inf
+
+// r_0461::Dihydrolipoamide S-Succinyltransferase
+r_0461,s_0470_c_1+s_0864_c_1,s_0624_c_1+s_0823_c_1,-inf,inf
+
+// r_0462::Dihydrolipoamide S-Succinyltransferase
+r_0462,s_0255_c_1+s_1030_c_2+s_1139_c_2,s_1199_c_2+s_1146_c_2+s_1161_c_2,0,inf
+
+// r_0463::Dihydroorotate Dehydrogenase
+r_0463,s_0298_c_1+s_0869_c_1,s_0124_c_1+s_0955_c_1,-inf,inf
+
+// r_0464::Dihydroorotate Dehydrogenase
+r_0464,s_0298_c_1+s_0998_c_2,s_1039_c_2+s_0124_c_1,-inf,inf
+
+// r_0465::Dihydroorotate Hydrolase
+r_0465,s_0135_c_1,s_0298_c_1,-inf,inf
+
+// r_0466::Dihydropteridine Reductase
+r_0466,s_0098_c_1+s_0775_c_1,s_0435_c_1+s_0075_c_1,0,inf
+
+// r_0467::Dihydrouracil Dehydrogenase (Nadp+)
+r_0467,s_0897_c_1+s_0075_c_1,s_0431_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0468::Dimethylglycine Dehydrogenase
+r_0468,s_0926_c_1+s_0100_c_1,s_0791_c_1+s_0845_c_1+s_0792_c_1,0,inf
+
+// r_0469::Diphosphate Phosphohydrolase
+r_0469,s_0591_c_1,2.0*s_0765_c_1,0,inf
+
+// r_0470::Diphosphate Phosphohydrolase
+r_0470,s_1137_c_2,2.0*s_1041_c_2,0,inf
+
+// r_0471::Diphosphomevalonate Decarboxylase
+r_0471,s_0839_c_1+s_0077_c_1,s_0386_c_1+s_0765_c_1+s_0164_c_1+s_0029_c_1,0,inf
+
+// r_0472::Dna Deoxynucleotidyltransferase (Dna-Directed)
+r_0472,s_0633_c_1+s_0356_c_1,s_0591_c_1+s_0356_c_1,-inf,inf
+
+// r_0473::Dna Deoxynucleotidyltransferase (Dna-Directed)
+r_0473,s_0827_c_1+s_0356_c_1,s_0591_c_1+s_0356_c_1,-inf,inf
+
+// r_0474::Dolichol-Phosphate (Beta-D) Mannosyltransferase 1
+r_0474,s_0797_c_1+s_0868_c_1,s_0284_c_1+s_0090_c_1,0,inf
+
+// r_0475::Dolichyl-Phosphate Alpha-N-Acetylglucosaminephosphotransferase 2
+r_0475,s_0868_c_1+s_0343_c_1,s_0642_c_1+s_0512_c_1,0,inf
+
+// r_0476::Dopachrome Tautomerase
+r_0476,s_0524_c_1,s_0894_c_1,0,inf
+
+// r_0477::Dopamine Beta Hydroxylase
+r_0477,s_0305_c_1+s_0725_c_1+s_0869_c_1,s_0916_c_1+s_0947_c_1+s_0659_c_1,0,inf
+
+// r_0478::Dtdp Diphosphohydrolase
+r_0478,s_0896_c_1,s_0712_c_1+s_0765_c_1,0,inf
+
+// r_0479::Dtmp Phosphotransferase
+r_0479,s_0839_c_1+s_0681_c_1,s_0386_c_1+s_0871_c_1,-inf,inf
+
+// r_0480::Dttp Nucleotidohydrolase
+r_0480,s_0827_c_1,s_0896_c_1+s_0765_c_1,0,inf
+
+// r_0481::Dttp:Cytidine 5'-Phosphotransferase
+r_0481,s_0827_c_1+s_0930_c_1,s_0896_c_1+s_0650_c_1,-inf,inf
+
+// r_0482::Dttp:Uridine 5'-Phosphotransferase
+r_0482,s_0827_c_1+s_0780_c_1,s_0896_c_1+s_0642_c_1,-inf,inf
+
+// r_0483::Dutp Pyrophosphatase
+r_0483,s_0923_c_1,s_0591_c_1+s_0681_c_1,0,inf
+
+// r_0484::Dutp:Cytidine 5'-Phosphotransferase
+r_0484,s_0923_c_1+s_0930_c_1,s_0871_c_1+s_0650_c_1,-inf,inf
+
+// r_0485::Dutp:Uridine 5'-Phosphotransferase
+r_0485,s_0923_c_1+s_0780_c_1,s_0871_c_1+s_0642_c_1,-inf,inf
+
+// r_0486::Ectonucleoside Triphosphate Diphosphohydrolase 2
+r_0486,s_0386_c_1+s_0765_c_1+3.0*s_1299_c_3,s_0839_c_1,0,inf
+
+// r_0487::Ectonucleotide Pyrophosphatase
+r_0487,s_0185_c_1,s_0039_c_1,0,inf
+
+// r_0488::Ectonucleotide Pyrophosphatase/Phosphodiesterase 1
+r_0488,s_0557_c_1,s_0642_c_1+s_0280_c_1,0,inf
+
+// r_0489::Ectonucleotide Pyrophosphatase/Phosphodiesterase 1
+r_0489,s_0888_c_1,s_0449_c_1+s_0648_c_1,0,inf
+
+// r_0490::Ectonucleotide Pyrophosphatase/Phosphodiesterase 2
+r_0490,s_0100_c_1,s_0648_c_1+s_0528_c_1,0,inf
+
+// r_0491::Ectonucleotide Pyrophosphatase/Phosphodiesterase 2
+r_0491,s_0096_c_1,s_0648_c_1+s_0982_c_1,0,inf
+
+// r_0492::Ectonucleotide Pyrophosphatase/Phosphodiesterase 2
+r_0492,s_0310_c_1,s_0699_c_1+s_0648_c_1,0,inf
+
+// r_0493::Enolase 1, Alpha Non-Neuron
+r_0493,s_0093_c_1,s_0368_c_1,-inf,inf
+
+// r_0494::Enolase 1, Alpha Non-Neuron
+r_0494,s_0205_c_1,s_0159_c_1,-inf,inf
+
+// r_0495::Enoyl Coenzyme A Hydratase 1, Peroxisomal
+r_0495,s_0137_c_1,s_0261_c_1,-inf,inf
+
+// r_0496::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0496,s_1024_c_2,s_1007_c_2+s_1192_c_2,-inf,inf
+
+// r_0497::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0497,s_1025_c_2+s_1139_c_2,s_1167_c_2+s_1161_c_2,-inf,inf
+
+// r_0498::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0498,s_1025_c_2,s_1054_c_2+s_1192_c_2,-inf,inf
+
+// r_0499::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0499,s_1027_c_2+s_1139_c_2,s_1032_c_2+s_1161_c_2,-inf,inf
+
+// r_0500::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0500,s_1027_c_2,s_1042_c_2+s_1192_c_2,-inf,inf
+
+// r_0501::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0501,s_1024_c_2+s_1139_c_2,s_1046_c_2+s_1161_c_2,-inf,inf
+
+// r_0502::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0502,s_1120_c_2,s_0990_c_2+s_1192_c_2,-inf,inf
+
+// r_0503::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0503,s_1055_c_2,s_1218_c_2+s_1192_c_2,-inf,inf
+
+// r_0504::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0504,s_1148_c_2+s_0096_c_1,s_1169_c_2+s_1161_c_2,-inf,inf
+
+// r_0505::Enoyl Coenzyme A Hydratase, Short Chain, 1, Mitochondrial
+r_0505,s_1148_c_2,s_1200_c_2+s_1192_c_2,-inf,inf
+
+// r_0506::Enoyl-Acp Reductase
+r_0506,s_0979_c_1+s_0096_c_1,s_0082_c_1+s_0611_c_1,-inf,inf
+
+// r_0507::Enoyl-Coa Hydratase
+r_0507,s_1170_c_2,s_0989_c_2,0,inf
+
+// r_0508::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0508,s_0360_c_1,s_0420_c_1,0,inf
+
+// r_0509::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0509,s_0738_c_1,s_0420_c_1,0,inf
+
+// r_0510::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0510,s_0426_c_1,s_0432_c_1+s_0659_c_1,-inf,inf
+
+// r_0511::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0511,s_0421_c_1,s_0375_c_1+s_0659_c_1,-inf,inf
+
+// r_0512::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0512,s_0441_c_1,s_0163_c_1+s_0659_c_1,-inf,inf
+
+// r_0513::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0513,s_0448_c_1,s_0107_c_1+s_0659_c_1,-inf,inf
+
+// r_0514::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0514,s_0339_c_1,s_0452_c_1+s_0659_c_1,-inf,inf
+
+// r_0515::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0515,s_0345_c_1,s_0301_c_1+s_0659_c_1,-inf,inf
+
+// r_0516::Enoyl-Coenzyme A, Hydratase/3-Hydroxyacyl Coenzyme A Dehydrogenase
+r_0516,s_0043_c_1,s_0199_c_1+s_0659_c_1,-inf,inf
+
+// r_0517::Ethanolamine Kinase (Alpha1)
+r_0517,s_0839_c_1+s_0680_c_1,s_0386_c_1+s_0060_c_1,0,inf
+
+// r_0518::Ethanolaminephosphotransferase
+r_0518,s_0882_c_1+s_0922_c_1,s_0650_c_1+s_0610_c_1,-inf,inf
+
+// r_0519::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0519,s_0275_c_1+s_0839_c_1,s_0830_c_1+s_0386_c_1,-inf,inf
+
+// r_0520::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0520,s_0282_c_1+s_0839_c_1,s_0841_c_1+s_0386_c_1,-inf,inf
+
+// r_0521::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0521,s_0613_c_1+s_0839_c_1,s_0551_c_1+s_0386_c_1,-inf,inf
+
+// r_0522::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0522,s_0871_c_1+s_0839_c_1,s_0923_c_1+s_0386_c_1,-inf,inf
+
+// r_0523::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0523,s_0245_c_1+s_0839_c_1,s_0633_c_1+s_0386_c_1,-inf,inf
+
+// r_0524::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0524,s_0896_c_1+s_0839_c_1,s_0827_c_1+s_0386_c_1,-inf,inf
+
+// r_0525::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0525,s_0078_c_1+s_0839_c_1,s_0020_c_1+s_0386_c_1,-inf,inf
+
+// r_0526::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0526,s_0284_c_1+s_0839_c_1,s_0844_c_1+s_0386_c_1,-inf,inf
+
+// r_0527::Expressed In Non-Metastatic Cells 2, Protein (Nm23B) (Nucleoside Diphosphate Kinase)
+r_0527,s_0383_c_1+s_0839_c_1,s_0832_c_1+s_0386_c_1,-inf,inf
+
+// r_0528::Expressed Sequence Ai197390
+r_0528,s_0214_c_1+s_0839_c_1+s_0679_c_1,s_0386_c_1+s_0765_c_1+s_0417_c_1,0,inf
+
+// r_0529::Expressed Sequence Ai197390
+r_0529,s_0681_c_1+s_0914_c_1,s_0417_c_1+s_0712_c_1,-inf,inf
+
+// r_0530::FACTRA10
+r_0530,s_0503_c_1,s_1206_c_2+s_1001_c_2,-inf,inf
+
+// r_0531::FACTRA11
+r_0531,s_0300_c_1+s_1130_c_2,s_1099_c_2+s_0070_c_1,-inf,inf
+
+// r_0532::FACTRA12
+r_0532,s_0300_c_1+s_1198_c_2,s_1099_c_2+s_0368_c_1,-inf,inf
+
+// r_0533::FACTRA13
+r_0533,s_0300_c_1+s_1214_c_2,s_1099_c_2+s_0566_c_1,-inf,inf
+
+// r_0534::FACTRA14
+r_0534,s_0112_c_1,s_1037_c_2,-inf,inf
+
+// r_0535::FACTRA15
+r_0535,s_0011_c_1,s_1116_c_2+s_1001_c_2,-inf,inf
+
+// r_0536::FACTRA16
+r_0536,s_0140_c_1,s_1033_c_2+s_1001_c_2,-inf,inf
+
+// r_0537::FACTRA17
+r_0537,s_0679_c_1,s_1040_c_2+s_1001_c_2,-inf,inf
+
+// r_0538::FACTRA18
+r_0538,s_0679_c_1+s_1022_c_2,s_1040_c_2,0,inf
+
+// r_0539::FACTRA21
+r_0539,s_0445_c_1,s_1019_c_2,-inf,inf
+
+// r_0540::FACTRA22
+r_0540,s_0438_c_1,s_1126_c_2,-inf,inf
+
+// r_0541::FACTRA23
+r_0541,s_0100_c_1+s_1000_c_2,s_1141_c_2+s_0528_c_1,0,inf
+
+// r_0542::FACTRA24
+r_0542,s_0927_c_1,s_1150_c_2,-inf,inf
+
+// r_0543::FACTRA25
+r_0543,s_0722_c_1,s_1052_c_2,-inf,inf
+
+// r_0544::FACTRA26
+r_0544,s_0953_c_1,s_1068_c_2,-inf,inf
+
+// r_0545::FACTRA27
+r_0545,s_0071_c_1,s_1131_c_2,-inf,inf
+
+// r_0546::FACTRA28
+r_0546,s_0491_c_1,s_1121_c_2,-inf,inf
+
+// r_0547::FACTRA29
+r_0547,s_0699_c_1,s_1003_c_2,-inf,inf
+
+// r_0548::FACTRA30
+r_0548,s_0773_c_1,s_1043_c_2,-inf,inf
+
+// r_0549::FACTRA31
+r_0549,s_0616_c_1,s_1113_c_2,-inf,inf
+
+// r_0550::FACTRA32
+r_0550,s_0417_c_1,s_1143_c_2,-inf,inf
+
+// r_0551::FACTRA33
+r_0551,s_0735_c_1,s_1029_c_2,-inf,inf
+
+// r_0552::FACTRA34
+r_0552,s_0468_c_1,s_1104_c_2,-inf,inf
+
+// r_0553::FACTRA35
+r_0553,s_0969_c_1,s_1070_c_2,-inf,inf
+
+// r_0554::FACTRA36
+r_0554,s_0419_c_1,s_1125_c_2,-inf,inf
+
+// r_0555::FACTRA37
+r_0555,s_0541_c_1+s_1048_c_2,s_1075_c_2+s_0079_c_1,0,inf
+
+// r_0556::FACTRA38
+r_0556,s_1217_c_2+s_0535_c_1,s_0715_c_1+s_1005_c_2,-inf,inf
+
+// r_0557::FACTRA39
+r_0557,s_1217_c_2+s_0535_c_1,s_0715_c_1+s_1005_c_2,-inf,inf
+
+// r_0558::FACTRA40
+r_0558,s_0750_c_1,s_1058_c_2,-inf,inf
+
+// r_0559::FACTRA6
+r_0559,s_0070_c_1+s_1075_c_2,s_1130_c_2+s_0541_c_1,-inf,inf
+
+// r_0560::FACTRA7
+r_0560,s_0070_c_1+s_1041_c_2,s_1130_c_2+s_0765_c_1,-inf,inf
+
+// r_0561::FACTRA8
+r_0561,s_0541_c_1+s_1041_c_2,s_1075_c_2+s_0765_c_1,0,inf
+
+// r_0562::FACTRA9
+r_0562,s_0303_c_1+s_1041_c_2,s_1072_c_2+s_0765_c_1,-inf,inf
+
+// r_0563::Farnesyl Diphosphate Farnesyl Transferase 1
+r_0563,2.0*s_0472_c_1+s_0775_c_1,s_0075_c_1+s_0601_c_1+2.0*s_0591_c_1,0,inf
+
+// r_0564::Farnesyl-Diphosphate Farnesyltransferase
+r_0564,2.0*s_0472_c_1,s_0591_c_1+s_0710_c_1+s_0213_c_1,-inf,inf
+
+// r_0565::Farnesyl-Diphosphate Farnesyltransferase
+r_0565,s_0710_c_1+s_0775_c_1+s_0213_c_1,s_0591_c_1+s_0601_c_1+s_0075_c_1,-inf,inf
+
+// r_0566::Fatty Acid Synthase
+r_0566,s_0408_c_1+s_0193_c_1,s_0624_c_1+s_0533_c_1,0,inf
+
+// r_0567::Fatty Acid Synthase
+r_0567,s_0970_c_1+s_0193_c_1,s_0624_c_1+s_0195_c_1,-inf,inf
+
+// r_0568::Fatty Acid Synthase
+r_0568,s_0127_c_1+s_0659_c_1,s_0193_c_1+s_0604_c_1,0,inf
+
+// r_0569::Fatty Acid Synthase
+r_0569,s_0258_c_1+s_0659_c_1,s_0193_c_1+s_0804_c_1,0,inf
+
+// r_0570::Fatty Acid Synthase
+r_0570,s_0150_c_1+s_0659_c_1,s_0193_c_1+s_0590_c_1,0,inf
+
+// r_0571::Fatty Acid Synthase
+r_0571,s_0824_c_1+s_0659_c_1,s_0193_c_1+s_0409_c_1,0,inf
+
+// r_0572::Fatty Acid Synthase
+r_0572,s_0315_c_1+s_0659_c_1,s_0193_c_1+s_0732_c_1,0,inf
+
+// r_0573::Fatty Acid Synthase
+r_0573,s_0179_c_1+s_0659_c_1,s_0193_c_1+s_0575_c_1,0,inf
+
+// r_0574::Fatty Acid Synthase
+r_0574,s_0533_c_1+s_0195_c_1,s_0931_c_1+s_0193_c_1,0,inf
+
+// r_0575::Fatty Acid Synthase
+r_0575,s_0789_c_1,s_0942_c_1+s_0659_c_1,-inf,inf
+
+// r_0576::Fatty Acid Synthase
+r_0576,s_0980_c_1+s_0075_c_1,s_0942_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0577::Fatty Acid Synthase
+r_0577,s_0789_c_1+s_0075_c_1,s_0931_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0578::Fatty Acid Synthase
+r_0578,s_0183_c_1+s_0075_c_1,s_0904_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0579::Fatty Acid Synthase
+r_0579,s_0183_c_1,s_0917_c_1+s_0659_c_1,-inf,inf
+
+// r_0580::Fatty Acid Synthase
+r_0580,s_0793_c_1+s_0075_c_1,s_0910_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0581::Fatty Acid Synthase
+r_0581,s_0105_c_1+s_0075_c_1,s_0192_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0582::Fatty Acid Synthase
+r_0582,s_0105_c_1,s_0570_c_1+s_0659_c_1,-inf,inf
+
+// r_0583::Fatty Acid Synthase
+r_0583,s_0963_c_1+s_0075_c_1,s_0924_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0584::Fatty Acid Synthase
+r_0584,s_0963_c_1,s_0520_c_1+s_0659_c_1,-inf,inf
+
+// r_0585::Fatty Acid Synthase
+r_0585,s_0150_c_1+s_0075_c_1,s_0790_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0586::Fatty Acid Synthase
+r_0586,s_0150_c_1+s_0195_c_1,s_0924_c_1+s_0029_c_1+s_0193_c_1,0,inf
+
+// r_0587::Fatty Acid Synthase
+r_0587,s_0980_c_1+s_0195_c_1,s_0918_c_1+s_0029_c_1+s_0193_c_1,0,inf
+
+// r_0588::Fatty Acid Synthase
+r_0588,s_0800_c_1+s_0075_c_1,s_0918_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0589::Fatty Acid Synthase
+r_0589,s_0800_c_1,s_0786_c_1+s_0659_c_1,-inf,inf
+
+// r_0590::Fatty Acid Synthase
+r_0590,s_0975_c_1+s_0075_c_1,s_0786_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0591::Fatty Acid Synthase
+r_0591,s_0975_c_1+s_0195_c_1,s_0910_c_1+s_0029_c_1+s_0193_c_1,0,inf
+
+// r_0592::Fatty Acid Synthase
+r_0592,s_0978_c_1+s_0075_c_1,s_0902_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0593::Fatty Acid Synthase
+r_0593,s_0978_c_1+s_0195_c_1,s_0904_c_1+s_0029_c_1+s_0193_c_1,0,inf
+
+// r_0594::Fatty Acid Synthase
+r_0594,s_0385_c_1+s_0075_c_1,s_0917_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0595::Fatty Acid Synthase
+r_0595,s_0385_c_1+s_0195_c_1,s_0950_c_1+s_0029_c_1+s_0193_c_1,0,inf
+
+// r_0596::Fatty Acid Synthase
+r_0596,s_0850_c_1+s_0075_c_1,s_0950_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0597::Fatty Acid Synthase
+r_0597,s_0850_c_1,s_0790_c_1+s_0659_c_1,-inf,inf
+
+// r_0598::Fatty Acid Synthase
+r_0598,s_0824_c_1+s_0075_c_1,s_0520_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0599::Fatty Acid Synthase
+r_0599,s_0824_c_1+s_0195_c_1,s_0192_c_1+s_0029_c_1+s_0193_c_1,0,inf
+
+// r_0600::Fatty Acid Synthase
+r_0600,s_0127_c_1+s_0075_c_1,s_0570_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0601::Fatty Acid Synthase
+r_0601,s_0958_c_1+s_0775_c_1+s_0213_c_1,s_0858_c_1+s_0075_c_1,-inf,inf
+
+// r_0602::Fatty Acid Synthase
+r_0602,s_0793_c_1,s_0902_c_1+s_0659_c_1,-inf,inf
+
+// r_0603::Fatty Acid Synthase
+r_0603,s_0475_c_1+s_0659_c_1,s_0193_c_1+s_0658_c_1,0,inf
+
+// r_0604::Fatty Acid Synthase
+r_0604,s_0258_c_1+s_0659_c_1,s_0193_c_1+s_0804_c_1,0,inf
+
+// r_0605::Fatty Acid Synthase
+r_0605,s_0618_c_1+s_0659_c_1,s_0193_c_1+s_0878_c_1,0,inf
+
+// r_0606::Ferrochelatase
+r_0606,s_1166_c_2,s_1091_c_2,0,inf
+
+// r_0607::Fibroblast Growth Factor Regulated Protein
+r_0607,s_0848_c_1+s_0096_c_1,s_0880_c_1+s_0611_c_1,0,inf
+
+// r_0608::Fibroblast Growth Factor Regulated Protein
+r_0608,s_0144_c_1+s_0096_c_1,s_0534_c_1+s_0611_c_1,0,inf
+
+// r_0609::Fibroblast Growth Factor Regulated Protein
+r_0609,s_0534_c_1+s_0096_c_1,s_0691_c_1+s_0611_c_1,0,inf
+
+// r_0610::Folate Transporter/Carrier
+r_0610,s_0891_c_1,s_1010_c_2,-inf,inf
+
+// r_0611::Folylpolyglutamyl Synthetase
+r_0611,s_0839_c_1+s_0369_c_1+s_0679_c_1,s_0386_c_1+s_0765_c_1+s_0369_c_1,-inf,inf
+
+// r_0612::Formamidopyrimidine Nucleoside Triphosphate 7,8-8,9-Dihydrolase
+r_0612,s_0459_c_1+s_0659_c_1,s_0232_c_1+s_0576_c_1,-inf,inf
+
+// r_0613::Formate Transport
+r_0613,s_0576_c_1,s_1191_c_2,-inf,inf
+
+// r_0614::Formate-Tetrahydrofolate Ligase
+r_0614,s_0576_c_1+s_0839_c_1+s_0099_c_1,s_0765_c_1+s_0386_c_1+s_0083_c_1,-inf,inf
+
+// r_0615::Formylkynurenine Hydrolase
+r_0615,s_0833_c_1+s_0659_c_1,s_0518_c_1+s_0349_c_1,-inf,inf
+
+// r_0616::Fructose Bisphosphatase 2
+r_0616,s_0283_c_1,s_0743_c_1+s_0765_c_1,0,inf
+
+// r_0617::Fucosyltransferase 4
+r_0617,s_0123_c_1+s_0346_c_1,s_0116_c_1+s_0275_c_1,0,inf
+
+// r_0618::Fucosyltransferase 4
+r_0618,s_0358_c_1+s_0557_c_1,s_0687_c_1+s_0275_c_1,0,inf
+
+// r_0619::Fumarate Hydratase, Mitochondrial [Precursor]
+r_0619,s_0079_c_1,s_0070_c_1,-inf,inf
+
+// r_0620::Fumarate Hydratase, Mitochondrial [Precursor]
+r_0620,s_1048_c_2,s_1130_c_2,-inf,inf
+
+// r_0621::Fumarylacetoacetate Hydrolase
+r_0621,s_0364_c_1,s_0079_c_1+s_0581_c_1,0,inf
+
+// r_0622::Galactokinase
+r_0622,s_0359_c_1+s_0839_c_1,s_0795_c_1+s_0386_c_1,0,inf
+
+// r_0623::Galactose-1-Phosphate Uridyl Transferase
+r_0623,s_0830_c_1+s_0795_c_1,s_0591_c_1+s_0346_c_1,-inf,inf
+
+// r_0624::Galactosidase, Alpha
+r_0624,s_0030_c_1,s_0548_c_1+s_0359_c_1,0,inf
+
+// r_0625::Galactosidase, Alpha
+r_0625,s_0212_c_1,s_0548_c_1+s_0359_c_1,0,inf
+
+// r_0626::Galactosidase, Alpha
+r_0626,s_0921_c_1,s_0359_c_1+s_0912_c_1,0,inf
+
+// r_0627::Galactosidase, Alpha
+r_0627,s_0367_c_1,s_0755_c_1+s_0359_c_1,-inf,inf
+
+// r_0628::Galactosidase, Alpha
+r_0628,s_0592_c_1,s_0893_c_1+s_0359_c_1,-inf,inf
+
+// r_0629::Galactosidase, Alpha
+r_0629,s_0608_c_1,s_0908_c_1+s_0359_c_1,-inf,inf
+
+// r_0630::Galactosidase, Alpha
+r_0630,s_0676_c_1,s_0851_c_1+s_0359_c_1,-inf,inf
+
+// r_0631::Galactosidase, Alpha
+r_0631,s_0263_c_1,s_0358_c_1+s_0359_c_1,0,inf
+
+// r_0632::Galactosidase, Alpha
+r_0632,s_0719_c_1,s_0843_c_1+s_0359_c_1,0,inf
+
+// r_0633::Galactosidase, Alpha
+r_0633,s_0637_c_1+s_0659_c_1,s_0921_c_1+s_0359_c_1,-inf,inf
+
+// r_0634::Galactosidase, Beta 1
+r_0634,s_0116_c_1,s_0139_c_1+s_0123_c_1,0,inf
+
+// r_0635::Galactosidase, Beta 1
+r_0635,s_0404_c_1,s_0510_c_1+s_0359_c_1,0,inf
+
+// r_0636::Galactosidase, Beta 1
+r_0636,s_0772_c_1,s_0873_c_1+s_0359_c_1,0,inf
+
+// r_0637::Galactosidase, Beta 1
+r_0637,s_0843_c_1,s_0092_c_1+s_0139_c_1,0,inf
+
+// r_0638::Galactosidase, Beta 1
+r_0638,s_0443_c_1,s_0359_c_1,-inf,inf
+
+// r_0639::Galactosidase, Beta 1
+r_0639,s_0237_c_1,s_0548_c_1+s_0359_c_1,0,inf
+
+// r_0640::Galactosidase, Beta 1
+r_0640,s_0237_c_1+s_0765_c_1,s_0271_c_1,0,inf
+
+// r_0641::Galactosidase, Beta 1
+r_0641,s_0840_c_1,s_0151_c_1+s_0250_c_1,-inf,inf
+
+// r_0642::Galactosidase, Beta 1
+r_0642,s_0361_c_1,s_0359_c_1,0,inf
+
+// r_0643::GALGT21
+r_0643,s_0874_c_1,s_0227_c_1+s_0354_c_1,0,inf
+
+// r_0644::GALN1
+r_0644,s_0314_c_1,s_0354_c_1+s_0265_c_1,-inf,inf
+
+// r_0645::Gamma-Glutamyl Hydrolase
+r_0645,s_0369_c_1,s_0099_c_1+s_0679_c_1,0,inf
+
+// r_0646::Gamma-Glutamyl Hydrolase
+r_0646,s_0386_c_1+s_0765_c_1+s_0545_c_1,s_0839_c_1+s_0099_c_1+s_0679_c_1,0,inf
+
+// r_0647::Gamma-Glutamyl Transpeptidase
+r_0647,s_0782_c_1+s_0659_c_1,s_0239_c_1+s_0679_c_1,-inf,inf
+
+// r_0648::Gamma-Glutamyl Transpeptidase
+r_0648,s_0782_c_1+s_0349_c_1,s_0239_c_1+s_0322_c_1,0,inf
+
+// r_0649::Gamma-Glutamyl Transpeptidase
+r_0649,s_0984_c_1,s_0679_c_1+s_0322_c_1,0,inf
+
+// r_0650::Gdp Diphosphohydrolase
+r_0650,s_0284_c_1,s_0653_c_1+s_0765_c_1,0,inf
+
+// r_0651::Gdp:Polynucleotide Adenylyltransferase
+r_0651,s_0530_c_1+s_0765_c_1,s_0530_c_1+s_0284_c_1,-inf,inf
+
+// r_0652::Gdpmannose 4,6-Hydro-Lyase
+r_0652,s_0797_c_1,s_0012_c_1+s_0659_c_1,-inf,inf
+
+// r_0653::General Control Of Amino Acid Synthesis-Like 2 (Yeast)
+r_0653,s_0538_c_1+s_0316_c_1,s_0885_c_1+s_0624_c_1,0,inf
+
+// r_0654::General Control Of Amino Acid Synthesis-Like 2 (Yeast)
+r_0654,s_0745_c_1+s_0408_c_1,s_0208_c_1+s_0624_c_1,0,inf
+
+// r_0655::Geranylgeranyl Diphosphate Synthase 1
+r_0655,s_0769_c_1+s_0164_c_1,s_0473_c_1+s_0591_c_1,0,inf
+
+// r_0656::Geranylgeranyl Diphosphate Synthase 1
+r_0656,s_0473_c_1+s_0164_c_1,s_0472_c_1+s_0591_c_1,0,inf
+
+// r_0657::Geranylgeranyl Diphosphate Synthase 1
+r_0657,s_0472_c_1+s_0164_c_1,s_0455_c_1+s_0591_c_1,0,inf
+
+// r_0658::Gln Amido-Ligase (Adp-Forming, Carbamate-Phosphorylating)
+r_0658,2.0*s_0839_c_1+s_0425_c_1+s_0029_c_1+s_0659_c_1,2.0*s_0386_c_1+s_0765_c_1+s_0679_c_1+s_0033_c_1,-inf,inf
+
+// r_0659::Glucan (1,4-Alpha-), Branching Enzyme 1
+r_0659,s_0021_c_1+s_0765_c_1,s_0280_c_1,0,inf
+
+// r_0660::Glucosamine-6-Phosphate Deaminase
+r_0660,s_0743_c_1+s_0774_c_1,s_0307_c_1,-inf,inf
+
+// r_0661::Glucose Phosphate Isomerase 1 Complex
+r_0661,s_0744_c_1,s_0743_c_1,-inf,inf
+
+// r_0662::Glucose-6-Phosphatase, Catalytic
+r_0662,s_0744_c_1+s_0659_c_1,s_0548_c_1+s_0765_c_1,-inf,inf
+
+// r_0663::Glucose-6-Phosphatase, Catalytic
+r_0663,s_0115_c_1,s_0893_c_1+s_0765_c_1,-inf,inf
+
+// r_0664::Glucose-6-Phosphate Dehydrogenase 2
+r_0664,s_0744_c_1+s_0075_c_1,s_0273_c_1+s_0775_c_1,-inf,inf
+
+// r_0665::Glucosidase, Alpha, Acid
+r_0665,s_0574_c_1,2.0*s_0548_c_1,0,inf
+
+// r_0666::Glucosidase, Alpha, Acid
+r_0666,s_0912_c_1,s_0548_c_1+s_0767_c_1,0,inf
+
+// r_0667::Glucosidase, Alpha, Acid
+r_0667,s_0836_c_1,s_0359_c_1+s_0548_c_1,0,inf
+
+// r_0668::Glucuronidase, Beta
+r_0668,s_0312_c_1+2.0*s_0659_c_1+6.0*s_0213_c_1,s_0834_c_1+2.0*s_0182_c_1,-inf,inf
+
+// r_0669::Glutamate 5-Kinase
+r_0669,s_0839_c_1+s_0679_c_1,s_0386_c_1+s_0645_c_1,-inf,inf
+
+// r_0670::Glutamate Dehydrogenase
+r_0670,s_1040_c_2+s_1139_c_2,s_1217_c_2+s_1066_c_2+s_1161_c_2,-inf,inf
+
+// r_0671::Glutamate Dehydrogenase
+r_0671,s_1040_c_2+s_1181_c_2,s_1217_c_2+s_1066_c_2+s_1002_c_2,-inf,inf
+
+// r_0672::Glutamate Formimidoyltransferase
+r_0672,s_0741_c_1+s_0099_c_1,s_0679_c_1+s_0083_c_1,-inf,inf
+
+// r_0673::Glutamate Oxaloacetate Transaminase 1, Soluble
+r_0673,s_0556_c_1+s_0096_c_1,s_0634_c_1+s_0774_c_1+s_0611_c_1,0,inf
+
+// r_0674::Glutamate Oxaloacetate Transaminase 1, Soluble
+r_0674,s_0556_c_1+s_0715_c_1,s_0634_c_1+s_0679_c_1,0,inf
+
+// r_0675::Glutamate Oxaloacetate Transaminase 1, Soluble
+r_0675,s_0503_c_1+s_0679_c_1,s_0746_c_1+s_0715_c_1,-inf,inf
+
+// r_0676::Glutamate Oxaloacetate Transaminase 1, Soluble
+r_0676,s_0638_c_1+s_0679_c_1,s_0754_c_1+s_0715_c_1,0,inf
+
+// r_0677::Glutamate Oxaloacetate Transaminase 1, Soluble
+r_0677,s_0198_c_1+s_0715_c_1,s_0234_c_1+s_0679_c_1,0,inf
+
+// r_0678::Glutamate Oxaloacetate Transaminase 1, Soluble
+r_0678,s_0203_c_1+s_0679_c_1,s_0715_c_1+s_0037_c_1,-inf,inf
+
+// r_0679::Glutamate Oxaloacetate Transaminase 1, Soluble
+r_0679,s_0013_c_1+s_0715_c_1,s_0944_c_1+s_0679_c_1,-inf,inf
+
+// r_0680::Glutamate Oxaloacetate Transaminase 2, Mitochondrial
+r_0680,s_1206_c_2+s_1040_c_2,s_1056_c_2+s_1217_c_2,-inf,inf
+
+// r_0681::Glutamate Oxaloacetate Transaminase 2, Mitochondrial
+r_0681,s_1049_c_2+s_1040_c_2,s_1061_c_2+s_1217_c_2,0,inf
+
+// r_0682::Glutamate Oxaloacetate Transaminase 2, Mitochondrial
+r_0682,s_1164_c_2+s_1217_c_2,s_1045_c_2+s_1040_c_2,0,inf
+
+// r_0683::Glutamate Oxaloacetate Transaminase 2, Mitochondrial
+r_0683,s_1208_c_2+s_1040_c_2,s_1217_c_2+s_1035_c_2,-inf,inf
+
+// r_0684::Glutamate Oxaloacetate Transaminase 2, Mitochondrial
+r_0684,s_1117_c_2+s_1217_c_2,s_1067_c_2+s_1040_c_2,-inf,inf
+
+// r_0685::Glutamate-Cysteine Ligase , Modifier Subunit
+r_0685,s_0754_c_1+s_0679_c_1+s_0839_c_1,s_0689_c_1+s_0765_c_1+s_0386_c_1,0,inf
+
+// r_0686::Glutamate-Gamma-Semialdehyde Dehydrogenase
+r_0686,s_0268_c_1+s_0765_c_1+s_0075_c_1,s_0645_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0687::Glutamic Acid Decarboxylase 1
+r_0687,s_0679_c_1,s_0778_c_1+s_0029_c_1,0,inf
+
+// r_0688::Glutamic Acid Decarboxylase 2
+r_0688,s_0746_c_1,s_0577_c_1+s_0029_c_1,0,inf
+
+// r_0689::Glutaminase
+r_0689,s_0425_c_1,s_0679_c_1+s_0774_c_1,0,inf
+
+// r_0690::Glutamine Fructose-6-Phosphate Transaminase 1
+r_0690,s_0743_c_1+s_0425_c_1,s_0679_c_1+s_0307_c_1,0,inf
+
+// r_0691::Glutamine Synthetase
+r_0691,s_0679_c_1+s_0774_c_1+s_0839_c_1,s_0425_c_1+s_0386_c_1+s_0765_c_1,0,inf
+
+// r_0692::Glutaryl-Coa: Dihydrolipoamide S-Succinyltransferase
+r_0692,s_0694_c_1+s_0864_c_1,s_0624_c_1+s_0067_c_1,-inf,inf
+
+// r_0693::Glutaryl-Coenzyme A Dehydrogenase
+r_0693,s_0694_c_1+s_0100_c_1,s_0792_c_1+s_0432_c_1+s_0029_c_1,0,inf
+
+// r_0694::Glutaryl-Coenzyme A Dehydrogenase
+r_0694,s_1199_c_2+s_1141_c_2,s_1170_c_2+s_1180_c_2+s_1146_c_2,0,inf
+
+// r_0695::Glutathione Peroxidase 5
+r_0695,2.0*s_0782_c_1+s_0955_c_1,s_0949_c_1,-inf,inf
+
+// r_0696::Glutathione Reductase 1
+r_0696,s_1002_c_2+s_1101_c_2,s_1181_c_2+2.0*s_1069_c_2,0,inf
+
+// r_0697::Glutathione Reductase 1
+r_0697,s_0775_c_1+s_0949_c_1,s_0075_c_1+2.0*s_0782_c_1,0,inf
+
+// r_0698::Glutathione Reductase 1
+r_0698,s_0075_c_1+2.0*s_0782_c_1,s_0949_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0699::Glutathione S-Transferase, Alpha 1 (Ya)
+r_0699,s_0782_c_1+s_0210_c_1,s_0984_c_1,0,inf
+
+// r_0700::Glutathione Synthetase
+r_0700,s_0316_c_1+s_0689_c_1+s_0839_c_1,s_0782_c_1+s_0765_c_1+s_0386_c_1,0,inf
+
+// r_0701::Glyceraldehyde-3-Phosphate Dehydrogenase
+r_0701,s_0929_c_1+s_0765_c_1+s_0096_c_1,s_0611_c_1+s_0866_c_1,-inf,inf
+
+// r_0702::Glycerol Kinase
+r_0702,s_0908_c_1+s_0839_c_1,s_0114_c_1+s_0386_c_1,0,inf
+
+// r_0703::Glycerol Phosphate Dehydrogenase 1, Cytoplasmic Adult
+r_0703,s_0414_c_1+s_0611_c_1,s_0114_c_1+s_0096_c_1,-inf,inf
+
+// r_0704::Glycerol Phosphate Dehydrogenase 1, Mitochondrial
+r_0704,s_1173_c_2+s_1141_c_2,s_1103_c_2+s_1180_c_2,0,inf
+
+// r_0705::Glycerol-3-Phosphate Acyltransferase
+r_0705,s_0114_c_1+0.025*s_0824_c_1+0.165*s_0127_c_1+0.066*s_0475_c_1+0.099*s_0315_c_1+0.559*s_0258_c_1+0.005*s_0618_c_1+0.045*s_0189_c_1+0.018*s_0546_c_1+0.009*s_0903_c_1+0.008*s_0489_c_1,s_0784_c_1+s_0193_c_1,0,inf
+
+// r_0706::Glycerol-3-Phosphate Acyltransferase
+r_0706,s_0414_c_1+0.025*s_0824_c_1+0.165*s_0127_c_1+0.066*s_0475_c_1+0.099*s_0315_c_1+0.559*s_0258_c_1+0.005*s_0618_c_1+0.045*s_0189_c_1+0.018*s_0546_c_1+0.009*s_0903_c_1+0.008*s_0489_c_1,s_0654_c_1+s_0193_c_1,0,inf
+
+// r_0707::Glycine Amidinotransferase (L-Arginine Glycine Amidinotransferase)
+r_0707,s_0004_c_1+s_0316_c_1,s_0526_c_1+s_0418_c_1,-inf,inf
+
+// r_0708::Glycine Amidinotransferase (L-Arginine Glycine Amidinotransferase)
+r_0708,s_1133_c_2+s_1036_c_2,s_0997_c_2+s_1050_c_2,0,inf
+
+// r_0709::Glycine C-Acetyltransferase (2-Amino-3-Ketobutyrate-Coenzyme A Ligase)
+r_0709,s_1135_c_2+s_1118_c_2,s_1030_c_2+s_0505_c_1,-inf,inf
+
+// r_0710::Glycine C-Succinyl-Transferase(Decarboxylating)
+r_0710,s_0595_c_1,s_0321_c_1+s_0029_c_1,-inf,inf
+
+// r_0711::Glycine N-Methyltransferase
+r_0711,s_0316_c_1+s_0969_c_1,s_0845_c_1+s_0419_c_1,0,inf
+
+// r_0712::Glycine Synthase
+r_0712,s_0316_c_1+s_0099_c_1+s_0096_c_1,s_0914_c_1+s_0774_c_1+s_0029_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0713::Glycine-Trna Ligase
+r_0713,s_0073_c_1+s_0316_c_1+s_0839_c_1,s_0716_c_1+s_0648_c_1+s_0591_c_1,0,inf
+
+// r_0714::Glycogen Synthase 1, Muscle
+r_0714,s_0557_c_1,s_0275_c_1+s_0021_c_1,0,inf
+
+// r_0715::Glycolate Reductase
+r_0715,s_0628_c_1+s_0075_c_1,s_0532_c_1+s_0775_c_1+s_0213_c_1,0,inf
+
+// r_0716::Gmp Reductase 1
+r_0716,s_0653_c_1+s_0775_c_1,s_0644_c_1+s_0774_c_1+s_0075_c_1,0,inf
+
+// r_0717::Gmp Reductase 2
+r_0717,s_0653_c_1+s_0611_c_1,s_0644_c_1+s_0774_c_1+s_0096_c_1,0,inf
+
+// r_0718::Gmp Synthase/ Xanthosine 5'-Phosphate Amidotransferase
+r_0718,s_0593_c_1+s_0839_c_1+s_0425_c_1,s_0679_c_1+s_0648_c_1+s_0591_c_1+s_0653_c_1,0,inf
+
+// r_0719::Gmp:Pyrophosphate Phosphoribosyltransferase
+r_0719,s_0226_c_1+s_0616_c_1,s_0591_c_1+s_0653_c_1,0,inf
+
+// r_0720::GNE
+r_0720,s_0660_c_1+s_0765_c_1,s_0005_c_1+s_0659_c_1,0,inf
+
+// r_0721::Gtp 7,8-8,9-Dihydrolase
+r_0721,s_0232_c_1,s_0965_c_1,-inf,inf
+
+// r_0722::Gtp 7,8-8,9-Dihydrolase
+r_0722,s_0844_c_1+s_0659_c_1,s_0459_c_1,-inf,inf
+
+// r_0723::Gtp Amp Phosphotransferase Mitochondrial
+r_0723,s_0284_c_1+s_0386_c_1,s_0844_c_1+s_0648_c_1,0,inf
+
+// r_0724::Gtp Amp Phosphotransferase Mitochondrial
+r_0724,s_0275_c_1+s_0386_c_1,s_0830_c_1+s_0648_c_1,0,inf
+
+// r_0725::Gtp Cyclohydrolase 1
+r_0725,s_0844_c_1,s_0576_c_1+s_0279_c_1,0,inf
+
+// r_0726::Gtp Cyclohydrolase 1
+r_0726,s_0965_c_1,s_0279_c_1+s_0659_c_1,0,inf
+
+// r_0727::Gtp Diphosphohydrolase
+r_0727,s_0844_c_1+s_0659_c_1,s_0653_c_1+s_0591_c_1,-inf,inf
+
+// r_0728::Gtp Nucleotidohydrolase
+r_0728,s_0844_c_1,s_0284_c_1+s_0765_c_1,0,inf
+
+// r_0729::Gtp Pyrophosphate-Lyase (Cyclizing)
+r_0729,s_0844_c_1,s_0308_c_1+s_0591_c_1,0,inf
+
+// r_0730::Gtp:Cytidine 5'-Phosphotransferase
+r_0730,s_0930_c_1+s_0844_c_1,s_0284_c_1+s_0650_c_1,0,inf
+
+// r_0731::Gtp:Polynucleotide Adenylyltransferase
+r_0731,s_0844_c_1+s_0530_c_1,s_0591_c_1+s_0530_c_1,-inf,inf
+
+// r_0732::Gtp:Pyruvate O2-Phosphotransferase
+r_0732,s_0844_c_1+s_0140_c_1,s_0284_c_1+s_0368_c_1,-inf,inf
+
+// r_0733::Gtp:Uridine 5'-Phosphotransferase
+r_0733,s_0780_c_1+s_0844_c_1,s_0642_c_1+s_0284_c_1,0,inf
+
+// r_0734::Guanidinoacetate Methyltransferase
+r_0734,s_0969_c_1+s_0418_c_1,s_0419_c_1+s_0673_c_1,0,inf
+
+// r_0735::Guanine Deaminase
+r_0735,s_0226_c_1,s_0886_c_1+s_0774_c_1,0,inf
+
+// r_0736::Guanosine 5'-Monophosphate Phosphohydrolase
+r_0736,s_0653_c_1+s_0659_c_1,s_0765_c_1+s_0559_c_1,0,inf
+
+// r_0737::Guanosine:Orthophosphate Ribosyltransferase
+r_0737,s_0226_c_1+s_0723_c_1+s_0659_c_1,s_0765_c_1+s_0559_c_1,-inf,inf
+
+// r_0738::Heme Oxygenase (Decycling) 1
+r_0738,s_0964_c_1+s_0792_c_1+3.0*s_0869_c_1,s_0104_c_1+s_0565_c_1+s_0317_c_1+s_0875_c_1+s_0100_c_1+3.0*s_0659_c_1,0,inf
+
+// r_0739::Hemk Methyltransferase Family Member 1
+r_0739,s_0895_c_1+s_0969_c_1,s_0835_c_1+s_0419_c_1,0,inf
+
+// r_0740::Heterogeneous Nuclear Ribonucleoproteins Methyltransferase-Like 2 (S. Cerevisiae)
+r_0740,s_0969_c_1+s_0201_c_1,s_0419_c_1+s_0511_c_1,0,inf
+
+// r_0741::Heterogeneous Nuclear Ribonucleoproteins Methyltransferase-Like 2 (S. Cerevisiae)
+r_0741,s_1086_c_2+s_1070_c_2,s_1119_c_2+s_1125_c_2,0,inf
+
+// r_0742::Hexokinase 1
+r_0742,s_0368_c_1+s_0548_c_1,s_0140_c_1+s_0744_c_1,0,inf
+
+// r_0743::Hexokinase 1
+r_0743,s_0839_c_1+s_0767_c_1,s_0386_c_1+s_0743_c_1,0,inf
+
+// r_0744::Hexokinase 1
+r_0744,s_0893_c_1+s_0839_c_1,s_0115_c_1+s_0386_c_1,0,inf
+
+// r_0745::Hexokinase 2
+r_0745,s_0230_c_1+s_0839_c_1,s_0307_c_1+s_0386_c_1,0,inf
+
+// r_0746::Hexosaminidase A
+r_0746,s_0171_c_1,2.0*s_0069_c_1,0,inf
+
+// r_0747::Hexosaminidase A
+r_0747,s_0510_c_1,s_0227_c_1+s_0883_c_1,0,inf
+
+// r_0748::Hexosaminidase B
+r_0748,s_0873_c_1,s_0116_c_1+s_0883_c_1,0,inf
+
+// r_0749::Histidine Ammonia Lyase
+r_0749,s_0201_c_1,s_0621_c_1+s_0774_c_1,-inf,inf
+
+// r_0750::Histidine Decarboxylase Cluster
+r_0750,s_0201_c_1,s_0174_c_1+s_0029_c_1,0,inf
+
+// r_0751::Histidyl Trna Synthetase
+r_0751,s_0839_c_1+s_0201_c_1+s_0920_c_1,s_0648_c_1+s_0591_c_1+s_0867_c_1,0,inf
+
+// r_0752::Holocytochrome C Synthetase
+r_0752,s_1149_c_2+s_1091_c_2,s_1092_c_2,0,inf
+
+// r_0753::Homogentisate 1, 2-Dioxygenase
+r_0753,s_0131_c_1+s_0869_c_1,s_0521_c_1,0,inf
+
+// r_0754::HPG29
+r_0754,s_0828_c_1,s_0404_c_1,0,inf
+
+// r_0755::HPG33
+r_0755,s_0901_c_1,s_0404_c_1+s_0354_c_1,0,inf
+
+// r_0756::HRMT1L13
+r_0756,s_0266_c_1,s_0819_c_1,-inf,inf
+
+// r_0757::Hydorogen-Peroxide:Hydrogen-Peroxide Oxidoreductase
+r_0757,2.0*s_0125_c_1+2.0*s_0869_c_1,s_0622_c_1+2.0*s_0955_c_1,-inf,inf
+
+// r_0758::Hydrogen-Peroxide Oxidoreductase / Peroxiredoxin 5
+r_0758,s_0228_c_1+s_0955_c_1,s_0791_c_1+2.0*s_0659_c_1,0,inf
+
+// r_0759::Hydrolases
+r_0759,s_0737_c_1+s_0289_c_1,s_0289_c_1+s_0737_c_1+s_0659_c_1,-inf,inf
+
+// r_0760::Hydroxyacid Oxidase 1, Liver
+r_0760,s_0628_c_1+s_0869_c_1,s_0532_c_1+s_0955_c_1,0,inf
+
+// r_0761::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0761,s_0426_c_1+s_0096_c_1,s_0974_c_1+s_0611_c_1,-inf,inf
+
+// r_0762::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0762,s_0441_c_1+s_0096_c_1,s_0492_c_1+s_0611_c_1,-inf,inf
+
+// r_0763::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0763,s_0448_c_1+s_0096_c_1,s_0458_c_1+s_0611_c_1,-inf,inf
+
+// r_0764::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0764,s_0421_c_1+s_0096_c_1,s_0540_c_1+s_0611_c_1,-inf,inf
+
+// r_0765::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0765,s_0339_c_1+s_0096_c_1,s_0899_c_1+s_0611_c_1,-inf,inf
+
+// r_0766::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0766,s_0345_c_1+s_0096_c_1,s_0439_c_1+s_0611_c_1,-inf,inf
+
+// r_0767::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0767,s_0043_c_1+s_0096_c_1,s_0141_c_1+s_0611_c_1,-inf,inf
+
+// r_0768::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0768,s_0408_c_1+s_0485_c_1,s_0141_c_1,0,inf
+
+// r_0769::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0769,s_0668_c_1+s_0408_c_1,s_0624_c_1+s_0899_c_1,0,inf
+
+// r_0770::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0770,s_0666_c_1+s_0408_c_1,s_0624_c_1+s_0458_c_1,0,inf
+
+// r_0771::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0771,s_0662_c_1+s_0408_c_1,s_0624_c_1+s_0492_c_1,0,inf
+
+// r_0772::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0772,s_0421_c_1,s_0375_c_1+s_0659_c_1,-inf,inf
+
+// r_0773::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0773,s_0441_c_1+s_0096_c_1,s_0163_c_1+s_0611_c_1,-inf,inf
+
+// r_0774::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0774,s_0441_c_1,s_0163_c_1+s_0659_c_1,-inf,inf
+
+// r_0775::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0775,s_0448_c_1+s_0096_c_1,s_0458_c_1+s_0611_c_1,-inf,inf
+
+// r_0776::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0776,s_0448_c_1,s_0107_c_1+s_0659_c_1,-inf,inf
+
+// r_0777::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0777,s_0421_c_1+s_0096_c_1,s_0540_c_1+s_0611_c_1,-inf,inf
+
+// r_0778::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0778,s_0671_c_1+s_0408_c_1,s_0624_c_1+s_0540_c_1,0,inf
+
+// r_0779::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0779,s_0339_c_1+s_0096_c_1,s_0899_c_1+s_0611_c_1,-inf,inf
+
+// r_0780::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0780,s_0345_c_1+s_0096_c_1,s_0439_c_1+s_0611_c_1,-inf,inf
+
+// r_0781::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0781,s_0345_c_1,s_0301_c_1+s_0659_c_1,-inf,inf
+
+// r_0782::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0782,s_0664_c_1+s_0408_c_1,s_0624_c_1+s_0439_c_1,0,inf
+
+// r_0783::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0783,s_0043_c_1+s_0096_c_1,s_0141_c_1+s_0611_c_1,-inf,inf
+
+// r_0784::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0784,s_0043_c_1,s_0199_c_1+s_0659_c_1,-inf,inf
+
+// r_0785::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0785,s_1120_c_2+s_1139_c_2,s_1145_c_2+s_1161_c_2,-inf,inf
+
+// r_0786::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0786,s_1055_c_2+s_1139_c_2,s_1147_c_2+s_1161_c_2,-inf,inf
+
+// r_0787::Hydroxyacyl-Coenzyme A Dehydrogenase
+r_0787,s_1108_c_2+s_1135_c_2,s_1030_c_2+s_1147_c_2,0,inf
+
+// r_0788::Hydroxyacyl-Coenzyme A Dehydrogenase/3-Ketoacyl-Coenzyme A Thiolase/Enoyl-Coenzyme A Hydratase (Trifunctional Protein), Alpha Subunit
+r_0788,s_0339_c_1,s_0452_c_1+s_0659_c_1,-inf,inf
+
+// r_0789::Hydroxymethylbilane Synthase
+r_0789,4.0*s_0102_c_1+s_0659_c_1,s_0537_c_1+4.0*s_0774_c_1,0,inf
+
+// r_0790::Hydroxysteroid (17-Beta) Dehydrogenase 10
+r_0790,s_0426_c_1+s_1139_c_2,s_0974_c_1+s_1161_c_2,-inf,inf
+
+// r_0791::Hydroxysteroid (17-Beta) Dehydrogenase 12
+r_0791,s_0186_c_1+2.0*s_0075_c_1,s_0777_c_1+2.0*s_0775_c_1,0,inf
+
+// r_0792::Hydroxysteroid (17-Beta) Dehydrogenase 12
+r_0792,s_0295_c_1+s_0096_c_1,s_0724_c_1+s_0611_c_1,-inf,inf
+
+// r_0793::Idp Diphosphohydrolase
+r_0793,s_0832_c_1+s_0659_c_1,s_0644_c_1+s_0591_c_1,-inf,inf
+
+// r_0794::Idp Diphosphohydrolase 5
+r_0794,s_0383_c_1,s_0644_c_1+s_0765_c_1,0,inf
+
+// r_0795::Ilvb (Bacterial Acetolactate Synthase)-Like
+r_0795,2.0*s_0140_c_1,s_0813_c_1+s_0029_c_1,0,inf
+
+// r_0796::Imidazolone Propionic Acid Hydrolase
+r_0796,s_0483_c_1+s_0659_c_1,s_0741_c_1+s_0213_c_1,0,inf
+
+// r_0797::Imp:Diphosphate Phospho-D-Ribosyltransferase
+r_0797,s_0493_c_1+s_0616_c_1,s_0591_c_1+s_0644_c_1,0,inf
+
+// r_0798::Inosine 5'-Phosphate Dehydrogenase 1
+r_0798,s_0644_c_1+s_0096_c_1,s_0611_c_1+s_0593_c_1,0,inf
+
+// r_0799::Inosine 5'-Phosphate Phosphohydrolase
+r_0799,s_0644_c_1+s_0659_c_1,s_0765_c_1+s_0661_c_1,0,inf
+
+// r_0800::Inosine:Orthophosphate Ribosyltransferase
+r_0800,s_0493_c_1+s_0723_c_1+s_0659_c_1,s_0661_c_1+s_0765_c_1,-inf,inf
+
+// r_0801::Inositol (Myo)-1(Or 4)-Monophosphatase 1
+r_0801,s_0407_c_1,s_0755_c_1+s_0765_c_1,0,inf
+
+// r_0802::Inositol (Myo)-1(Or 4)-Monophosphatase 1
+r_0802,s_0450_c_1,s_0755_c_1+s_0765_c_1,0,inf
+
+// r_0803::Inositol (Myo)-1(Or 4)-Monophosphatase 2
+r_0803,s_0028_c_1,s_0755_c_1+s_0765_c_1,0,inf
+
+// r_0804::Inositol Polyphosphate-1-Phosphatase
+r_0804,s_0504_c_1,s_0450_c_1+s_0765_c_1,0,inf
+
+// r_0805::Inositol Polyphosphate-1-Phosphatase
+r_0805,s_0721_c_1,s_0696_c_1+s_0765_c_1,0,inf
+
+// r_0806::Inositol-Polyphosphate 5-Phosphatase
+r_0806,s_0402_c_1,s_0504_c_1+s_0765_c_1,0,inf
+
+// r_0807::Inositol-Polyphosphate 5-Phosphatase
+r_0807,s_0306_c_1,s_0721_c_1+s_0765_c_1,0,inf
+
+// r_0808::Iodide:Hydrogen-Peroxide Oxidoreductase
+r_0808,2.0*s_0023_c_1+s_0955_c_1,s_0558_c_1+s_0847_c_1+2.0*s_0659_c_1,-inf,inf
+
+// r_0809::Isocitrate Dehydrogenase 1 (Nadp+), Soluble
+r_0809,s_0566_c_1+s_0075_c_1,s_0715_c_1+s_0029_c_1+s_0775_c_1+s_0213_c_1,0,inf
+
+// r_0810::Isocitrate Dehydrogenase 2 (Nadp+), Mitochondrial
+r_0810,s_0566_c_1+s_0075_c_1,s_0490_c_1+s_0029_c_1+s_0775_c_1,-inf,inf
+
+// r_0811::Isocitrate Dehydrogenase 3 (Nad+), Gamma
+r_0811,s_1214_c_2+s_1139_c_2,s_1161_c_2+s_1217_c_2+s_1146_c_2,0,inf
+
+// r_0812::Isocitrate Hydro-Lyase (Aconitase1)
+r_0812,s_0566_c_1,s_0948_c_1+s_0659_c_1,-inf,inf
+
+// r_0813::Isopentenyl-Diphosphate Delta-Isomerase 1
+r_0813,s_0164_c_1,s_0769_c_1,-inf,inf
+
+// r_0814::Itp Nucleotidohydrolase
+r_0814,s_0832_c_1,s_0383_c_1+s_0765_c_1,0,inf
+
+// r_0815::Itp:Cytidine 5'-Phosphotransferase
+r_0815,s_0832_c_1+s_0930_c_1,s_0383_c_1+s_0650_c_1,-inf,inf
+
+// r_0816::Itp:Uridine 5'-Phosphotransferase
+r_0816,s_0832_c_1+s_0780_c_1,s_0383_c_1+s_0642_c_1,-inf,inf
+
+// r_0817::Ketohexokinase
+r_0817,s_0839_c_1+s_0767_c_1,s_0386_c_1+s_0027_c_1,0,inf
+
+// r_0818::Kynureninase
+r_0818,s_0042_c_1,s_0125_c_1+s_0349_c_1,0,inf
+
+// r_0819::Kynurenine 3-Hydroxylase
+r_0819,s_0707_c_1+s_0775_c_1+s_0869_c_1,s_0042_c_1+s_0075_c_1,0,inf
+
+// r_0820::Kynurenine Formamidase
+r_0820,s_0833_c_1,s_0576_c_1+s_0707_c_1,0,inf
+
+// r_0821::L-1-Pyrroline-3-Hydroxy-5-Carboxylate:Nad Oxidoreductase
+r_0821,s_0615_c_1+s_0096_c_1+2.0*s_0659_c_1,s_0198_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0822::L-1-Pyrroline-3-Hydroxy-5-Carboxylate:Nadp Oxidoreductase
+r_0822,s_0615_c_1+s_0075_c_1+2.0*s_0659_c_1,s_0198_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0823::L-2-Aminoadipate-6-Semialdehyde:Nadp+ 6-Oxidoreductase
+r_0823,s_0058_c_1+s_1181_c_2,s_0436_c_1+s_1002_c_2,0,inf
+
+// r_0824::L-3-Hydroxyacyl-Coenzyme A Dehydrogenase, Short Chain
+r_0824,s_0974_c_1+s_0096_c_1,s_0176_c_1+s_0611_c_1,-inf,inf
+
+// r_0825::L-3-Hydroxyacyl-Coenzyme A Dehydrogenase, Short Chain
+r_0825,s_0862_c_1+s_0096_c_1,s_0434_c_1+s_0611_c_1,-inf,inf
+
+// r_0826::L-3-Hydroxyacyl-Coenzyme A Dehydrogenase, Short Chain
+r_0826,s_0420_c_1+s_1139_c_2,s_0086_c_1+s_1161_c_2,-inf,inf
+
+// r_0827::L-3-Hydroxyacyl-Coenzyme A Dehydrogenase, Short Chain
+r_0827,s_0989_c_2+s_1139_c_2,s_1132_c_2+s_1161_c_2,-inf,inf
+
+// r_0828::L-Cysteate Akg Aminotransferase
+r_0828,s_0355_c_1+s_0715_c_1,s_0221_c_1+s_0679_c_1,-inf,inf
+
+// r_0829::L-Cystine Lysteine-Lyase (Deaminating)
+r_0829,s_0207_c_1+s_0659_c_1,s_0140_c_1+s_0774_c_1+s_0311_c_1,-inf,inf
+
+// r_0830::L-Dopachrome:Oxygen Oxidoreductase
+r_0830,s_0524_c_1,s_0327_c_1+s_0029_c_1,0,inf
+
+// r_0831::L-Erythro-4-Hydroxyglutamate:Nad Oxidoreductase
+r_0831,s_0198_c_1+s_0096_c_1,s_0242_c_1+s_0611_c_1+s_0659_c_1,-inf,inf
+
+// r_0832::L-Glutamate 5-Semialdehyde:Nad Oxidoreductase
+r_0832,s_0268_c_1+s_0096_c_1+s_0659_c_1,s_0679_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0833::L-Isoleucine:Akg Aminotransferase
+r_0833,s_0366_c_1+s_0715_c_1,s_0324_c_1+s_0679_c_1,-inf,inf
+
+// r_0834::L-Isoleucine:Trna(Ile) Ligase (Amp-Forming)
+r_0834,s_0839_c_1+s_0366_c_1+s_0009_c_1,s_0648_c_1+s_0591_c_1+s_0103_c_1,0,inf
+
+// r_0835::L-Kynurenine Hydrolase
+r_0835,s_0707_c_1+s_0659_c_1,s_0222_c_1+s_0349_c_1,-inf,inf
+
+// r_0836::L-Leucine:Akg Aminotransferase
+r_0836,s_0487_c_1+s_0715_c_1,s_0632_c_1+s_0679_c_1,-inf,inf
+
+// r_0837::L-Leucine:Trna(Leu) Ligase (Amp-Forming)
+r_0837,s_0839_c_1+s_0487_c_1+s_0422_c_1,s_0648_c_1+s_0591_c_1+s_0717_c_1,0,inf
+
+// r_0838::L-Metanephrine:Oxygen Oxidoreductase (Deaminating) (Flavin-Containing)
+r_0838,s_0692_c_1+s_0659_c_1+s_0869_c_1,s_0937_c_1+s_0955_c_1+s_0446_c_1,0,inf
+
+// r_0839::L-Methionine Trnamet Ligase (Amp-Forming)
+r_0839,s_0839_c_1+s_0391_c_1+s_0933_c_1,s_0648_c_1+s_0591_c_1+s_0539_c_1,-inf,inf
+
+// r_0840::L-Normetanephrine:Oxygen Oxidoreductase (Deaminating)(Copper-Containing)
+r_0840,s_0217_c_1+s_0659_c_1+s_0869_c_1,s_0937_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_0841::L-Phenylalanine 2-Oxoglutarate Aminotransferase
+r_0841,s_0203_c_1+s_0679_c_1,s_0715_c_1+s_0037_c_1,-inf,inf
+
+// r_0842::L-Phenylalanine Carboxy-Lyase
+r_0842,s_0013_c_1,s_0165_c_1+s_0029_c_1,0,inf
+
+// r_0843::L-Phenylalanine,Tetrahydrobiopterin:Oxygen Oxidoreductase
+r_0843,s_0435_c_1+s_0013_c_1+s_0869_c_1,s_0098_c_1+s_0037_c_1+s_0659_c_1,-inf,inf
+
+// r_0844::L-Phenylalanine:Trna(Ala) Ligase (Amp-Forming)
+r_0844,s_0839_c_1+s_0013_c_1+s_0026_c_1,s_0648_c_1+s_0591_c_1+s_0153_c_1,-inf,inf
+
+// r_0845::L-Proline:Acceptor Oxidoreductase
+r_0845,s_0629_c_1+s_0792_c_1,s_0623_c_1+s_0100_c_1,0,inf
+
+// r_0846::L-Serine Hydro-Lyase (Adding Homocysteine)
+r_0846,s_0562_c_1+s_0582_c_1,s_0754_c_1+s_0659_c_1,-inf,inf
+
+// r_0847::L-Serine Hydro-Lyase (Deaminating)
+r_0847,s_0562_c_1,s_0847_c_1+s_0659_c_1,0,inf
+
+// r_0848::L-Serine Trna(Ser) Ligase (Amp-Forming)
+r_0848,s_0839_c_1+s_0562_c_1+s_0853_c_1,s_0648_c_1+s_0591_c_1+s_0815_c_1,-inf,inf
+
+// r_0849::L-Threonine Dehydrogenase
+r_0849,s_1128_c_2+s_1139_c_2,s_0505_c_1+s_1161_c_2,0,inf
+
+// r_0850::L-Tryptophan Decarboxy-Lyase
+r_0850,s_0946_c_1,s_0718_c_1+s_0029_c_1,-inf,inf
+
+// r_0851::L-Tyrosine Carboxy-Lyase
+r_0851,s_0037_c_1,s_0351_c_1+s_0029_c_1,0,inf
+
+// r_0852::L-Tyrosine,L-Dopa:Oxygen Oxidoreductase
+r_0852,s_0636_c_1+s_0037_c_1+s_0869_c_1,s_0515_c_1+s_0636_c_1+s_0659_c_1,0,inf
+
+// r_0853::L-Tyrosine:Trnatyr Ligase (Amp-Forming)
+r_0853,s_0839_c_1+s_0037_c_1+s_0783_c_1,s_0648_c_1+s_0591_c_1+s_0734_c_1,-inf,inf
+
+// r_0854::Lactate Dehydrogenase 1, A Chain
+r_0854,s_0140_c_1+s_0611_c_1,s_0011_c_1+s_0096_c_1,-inf,inf
+
+// r_0855::Lactate Dehydrogenase 3, C Chain, Sperm Specific
+r_0855,s_0837_c_1+s_0096_c_1,s_0461_c_1+s_0611_c_1,0,inf
+
+// r_0856::Lactate Dehydrogenase 3, C Chain, Sperm Specific
+r_0856,s_0638_c_1+s_0611_c_1,s_0352_c_1+s_0096_c_1,0,inf
+
+// r_0857::Lanosterol 14-Demethylase/D14-Sterol Reductase
+r_0857,s_0915_c_1+7.0*s_0775_c_1+7.0*s_0869_c_1,s_0733_c_1+7.0*s_0075_c_1+s_0576_c_1+2.0*s_0029_c_1,0,inf
+
+// r_0858::Lanosterol Synthase
+r_0858,s_0088_c_1,s_0915_c_1,0,inf
+
+// r_0859::Lipase, Hepatic
+r_0859,s_0922_c_1,s_0798_c_1+s_0509_c_1,0,inf
+
+// r_0860::Lipoamde 2-Oxidoreductase(Decarboxylating And Acceptor-Succinylating)
+r_0860,s_0146_c_1+s_0646_c_1,s_0823_c_1+s_0015_c_1,-inf,inf
+
+// r_0861::Lipoylprotein Oxidoreductase (Decarboxylating And Acceptor-Aminomethylating)
+r_0861,s_0316_c_1+s_0451_c_1,s_0025_c_1+s_0029_c_1,0,inf
+
+// r_0862::LOXL3
+r_0862,s_0404_c_1,s_0772_c_1,0,inf
+
+// r_0863::Lysyl Oxidase-Like 3
+r_0863,s_0004_c_1+s_0869_c_1,s_0674_c_1+s_0955_c_1+s_0774_c_1,0,inf
+
+// r_0864::Lysyl-Trna Synthetase
+r_0864,s_0839_c_1+s_0750_c_1+s_0188_c_1,s_0648_c_1+s_0591_c_1+s_0913_c_1,0,inf
+
+// r_0865::Macrophage Migration Inhibitory Factor
+r_0865,s_0203_c_1,s_0370_c_1,-inf,inf
+
+// r_0866::Malate Dehydrogenase, Mitochondrial
+r_0866,s_1130_c_2+s_1139_c_2,s_1161_c_2+s_1206_c_2,-inf,inf
+
+// r_0867::Malate Dehydrogenase, Soluble
+r_0867,s_0070_c_1+s_0096_c_1,s_0611_c_1+s_0503_c_1,-inf,inf
+
+// r_0868::Maleylacetoacetate Isomerase / Glutathione S-Transferase
+r_0868,s_0521_c_1,s_0364_c_1,0,inf
+
+// r_0869::Malic Enzyme 2, Nad(+)-Dependent, Mitochondrial
+r_0869,s_1130_c_2+s_1139_c_2,s_1033_c_2+s_1146_c_2+s_1161_c_2,0,inf
+
+// r_0870::Malic Enzyme 3, Supernatant
+r_0870,s_0070_c_1+s_0075_c_1,s_0140_c_1+s_0029_c_1+s_0775_c_1,0,inf
+
+// r_0871::Malonyl-Coa Decarboxylase
+r_0871,s_0970_c_1,s_0408_c_1+s_0029_c_1,0,inf
+
+// r_0872::Melatonin:Oxygen 2,3-Dioxygenase (Indole-Decyclizing)
+r_0872,s_0003_c_1+s_0869_c_1,s_0168_c_1,-inf,inf
+
+// r_0873::Membrane Alanyl Aminopeptidase
+r_0873,s_0239_c_1+s_0659_c_1,s_0754_c_1+s_0316_c_1,-inf,inf
+
+// r_0874::Methionine Adenosyltransferase
+r_0874,s_0391_c_1+s_0839_c_1,s_0591_c_1+s_0765_c_1+s_0969_c_1,0,inf
+
+// r_0875::Methionine Synthase
+r_0875,s_0424_c_1+s_0080_c_1,s_0099_c_1+s_0391_c_1,0,inf
+
+// r_0876::Methylcrotonoyl-Coenzyme A Carboxylase 1 (Alpha) And Methylcrotonoyl-Coenzyme A Carboxylase 1 (Beta)
+r_0876,s_0738_c_1+s_1079_c_2+s_1146_c_2,s_0347_c_1+s_1184_c_2+s_1041_c_2,0,inf
+
+// r_0877::Methylcrotonoyl-Coenzyme A Carboxylase 1 (Alpha) And Methylcrotonoyl-Coenzyme A Carboxylase 1 (Beta)
+r_0877,s_0839_c_1+s_0738_c_1+s_0583_c_1,s_0386_c_1+s_0765_c_1+s_0347_c_1,0,inf
+
+// r_0878::Methylene-Fatty-Acyl-Phospholipid Synthase
+r_0878,s_0969_c_1+s_0561_c_1,s_0419_c_1+s_0194_c_1,0,inf
+
+// r_0879::Methylenetetrahydrofolate Dehydrogenase (Nad+ Dependent), Methenyltetrahydrofolate Cyclohydrolase
+r_0879,s_1140_c_2+s_1191_c_2+s_1079_c_2,s_1184_c_2+s_1041_c_2+s_1138_c_2,-inf,inf
+
+// r_0880::Methylenetetrahydrofolate Dehydrogenase (Nad+ Dependent), Methenyltetrahydrofolate Cyclohydrolase
+r_0880,s_1018_c_2,s_1138_c_2,-inf,inf
+
+// r_0881::Methylenetetrahydrofolate Dehydrogenase (Nadp+)
+r_0881,s_1018_c_2+s_1002_c_2,s_1174_c_2+s_1181_c_2,0,inf
+
+// r_0882::Methylmalonate-Semialdehyde Dehydrogenase (Acylating)
+r_0882,s_0568_c_1+s_0624_c_1+s_0096_c_1,s_0126_c_1+s_0029_c_1+s_0611_c_1,0,inf
+
+// r_0883::Methylmalonic Aciduria (Cobalamin Deficiency) Type B Homolog
+r_0883,s_0967_c_1+s_0839_c_1,s_0498_c_1+s_0591_c_1+s_0765_c_1,0,inf
+
+// r_0884::Methylmalonic Aciduria (Cobalamin Deficiency) Type B Homolog
+r_0884,s_0839_c_1+s_0406_c_1+s_0659_c_1,s_0765_c_1+s_0591_c_1+s_0688_c_1,0,inf
+
+// r_0885::Methylmalonyl-Coenzyme A Mutase
+r_0885,s_1094_c_2,s_1017_c_2,-inf,inf
+
+// r_0886::Mevalonate Kinase
+r_0886,s_0839_c_1+s_0071_c_1,s_0386_c_1+s_0640_c_1,0,inf
+
+// r_0887::Mitochondrial 2-Oxoglutarate/Malate Carrier Protein
+r_0887,s_1217_c_2+s_0070_c_1,s_0715_c_1+s_1130_c_2,-inf,inf
+
+// r_0888::Mitochondrial 2-Oxoglutarate/Malate Carrier Protein
+r_0888,s_1217_c_2+s_0541_c_1,s_0715_c_1+s_1075_c_2,-inf,inf
+
+// r_0889::Mitochondrial Trans-2-Enoyl-Coa Reductase
+r_0889,s_1054_c_2+s_1002_c_2+s_1001_c_2,s_1031_c_2+s_1181_c_2,0,inf
+
+// r_0890::Mitochondrial Trans-2-Enoyl-Coa Reductase
+r_0890,s_1218_c_2+s_1002_c_2+s_1001_c_2,s_1093_c_2+s_1181_c_2,0,inf
+
+// r_0891::Mitochondrial Trans-2-Enoyl-Coa Reductase
+r_0891,s_1007_c_2+s_1002_c_2+s_1001_c_2,s_1114_c_2+s_1181_c_2,0,inf
+
+// r_0892::Mitochondrial Trans-2-Enoyl-Coa Reductase
+r_0892,s_1042_c_2+s_1002_c_2+s_1001_c_2,s_1100_c_2+s_1181_c_2,0,inf
+
+// r_0893::Mitochondrial Trans-2-Enoyl-Coa Reductase
+r_0893,s_0990_c_2+s_1002_c_2+s_1001_c_2,s_1136_c_2+s_1181_c_2,0,inf
+
+// r_0894::Mitochondrial Trans-2-Enoyl-Coa Reductase
+r_0894,s_1200_c_2+s_1002_c_2+s_1001_c_2,s_1108_c_2+s_1181_c_2,0,inf
+
+// r_0895::MITTRA1
+r_0895,s_0869_c_1,s_0995_c_2,-inf,inf
+
+// r_0896::MITTRA10
+r_0896,s_1089_c_2,s_0454_c_1,-inf,inf
+
+// r_0897::MITTRA11
+r_0897,s_1196_c_2,s_0596_c_1,-inf,inf
+
+// r_0898::MITTRA12
+r_0898,s_1188_c_2,s_0629_c_1,-inf,inf
+
+// r_0899::MITTRA13
+r_0899,s_1163_c_2,s_0650_c_1,-inf,inf
+
+// r_0900::MITTRA14
+r_0900,s_1023_c_2,s_0685_c_1,-inf,inf
+
+// r_0901::MITTRA15
+r_0901,s_0465_c_1,s_1213_c_2,0,inf
+
+// r_0902::MITTRA16
+r_0902,s_1083_c_2,s_0204_c_1,0,inf
+
+// r_0903::MITTRA17
+r_0903,s_0813_c_1,s_1097_c_2,-inf,inf
+
+// r_0904::MITTRA18
+r_0904,s_0581_c_1,s_1175_c_2,-inf,inf
+
+// r_0905::MITTRA19
+r_0905,s_0457_c_1,s_1123_c_2+s_1001_c_2,0,inf
+
+// r_0906::MITTRA2
+r_0906,s_0029_c_1,s_1146_c_2,-inf,inf
+
+// r_0907::MITTRA20
+r_0907,s_1128_c_2,s_0381_c_1,-inf,inf
+
+// r_0908::MITTRA21
+r_0908,s_1153_c_2,s_0255_c_1,0,inf
+
+// r_0909::MITTRA22
+r_0909,s_1103_c_2,s_0414_c_1,0,inf
+
+// r_0910::MITTRA23
+r_0910,s_0114_c_1,s_1173_c_2,0,inf
+
+// r_0911::MITTRA24
+r_0911,s_0980_c_1,s_1172_c_2,-inf,inf
+
+// r_0912::MITTRA25
+r_0912,s_0975_c_1,s_1129_c_2,-inf,inf
+
+// r_0913::MITTRA26
+r_0913,s_0978_c_1,s_1158_c_2,-inf,inf
+
+// r_0914::MITTRA27
+r_0914,s_0385_c_1,s_1156_c_2,-inf,inf
+
+// r_0915::MITTRA28
+r_0915,s_0150_c_1,s_1211_c_2,-inf,inf
+
+// r_0916::MITTRA29
+r_0916,s_0824_c_1,s_1020_c_2,-inf,inf
+
+// r_0917::MITTRA3
+r_0917,s_0876_c_1,s_1106_c_2,-inf,inf
+
+// r_0918::MITTRA30
+r_0918,s_0179_c_1,s_1204_c_2,-inf,inf
+
+// r_0919::MITTRA31
+r_0919,s_0127_c_1,s_1096_c_2,-inf,inf
+
+// r_0920::MITTRA32
+r_0920,s_0475_c_1,s_1047_c_2,-inf,inf
+
+// r_0921::MITTRA33
+r_0921,s_0315_c_1,s_1124_c_2,-inf,inf
+
+// r_0922::MITTRA34
+r_0922,s_0258_c_1,s_1053_c_2,-inf,inf
+
+// r_0923::MITTRA35
+r_0923,s_0533_c_1,s_1006_c_2,-inf,inf
+
+// r_0924::MITTRA4
+r_0924,s_0774_c_1,s_1066_c_2,-inf,inf
+
+// r_0925::MITTRA5
+r_0925,s_0161_c_1,s_1088_c_2,-inf,inf
+
+// r_0926::MITTRA6
+r_0926,s_1140_c_2,s_0099_c_1,-inf,inf
+
+// r_0927::MITTRA7
+r_0927,s_1174_c_2,s_0914_c_1,-inf,inf
+
+// r_0928::MITTRA8
+r_0928,s_1154_c_2,s_0562_c_1,-inf,inf
+
+// r_0929::MITTRA9
+r_0929,s_1118_c_2,s_0316_c_1,-inf,inf
+
+// r_0930::Monoglyceride Lipase
+r_0930,s_0798_c_1,s_0908_c_1+s_0509_c_1,0,inf
+
+// r_0931::Multiple Inositol Polyphosphate Histidine Phosphatase 1
+r_0931,s_0306_c_1+s_0659_c_1,s_0402_c_1+s_0765_c_1,0,inf
+
+// r_0932::Myo-Inositol Oxygen Oxidoreductase
+r_0932,s_0755_c_1+s_0869_c_1,s_0182_c_1+s_0659_c_1,-inf,inf
+
+// r_0933::N-(Omega)-Hydroxyarginine,Nadph:Oxygen Oxidoreductase (Nitric-Oxide-Forming)
+r_0933,s_0775_c_1+2.0*s_0113_c_1+s_0869_c_1+s_0213_c_1,s_0075_c_1+2.0*s_0981_c_1+2.0*s_0720_c_1,-inf,inf
+
+// r_0934::N-Acetyl-D-Glucosamine 1-Phosphate 1,6-Phosphomutase
+r_0934,s_0240_c_1,s_0208_c_1,-inf,inf
+
+// r_0935::N-Acetylglucosamine Kinase
+r_0935,s_0240_c_1+s_0386_c_1,s_0069_c_1+s_0839_c_1,-inf,inf
+
+// r_0936::N-Acetylglutamate Synthase
+r_0936,s_0408_c_1+s_0679_c_1,s_0624_c_1+s_0889_c_1,-inf,inf
+
+// r_0937::N-Acetylneuraminic Monooxygenase
+r_0937,s_0354_c_1+2.0*s_0045_c_1+s_0869_c_1+2.0*s_0213_c_1,s_0206_c_1+2.0*s_0122_c_1+s_0659_c_1,-inf,inf
+
+// r_0938::N-Acylsphingosine Amidohydrolase 1/ Phytoceramidase, Alkaline
+r_0938,s_0092_c_1,s_0509_c_1+s_0335_c_1,0,inf
+
+// r_0939::N-Carbamoyl-Beta-Alanine Amidohydrolase
+r_0939,s_0181_c_1+s_0659_c_1,s_0577_c_1+s_0029_c_1+s_0774_c_1,0,inf
+
+// r_0940::N-Formyl-Asp Amidohydrolase
+r_0940,s_0117_c_1+s_0659_c_1,s_0576_c_1+s_0746_c_1,-inf,inf
+
+// r_0941::N-Methylhistamine Oxygen Oxidoreductase (Deaminating) (Copper-Containing)
+r_0941,s_0001_c_1+s_0659_c_1+s_0869_c_1,s_0296_c_1+s_0774_c_1+s_0955_c_1,-inf,inf
+
+// r_0942::N-Terminal Asn Amidase
+r_0942,s_0054_c_1+s_0659_c_1,s_0329_c_1+s_0774_c_1,0,inf
+
+// r_0943::N-Terminal Asn Amidase
+r_0943,s_0822_c_1+s_0659_c_1,s_0118_c_1+s_0244_c_1,-inf,inf
+
+// r_0944::N2-Acetyl-L-Ornithine Amidohydrolase
+r_0944,s_1155_c_2,s_1023_c_2+s_0997_c_2,0,inf
+
+// r_0945::N2-Succinyl-L-Glutamate 5-Semialdehyde:Nad Oxidoreductase
+r_0945,s_0396_c_1+s_0096_c_1+s_0659_c_1,s_0860_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0946::N2-Succinyl-L-Ornithine:2-Oxo-Acid Aminotransferase
+r_0946,s_0269_c_1+s_0715_c_1,s_0396_c_1+s_0679_c_1,-inf,inf
+
+// r_0947::N4-Acetylaminobal:Nad Oxidoreductase
+r_0947,s_0760_c_1+s_0096_c_1+s_0659_c_1,s_0701_c_1+s_0611_c_1+s_0213_c_1,0,inf
+
+// r_0948::N6,N6,N6-Trimethyl-L-Lysine,Akg4/15/2008Oxygen Oxidoreductase (3-Hydroxylating)
+r_0948,s_0737_c_1+s_0715_c_1+s_0869_c_1,s_0378_c_1+s_0541_c_1+s_0029_c_1,-inf,inf
+
+// r_0949::N6-(1,2-Dicarboxyethyl)Amp Amp-Lyase
+r_0949,s_0954_c_1,s_0079_c_1+s_0648_c_1,-inf,inf
+
+// r_0950::Nad 2-Oxidoreductase
+r_0950,s_0851_c_1+s_0096_c_1,s_0767_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0951::Nad 4-Oxidoreductase (3,5-Epimerizing)
+r_0951,s_0826_c_1+s_0096_c_1,s_0012_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0952::Nad Delta7-Oxidoreductase
+r_0952,s_0326_c_1+s_0096_c_1,s_0513_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0953::Nad Kinase
+r_0953,s_0839_c_1+s_0096_c_1,s_0386_c_1+s_0075_c_1,-inf,inf
+
+// r_0954::Nad Oxidoreductase
+r_0954,s_0623_c_1+s_0096_c_1+2.0*s_0659_c_1,s_0679_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0955::Nad Oxidoreductase
+r_0955,s_0623_c_1+s_0075_c_1+2.0*s_0659_c_1,s_0679_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_0956::Nad Oxidoreductase
+r_0956,s_0936_c_1+s_0096_c_1+s_0659_c_1,s_0541_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0957::Nad Oxidoreductase
+r_0957,s_0864_c_1+s_0096_c_1,s_0646_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_0958::Nad Oxidoreductase
+r_0958,s_0493_c_1+s_0096_c_1+s_0659_c_1,s_0886_c_1+s_0611_c_1,-inf,inf
+
+// r_0959::Nad Synthase (Glutamine-Hydrolysing)
+r_0959,s_0839_c_1+s_0888_c_1+s_0425_c_1,s_0648_c_1+s_0591_c_1+s_0679_c_1+s_0096_c_1,0,inf
+
+// r_0960::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0960,s_0635_c_1+s_0096_c_1,s_0293_c_1+s_0611_c_1,-inf,inf
+
+// r_0961::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0961,s_0139_c_1+s_0775_c_1,s_0857_c_1+s_0075_c_1,-inf,inf
+
+// r_0962::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0962,s_0809_c_1+s_0096_c_1,s_0506_c_1+s_0611_c_1,-inf,inf
+
+// r_0963::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0963,s_0346_c_1+2.0*s_0096_c_1,s_0084_c_1+2.0*s_0611_c_1,0,inf
+
+// r_0964::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0964,s_0144_c_1+s_0775_c_1,s_0496_c_1+s_0075_c_1,0,inf
+
+// r_0965::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0965,s_0925_c_1+s_0096_c_1,s_0295_c_1+s_0611_c_1,-inf,inf
+
+// r_0966::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0966,s_0506_c_1+s_0775_c_1+s_0213_c_1,s_0809_c_1+s_0075_c_1,-inf,inf
+
+// r_0967::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0967,s_0641_c_1+s_0096_c_1,s_0477_c_1+s_0611_c_1,-inf,inf
+
+// r_0968::Nad(P) Dependent Steroid Dehydrogenase-Like
+r_0968,s_0481_c_1+s_0611_c_1+s_0029_c_1,s_0852_c_1+s_0096_c_1,-inf,inf
+
+// r_0969::Nadh Dehydrogenase
+r_0969,s_0775_c_1+s_0096_c_1,s_0075_c_1+s_0611_c_1,0,inf
+
+// r_0970::Nadh Dehydrogenase (Ubiquinone) 1 Alpha Subcomplex, 1
+r_0970,s_1161_c_2+s_0998_c_2,s_1039_c_2+s_1139_c_2,0,inf
+
+// r_0971::Nadh:(Quinone-Acceptor) Oxidoreductase
+r_0971,s_0121_c_1+s_0611_c_1,s_0657_c_1+s_0096_c_1,0,inf
+
+// r_0972::Nadp 4-Oxidoreductase (L-Xylulose-Forming)
+r_0972,s_0848_c_1+s_0075_c_1,s_0880_c_1+s_0775_c_1,-inf,inf
+
+// r_0973::Nadp Oxidoreductase
+r_0973,s_0270_c_1+s_0075_c_1,s_0451_c_1+s_0775_c_1,0,inf
+
+// r_0974::Neuraminidase 1
+r_0974,s_0325_c_1,s_0354_c_1+s_0843_c_1,0,inf
+
+// r_0975::Nicotinamide Mononucleotide Adenylyltransferase
+r_0975,s_0449_c_1+s_0839_c_1,s_0591_c_1+s_0888_c_1,0,inf
+
+// r_0976::Nicotinamide N-Methyltransferase
+r_0976,s_0072_c_1+s_0969_c_1,s_0419_c_1+s_0763_c_1,0,inf
+
+// r_0977::Nicotinamide Nucleotide Adenylyltransferase 2
+r_0977,s_0839_c_1+s_0982_c_1,s_0591_c_1+s_0096_c_1,-inf,inf
+
+// r_0978::Nicotinamide Nucleotide Transhydrogenase
+r_0978,s_1139_c_2+s_1002_c_2,s_1161_c_2+s_1181_c_2,-inf,inf
+
+// r_0979::Nitric Oxide Synthase 1, Neuronal
+r_0979,2.0*s_0004_c_1+s_0775_c_1+s_0869_c_1,2.0*s_0720_c_1+s_0075_c_1+2.0*s_0806_c_1,0,inf
+
+// r_0980::NSDHL3
+r_0980,s_0801_c_1,s_0947_c_1,0,inf
+
+// r_0981::NSDHL7
+r_0981,2.0*s_0801_c_1,s_0725_c_1+s_0947_c_1,0,inf
+
+// r_0982::Nucleoside-Diphosphate Phosphatransferase
+r_0982,s_0839_c_1+s_0341_c_1,s_0386_c_1+s_0272_c_1,-inf,inf
+
+// r_0983::OAT2
+r_0983,s_0268_c_1,s_0623_c_1,-inf,inf
+
+// r_0984::OAT3
+r_0984,s_1084_c_2,s_1209_c_2,-inf,inf
+
+// r_0985::OGT
+r_0985,s_0797_c_1+s_0854_c_1,s_0284_c_1+s_0486_c_1,-inf,inf
+
+// r_0986::Ornithine Aminotransferase
+r_0986,s_0997_c_2+s_1217_c_2,s_1084_c_2+s_1040_c_2,-inf,inf
+
+// r_0987::Ornithine Decarboxylase, Structural
+r_0987,s_0526_c_1,s_0909_c_1+s_0029_c_1,0,inf
+
+// r_0988::Ornithine Transcarbamylase
+r_0988,s_0997_c_2+s_1122_c_2,s_1063_c_2+s_1041_c_2,0,inf
+
+// r_0989::Orthophosphate Deoxyribosyltransferase
+r_0989,s_0149_c_1+s_0765_c_1,s_0246_c_1+s_0373_c_1,-inf,inf
+
+// r_0990::Oxalosuccinate Nadp Oxidoreductase (Decarboxylating)
+r_0990,s_0490_c_1,s_0715_c_1+s_0029_c_1,-inf,inf
+
+// r_0991::Oxalosuccinate Nadp Oxidoreductase (Decarboxylating)
+r_0991,s_1214_c_2+s_1181_c_2,s_1002_c_2+s_1217_c_2+s_1146_c_2,0,inf
+
+// r_0992::Oxidized-Dithiothreitol Oxidoreductase
+r_0992,s_0968_c_1,s_0121_c_1,0,inf
+
+// r_0993::Oxidized-Thioredoxin 2'-Oxidoreductase
+r_0993,s_0613_c_1+s_0736_c_1+s_0659_c_1,s_0284_c_1+s_0499_c_1,-inf,inf
+
+// r_0994::Oxygen Delta5-Oxidoreductase
+r_0994,s_0480_c_1+s_0869_c_1,s_0513_c_1+s_0955_c_1,-inf,inf
+
+// r_0995::Oxygen Oxidoreductase
+r_0995,s_0493_c_1+s_0869_c_1+s_0659_c_1,s_0886_c_1+s_0955_c_1,-inf,inf
+
+// r_0996::Oxygen Oxidoreductase (1-Hydroxylating)
+r_0996,s_0776_c_1+s_0869_c_1+s_0775_c_1,s_0543_c_1+s_0075_c_1+s_0659_c_1,-inf,inf
+
+// r_0997::P1,P3-Bis(5'-Adenosyl)-Triphosphate Adenylohydrolase
+r_0997,s_0076_c_1,s_0386_c_1+s_0648_c_1,0,inf
+
+// r_0998::P1,P4-Bis(5'-Adenosyl) Tetraphosphate Nucleotidohydrolase
+r_0998,s_0630_c_1+s_0659_c_1,s_0839_c_1+s_0648_c_1,-inf,inf
+
+// r_0999::P1,P4-Bis(5'-Guanosyl)-Tetraphosphate Nucleotidohydrolase
+r_0999,s_0631_c_1+s_0659_c_1,s_0844_c_1+s_0653_c_1,-inf,inf
+
+// r_1000::P1,P4-Bis(5'-Xanthosyl)-Tetraphosphate Nucleotidohydrolase
+r_1000,s_0138_c_1+s_0659_c_1,s_0977_c_1+s_0593_c_1,-inf,inf
+
+// r_1001::Palmitoyl-Protein Thioesterase 1
+r_1001,s_0478_c_1+s_0659_c_1,s_0624_c_1+s_0604_c_1,0,inf
+
+// r_1002::Palmitoyl-Protein Thioesterase 2
+r_1002,s_1031_c_2+s_1192_c_2,s_1030_c_2+s_0988_c_2,0,inf
+
+// r_1003::Pantothenate Kinase
+r_1003,s_0118_c_1+s_0839_c_1,s_0386_c_1+s_0600_c_1,0,inf
+
+// r_1004::Pantothenate Kinase 3
+r_1004,s_0839_c_1+s_0822_c_1,s_0386_c_1+s_0699_c_1,0,inf
+
+// r_1005::Pantothenate Kinase 3
+r_1005,s_0839_c_1+s_0961_c_1,s_0386_c_1+s_0156_c_1,0,inf
+
+// r_1006::Peroxiredoxin 5
+r_1006,s_0044_c_1+s_0955_c_1,s_0336_c_1,0,inf
+
+// r_1007::Peroxiredoxin 5
+r_1007,s_0013_c_1,s_0966_c_1,0,inf
+
+// r_1008::Peroxisomal Sarcosine Oxidase
+r_1008,s_0278_c_1+s_0869_c_1,s_0058_c_1+s_0955_c_1,0,inf
+
+// r_1009::Peroxisomal Sarcosine Oxidase
+r_1009,s_0845_c_1+s_0869_c_1,s_0316_c_1+s_0791_c_1+s_0955_c_1,0,inf
+
+// r_1010::Peroxisomal Trans-2-Enoyl-Coa Reductase
+r_1010,s_0163_c_1+s_0775_c_1+s_0213_c_1,s_0478_c_1+s_0075_c_1,0,inf
+
+// r_1011::Peroxisomal Trans-2-Enoyl-Coa Reductase
+r_1011,s_0301_c_1+s_0775_c_1+s_0213_c_1,s_0668_c_1+s_0075_c_1,0,inf
+
+// r_1012::Peroxisomal Trans-2-Enoyl-Coa Reductase
+r_1012,s_0375_c_1+s_0775_c_1+s_0213_c_1,s_0666_c_1+s_0075_c_1,0,inf
+
+// r_1013::Peroxisomal Trans-2-Enoyl-Coa Reductase
+r_1013,s_0107_c_1+s_0775_c_1+s_0213_c_1,s_0662_c_1+s_0075_c_1,0,inf
+
+// r_1014::Peroxisomal Trans-2-Enoyl-Coa Reductase
+r_1014,s_0452_c_1+s_0775_c_1+s_0213_c_1,s_0671_c_1+s_0075_c_1,0,inf
+
+// r_1015::Peroxisomal Trans-2-Enoyl-Coa Reductase
+r_1015,s_0199_c_1+s_0775_c_1+s_0213_c_1,s_0664_c_1+s_0075_c_1,0,inf
+
+// r_1016::Pgp Synthase
+r_1016,s_0996_c_2+s_1173_c_2,s_1163_c_2+s_1013_c_2,-inf,inf
+
+// r_1017::Phenylalanine Hydroxylase
+r_1017,s_0013_c_1+s_0775_c_1+s_0869_c_1,s_0037_c_1+s_0075_c_1,0,inf
+
+// r_1018::Phenylalkylamine Ca2+ Antagonist (Emopamil) Binding Protein
+r_1018,s_0733_c_1+s_0969_c_1,s_0607_c_1+s_0419_c_1,0,inf
+
+// r_1019::Phenylethanolamine-N-Methyltransferase
+r_1019,s_0969_c_1+s_0916_c_1,s_0419_c_1+s_0219_c_1,0,inf
+
+// r_1020::Phenylpyruvate Keto-Enol-Isomerase
+r_1020,s_0944_c_1,s_0178_c_1,-inf,inf
+
+// r_1021::Phosphate Carrier Protein, Mitochondrial [Precursor]
+r_1021,s_0765_c_1,s_1041_c_2+s_1001_c_2,-inf,inf
+
+// r_1022::Phosphate Carrier Protein, Mitochondrial [Precursor]
+r_1022,s_0765_c_1+s_1022_c_2,s_1041_c_2,-inf,inf
+
+// r_1023::Phosphate Cytidylyltransferase 1, Choline, Alpha Isoform
+r_1023,s_0690_c_1+s_0841_c_1,s_0064_c_1+s_0591_c_1,0,inf
+
+// r_1024::Phosphatidate Cytidylyltransferase 1 [Fragment]
+r_1024,s_0491_c_1+s_0841_c_1,s_0861_c_1+s_0591_c_1,-inf,inf
+
+// r_1025::Phosphatidyl-N-Methylethanolamine N-Methyltransferase
+r_1025,s_0194_c_1+s_0969_c_1,s_0677_c_1+s_0419_c_1,0,inf
+
+// r_1026::Phosphatidylethanolamine N-Methyltransferase
+r_1026,s_0969_c_1+s_0610_c_1,s_0419_c_1+s_0561_c_1,0,inf
+
+// r_1027::Phosphatidylethanolamine N-Methyltransferase
+r_1027,s_1070_c_2+s_1064_c_2,s_1125_c_2+s_1183_c_2,0,inf
+
+// r_1028::Phosphatidylglycerolphosphate Synthase
+r_1028,s_1013_c_2,s_1041_c_2+s_1077_c_2,0,inf
+
+// r_1029::Phosphatidylinositol 3-Kinase, Catalytic, Alpha Polypeptide
+r_1029,s_0379_c_1+s_0839_c_1,s_0890_c_1+s_0386_c_1,0,inf
+
+// r_1030::Phosphatidylinositol 3-Kinase, Catalytic, Alpha Polypeptide
+r_1030,s_0386_c_1+s_0890_c_1,s_0839_c_1+s_0379_c_1,0,inf
+
+// r_1031::Phosphatidylinositol 4-Kinase, Catalytic, Beta Polypeptide
+r_1031,s_0839_c_1+s_0332_c_1,s_0386_c_1+s_0252_c_1,0,inf
+
+// r_1032::Phosphatidylinositol-4-Phosphate 5-Kinase, Type Iii
+r_1032,s_0252_c_1+s_0839_c_1,s_0379_c_1+s_0386_c_1,0,inf
+
+// r_1033::Phosphatidylserine Carboxylase
+r_1033,s_1152_c_2,s_1064_c_2+s_1146_c_2,0,inf
+
+// r_1034::Phosphatidylserine Synthase I
+r_1034,s_0677_c_1+s_0562_c_1,s_0169_c_1+s_0014_c_1,0,inf
+
+// r_1035::Phosphatidylserine Synthase Ii
+r_1035,s_0610_c_1+s_0562_c_1,s_0169_c_1+s_0680_c_1,0,inf
+
+// r_1036::Phospho-Pantethiene Adenylyltransferase/Dephospho-Coa Kinase
+r_1036,s_0699_c_1+s_0839_c_1,s_0591_c_1+s_0310_c_1,0,inf
+
+// r_1037::Phosphocholine Phosphatase;
+r_1037,s_0677_c_1+s_0659_c_1,s_0014_c_1+s_0765_c_1,0,inf
+
+// r_1038::Phosphodiesterase 1A, Calmodulin-Dependent
+r_1038,s_0308_c_1,s_0653_c_1,0,inf
+
+// r_1039::Phosphodiesterase 7A
+r_1039,s_0238_c_1,s_0648_c_1,0,inf
+
+// r_1040::Phosphoenolpyruvate Carboxykinase 1, Cytosolic
+r_1040,s_0368_c_1+s_0029_c_1+s_0386_c_1,s_0503_c_1+s_0839_c_1,0,inf
+
+// r_1041::Phosphoenolpyruvate Carboxykinase 1, Cytosolic
+r_1041,s_0503_c_1+s_0839_c_1,s_0368_c_1+s_0029_c_1+s_0386_c_1,0,inf
+
+// r_1042::Phosphoenolpyruvate Carboxykinase 1, Mitcochondrial
+r_1042,s_1206_c_2+s_1081_c_2,s_1198_c_2+s_1146_c_2+s_1185_c_2,0,inf
+
+// r_1043::Phosphoethanolamine Cytidylyltransferase
+r_1043,s_0060_c_1+s_0841_c_1,s_0882_c_1+s_0591_c_1,0,inf
+
+// r_1044::Phosphoethanolamine Phosphatase;
+r_1044,s_0060_c_1+s_0659_c_1,s_0680_c_1+s_0765_c_1,0,inf
+
+// r_1045::Phosphofructokinase, Liver, B-Type
+r_1045,s_0743_c_1+s_0839_c_1,s_0283_c_1+s_0386_c_1,0,inf
+
+// r_1046::Phosphofructokinase, Platelet
+r_1046,s_0839_c_1+s_0803_c_1,s_0386_c_1+s_0062_c_1,0,inf
+
+// r_1047::Phosphoglucomutase
+r_1047,s_0744_c_1,s_0280_c_1,-inf,inf
+
+// r_1048::Phosphoglucomutase 2
+r_1048,s_0887_c_1,s_0723_c_1,-inf,inf
+
+// r_1049::Phosphogluconate 2-Dehydrogenase
+r_1049,s_0075_c_1+s_0973_c_1,s_0775_c_1+s_0018_c_1,0,inf
+
+// r_1050::Phosphoglycerate Kinase 1
+r_1050,s_0866_c_1+s_0386_c_1,s_0514_c_1+s_0839_c_1,-inf,inf
+
+// r_1051::Phosphoinositide-3-Kinase, Catalytic, Gamma Polypeptide
+r_1051,s_0839_c_1+s_0332_c_1,s_0386_c_1+s_0494_c_1,0,inf
+
+// r_1052::Phospholipase A2, Group Ib, Pancreas
+r_1052,s_0610_c_1,s_0705_c_1+s_0509_c_1,0,inf
+
+// r_1053::Phospholipase C, Beta 3
+r_1053,s_0379_c_1,s_0402_c_1+s_0922_c_1,0,inf
+
+// r_1054::Phospholipase D
+r_1054,s_1159_c_2,s_1121_c_2+s_1077_c_2,0,inf
+
+// r_1055::Phospholipase D1
+r_1055,s_0677_c_1,s_0491_c_1+s_0014_c_1,0,inf
+
+// r_1056::Phospholipase D2
+r_1056,s_0610_c_1,s_0680_c_1+s_0491_c_1,0,inf
+
+// r_1057::Phosphomannomutase 2
+r_1057,s_0115_c_1,s_0571_c_1,-inf,inf
+
+// r_1058::Phosphomevalonate Kinase
+r_1058,s_0839_c_1+s_0640_c_1,s_0386_c_1+s_0077_c_1,0,inf
+
+// r_1059::Phosphopantothenate-Cysteine Decarboxylase
+r_1059,s_0156_c_1,s_0029_c_1+s_0699_c_1,0,inf
+
+// r_1060::Phosphopantothenate-Cysteine Ligase
+r_1060,s_0600_c_1+s_0841_c_1+s_0754_c_1,s_0650_c_1+s_0591_c_1+s_0156_c_1,0,inf
+
+// r_1061::Phosphopantothenate-Cysteine Ligase
+r_1061,s_0839_c_1+s_0600_c_1+s_0754_c_1,s_0386_c_1+s_0765_c_1+s_0156_c_1,-inf,inf
+
+// r_1062::Phosphoribosylamine--Glycine Ligase
+r_1062,s_0563_c_1+s_0083_c_1,s_0099_c_1+s_0838_c_1,0,inf
+
+// r_1063::Phosphoribosylamine--Glycine Ligase
+r_1063,s_0412_c_1+s_0839_c_1+s_0316_c_1,s_0386_c_1+s_0765_c_1+s_0563_c_1,0,inf
+
+// r_1064::Phosphoribosylamine--Glycine Ligase
+r_1064,s_0951_c_1+s_0839_c_1,s_0386_c_1+s_0765_c_1+s_0479_c_1,0,inf
+
+// r_1065::Phosphoribosylaminoimidazole-Succinocarboxamide Synthase
+r_1065,s_0700_c_1+s_0839_c_1+s_0746_c_1,s_0386_c_1+s_0765_c_1+s_0148_c_1,-inf,inf
+
+// r_1066::Phosphoribosylaminoimidazole-Succinocarboxamide Synthase
+r_1066,s_0700_c_1,s_0479_c_1+s_0029_c_1,-inf,inf
+
+// r_1067::Phosphoserine Aminotransferase
+r_1067,s_0313_c_1+s_0679_c_1,s_0715_c_1+s_0943_c_1,-inf,inf
+
+// r_1068::Phosphoserine Aminotransferase 1
+r_1068,s_0939_c_1+s_0715_c_1,s_0089_c_1+s_0679_c_1,-inf,inf
+
+// r_1069::Phosphoserine Phosphatase
+r_1069,s_0943_c_1,s_0765_c_1+s_0562_c_1,0,inf
+
+// r_1070::Phsophatidyl-L-Serine Carboxy-Lyase
+r_1070,s_0169_c_1,s_0610_c_1+s_0029_c_1,0,inf
+
+// r_1071::Polyribonucleotide Orthophosphate Nucleotidyltransferase
+r_1071,s_0530_c_1+s_0765_c_1,s_0530_c_1+s_0275_c_1,-inf,inf
+
+// r_1072::Polyribonucleotide Orthophosphate Nucleotidyltransferase
+r_1072,s_0530_c_1+s_0765_c_1,s_0530_c_1+s_0282_c_1,-inf,inf
+
+// r_1073::Pre-B-Cell Colony-Enhancing Factor 1
+r_1073,s_0982_c_1+s_0591_c_1,s_0072_c_1+s_0616_c_1,-inf,inf
+
+// r_1074::Probable Urocanate Hydratase
+r_1074,s_0621_c_1,s_0320_c_1,0,inf
+
+// r_1075::Procollagen-Proline, 2-Oxoglutarate 4-Dioxygenase (Proline 4-Hydroxylase), Alpha Ii Polypeptide
+r_1075,s_0629_c_1+s_0715_c_1+s_0869_c_1,s_0751_c_1+s_0541_c_1+s_0029_c_1,0,inf
+
+// r_1076::Proline Oxidase, Mitochondrial [Precursor]
+r_1076,s_1188_c_2+s_1139_c_2,s_1209_c_2+s_1161_c_2,0,inf
+
+// r_1077::Propanoyl-Coa (Acceptor) 2,3-Oxidoreductase
+r_1077,s_0126_c_1+s_0100_c_1,s_0792_c_1+s_0807_c_1,-inf,inf
+
+// r_1078::Propionyl Coenzyme A Carboxylase, Beta Polypeptide
+r_1078,s_0839_c_1+s_0126_c_1+s_0029_c_1,s_0386_c_1+s_0365_c_1+s_0765_c_1,0,inf
+
+// r_1079::protein kinase C
+r_1079,s_0839_c_1+s_0289_c_1,s_0386_c_1+s_0527_c_1,-inf,inf
+
+// r_1080::Protein Lysine,Akg4/15/2008Oxygen Oxidoreductase (5-Hydroxylating)
+r_1080,s_0911_c_1+s_0715_c_1+s_0869_c_1,s_0799_c_1+s_0541_c_1+s_0029_c_1+s_0659_c_1,-inf,inf
+
+// r_1081::Protoporphyrinogen Oxidase
+r_1081,s_0869_c_1+s_1190_c_2,s_1166_c_2+s_1105_c_2,0,inf
+
+// r_1082::Pseudouridine Synthase 1
+r_1082,s_0431_c_1+s_0887_c_1,s_0728_c_1,-inf,inf
+
+// r_1083::Purine-Nucleoside Phosphorylase
+r_1083,s_0698_c_1+s_0723_c_1,s_0334_c_1+s_0765_c_1,-inf,inf
+
+// r_1084::Purine-Nucleoside Phosphorylase
+r_1084,s_0405_c_1+s_0591_c_1,s_0431_c_1+s_0373_c_1,0,inf
+
+// r_1085::Purine-Nucleoside Phosphorylase
+r_1085,s_0072_c_1+s_0723_c_1,s_0756_c_1+s_0765_c_1,0,inf
+
+// r_1086::Putative Succinate Dehydrogenase (Ubiquinone) Cytochrome B Subunit Precursor
+r_1086,s_1075_c_2+s_1141_c_2,s_1048_c_2+s_1180_c_2,-inf,inf
+
+// r_1087::Putative Succinate Dehydrogenase (Ubiquinone) Cytochrome B Subunit Precursor
+r_1087,s_1180_c_2+s_0998_c_2,s_1141_c_2+s_1039_c_2,-inf,inf
+
+// r_1088::Pyridoxal (Pyridoxine, Vitamin B6) Kinase
+r_1088,s_0839_c_1+s_0297_c_1,s_0386_c_1+s_0825_c_1,0,inf
+
+// r_1089::Pyridoxal (Pyridoxine, Vitamin B6) Kinase
+r_1089,s_0839_c_1+s_0049_c_1,s_0386_c_1+s_0290_c_1,0,inf
+
+// r_1090::Pyridoxal (Pyridoxine, Vitamin B6) Kinase
+r_1090,s_0839_c_1+s_0338_c_1,s_0386_c_1+s_0649_c_1,0,inf
+
+// r_1091::Pyridoxal (Pyridoxine, Vitamin B6) Phosphatase
+r_1091,s_0825_c_1+s_0659_c_1,s_0297_c_1+s_0765_c_1,0,inf
+
+// r_1092::Pyridoxal (Pyridoxine, Vitamin B6) Phosphatase
+r_1092,s_0290_c_1+s_0659_c_1,s_0049_c_1+s_0765_c_1,0,inf
+
+// r_1093::Pyridoxal (Pyridoxine, Vitamin B6) Phosphatase
+r_1093,s_0649_c_1+s_0659_c_1,s_0338_c_1+s_0765_c_1,0,inf
+
+// r_1094::Pyridoxal 5'-Phosphate Synthase
+r_1094,s_0338_c_1+s_0659_c_1+s_0869_c_1,s_0049_c_1+s_0774_c_1+s_0955_c_1,-inf,inf
+
+// r_1095::Pyridoxine 5'-Phosphate Oxidase
+r_1095,s_0825_c_1+s_0869_c_1,s_0955_c_1+s_0290_c_1,0,inf
+
+// r_1096::Pyridoxine 5'-Phosphate Oxidase
+r_1096,s_0649_c_1+s_0659_c_1+s_0869_c_1,s_0290_c_1+s_0774_c_1+s_0955_c_1,-inf,inf
+
+// r_1097::Pyridoxine 5'-Phosphate Oxidase
+r_1097,s_0297_c_1+s_0869_c_1,s_0049_c_1+s_0955_c_1,-inf,inf
+
+// r_1098::Pyrophosphate Phosphoribosyltransferase
+r_1098,s_0569_c_1+s_0591_c_1,s_0462_c_1+s_0616_c_1,-inf,inf
+
+// r_1099::Pyrroline-5-Carboxylate Reductase
+r_1099,s_0623_c_1+s_0775_c_1,s_0629_c_1+s_0075_c_1,0,inf
+
+// r_1100::Pyrroline-5-Carboxylate Reductase
+r_1100,s_1209_c_2+s_1002_c_2,s_1188_c_2+s_1181_c_2,0,inf
+
+// r_1101::Pyrroline-5-Carboxylate Synthetase (Glutamate Gamma-Semialdehyde Synthetase)
+r_1101,s_1040_c_2+s_1079_c_2,s_1184_c_2+s_1205_c_2,0,inf
+
+// r_1102::Pyrroline-5-Carboxylate Synthetase (Glutamate Gamma-Semialdehyde Synthetase)
+r_1102,s_1205_c_2+s_1002_c_2,s_1181_c_2+s_1041_c_2+s_1084_c_2,-inf,inf
+
+// r_1103::Pyruvate Decarboxylase, Mitochondrial [Precursor]
+r_1103,s_1033_c_2+s_1079_c_2+s_1146_c_2,s_1184_c_2+s_1206_c_2+s_1041_c_2,0,inf
+
+// r_1104::Pyruvate Dehydrogenase E1 Alpha 1
+r_1104,s_1033_c_2+s_1030_c_2+s_1139_c_2,s_1161_c_2+s_1146_c_2+s_1135_c_2,0,inf
+
+// r_1105::Pyruvate Dehydrogenase E1 Alpha 1
+r_1105,2.0*s_1033_c_2+s_0015_c_1,s_0849_c_1+s_0029_c_1,0,inf
+
+// r_1106::Pyruvate Kinase 3
+r_1106,s_0368_c_1+s_0386_c_1,s_0140_c_1+s_0839_c_1,0,inf
+
+// r_1107::Pyruvate O2-Phosphotransferase
+r_1107,s_0140_c_1+s_0839_c_1,s_0368_c_1+s_0648_c_1+s_0765_c_1,0,inf
+
+// r_1108::Quinoid Dihydropteridine Reductase
+r_1108,s_0435_c_1+s_0096_c_1,s_0098_c_1+s_0611_c_1,0,inf
+
+// r_1109::Quinolinate Phosphoribosyltransferase
+r_1109,s_0735_c_1+s_0616_c_1,s_0449_c_1+s_0591_c_1+s_0029_c_1,0,inf
+
+// r_1110::Renin Binding Protein
+r_1110,s_0069_c_1,s_0660_c_1,-inf,inf
+
+// r_1111::Riboflavin Kinase
+r_1111,s_0927_c_1+s_0839_c_1,s_0528_c_1+s_0386_c_1,0,inf
+
+// r_1112::Riboflavin Kinase
+r_1112,s_1150_c_2+s_1079_c_2,s_1000_c_2+s_1184_c_2,0,inf
+
+// r_1113::Ribonucleotide Reductase M1
+r_1113,s_0386_c_1+s_0499_c_1,s_0078_c_1+s_0736_c_1,0,inf
+
+// r_1114::Ribonucleotide Reductase M1
+r_1114,s_0275_c_1+s_0499_c_1,s_0871_c_1+s_0736_c_1,0,inf
+
+// r_1115::Ribonucleotide Reductase M2
+r_1115,s_0282_c_1+s_0499_c_1,s_0245_c_1+s_0736_c_1,0,inf
+
+// r_1116::Ribose 5-Phosphate Isomerase A
+r_1116,s_0291_c_1,s_0887_c_1,-inf,inf
+
+// r_1117::Ribose-Phosphate Diphosphokinase
+r_1117,s_0839_c_1+s_0887_c_1,s_0386_c_1+s_0616_c_1,-inf,inf
+
+// r_1118::Ribulose-Phosphate 3-Epimerase
+r_1118,s_0291_c_1,s_0344_c_1,-inf,inf
+
+// r_1119::Rna Nucleotidyltransferase (Dna-Directed)
+r_1119,s_0841_c_1+s_0530_c_1,s_0591_c_1+s_0530_c_1,-inf,inf
+
+// r_1120::Rna Uridylyltransferase
+r_1120,s_0830_c_1+s_0530_c_1,s_0591_c_1+s_0530_c_1,-inf,inf
+
+// r_1121::S-Adenosyl-L-Methionine Dna (Cyts-5-)-Methyltransferase
+r_1121,s_0969_c_1+s_0466_c_1,s_0419_c_1+s_0410_c_1,-inf,inf
+
+// r_1122::S-Adenosyl-L-Methionine Histamine N-Tele-Methyltransferase
+r_1122,s_0969_c_1+s_0174_c_1,s_0419_c_1+s_0001_c_1,-inf,inf
+
+// r_1123::S-Adenosyl-L-Methionine:3-Hexaprenyl-4,5-Dihydroxylateo-Methyltransferase
+r_1123,s_0587_c_1,s_0411_c_1,0,inf
+
+// r_1124::S-Adenosyl-L-Methionine:Catechol O-Methyltransferase
+r_1124,s_0969_c_1+s_0916_c_1,s_0419_c_1+s_0217_c_1,0,inf
+
+// r_1125::S-Adenosyl-L-Methionine:Catechol O-Methyltransferase
+r_1125,s_0969_c_1+s_0219_c_1,s_0419_c_1+s_0692_c_1,0,inf
+
+// r_1126::S-Adenosyl-L-Methionine:Catechol O-Methyltransferase
+r_1126,s_0969_c_1+s_0200_c_1,s_0419_c_1+s_0056_c_1,0,inf
+
+// r_1127::S-Adenosyl-L-Methionine:Catechol O-Methyltransferase
+r_1127,s_0969_c_1+s_0900_c_1,s_0419_c_1+s_0187_c_1,0,inf
+
+// r_1128::S-Adenosyl-L-Methionine:Catechol O-Methyltransferase
+r_1128,s_0969_c_1+s_0811_c_1,s_0419_c_1+s_0796_c_1,0,inf
+
+// r_1129::S-Adenosyl-L-Methionine:Catechol O-Methyltransferase
+r_1129,s_0969_c_1+s_0305_c_1,s_0419_c_1+s_0932_c_1,0,inf
+
+// r_1130::S-Adenosyl-L-Methionine:Histone-L-Lysine N6-Methyltransferase
+r_1130,s_0911_c_1+s_0969_c_1,s_0065_c_1+s_0419_c_1,-inf,inf
+
+// r_1131::S-Adenosyl-L-Methionine:Histone-L-Lysine N6-Methyltransferase
+r_1131,s_0969_c_1+s_0065_c_1,s_0419_c_1+s_0516_c_1,-inf,inf
+
+// r_1132::S-Adenosyl-L-Methionine:Histone-L-Lysine N6-Methyltransferase
+r_1132,s_0969_c_1+s_0516_c_1,s_0419_c_1+s_0289_c_1+s_0737_c_1,-inf,inf
+
+// r_1133::S-Adenosylhomocysteine Hydrolase
+r_1133,s_0419_c_1,s_0424_c_1+s_0162_c_1,-inf,inf
+
+// r_1134::S-Adenosylmethionine Decarboxylase 1
+r_1134,s_0969_c_1,s_0766_c_1+s_0029_c_1,0,inf
+
+// r_1135::Saccharopine Dehydrogenase (Nad+, L-Glutamate Forming).
+r_1135,s_0972_c_1+s_1139_c_2,s_1040_c_2+s_0058_c_1+s_1161_c_2,0,inf
+
+// r_1136::Saccharopine Dehydrogenase (Nad+, L-Lysine Forming)
+r_1136,s_1058_c_2+s_1217_c_2+s_1161_c_2,s_0972_c_1+s_1139_c_2,0,inf
+
+// r_1137::Sepiapterin Reductase
+r_1137,s_0846_c_1+s_0775_c_1,s_0435_c_1+s_0075_c_1,0,inf
+
+// r_1138::Sepiapterin Reductase
+r_1138,s_0395_c_1+s_0775_c_1+s_0213_c_1,s_0846_c_1+s_0075_c_1,0,inf
+
+// r_1139::Seratonin:Oxygen 2,3-Dioxygenase (Indole-Decyclizing)
+r_1139,s_0814_c_1+s_0869_c_1,s_0703_c_1,-inf,inf
+
+// r_1140::Serine Dehydratase
+r_1140,s_0562_c_1,s_0140_c_1+s_0774_c_1,0,inf
+
+// r_1141::Serine Hydroxymethyl Transferase 1 (Mitochondrial)
+r_1141,s_1140_c_2+s_1154_c_2,s_1118_c_2+s_1174_c_2,-inf,inf
+
+// r_1142::Serine Hydroxymethyl Transferase 1 (Soluble)
+r_1142,s_0099_c_1+s_0562_c_1,s_0316_c_1+s_0914_c_1,-inf,inf
+
+// r_1143::Serine Palmitoyltransferase, Long Chain Base Subunit 1
+r_1143,s_0478_c_1+s_0562_c_1,s_0624_c_1+s_0036_c_1+s_0029_c_1,0,inf
+
+// r_1144::Serotonin O-Methyltransferase
+r_1144,s_0814_c_1+s_0223_c_1,s_0061_c_1,-inf,inf
+
+// r_1145::SGL1
+r_1145,s_0143_c_1,s_0354_c_1+s_0510_c_1,0,inf
+
+// r_1146::SGL11
+r_1146,s_0227_c_1,s_0116_c_1+s_0354_c_1,0,inf
+
+// r_1147::SGL6
+r_1147,s_0346_c_1,s_0361_c_1+s_0275_c_1,0,inf
+
+// r_1148::SGL7
+r_1148,s_0908_c_1+s_0075_c_1,s_0132_c_1+s_0775_c_1,0,inf
+
+// r_1149::SGPL1
+r_1149,s_0224_c_1,s_0768_c_1,0,inf
+
+// r_1150::Sialyltransferase 8 (Alpha-2, 8-Sialytransferase) A
+r_1150,s_0404_c_1,s_0901_c_1+s_0650_c_1,0,inf
+
+// r_1151::Sialyltransferase 9 (Cmp-Neuaclactosylceramide Alpha-2,3-Sialyltransferase)
+r_1151,s_0873_c_1+s_0564_c_1,s_0510_c_1+s_0650_c_1,0,inf
+
+// r_1152::Sialyltransferase 9 (Cmp-Neuaclactosylceramide Alpha-2,3-Sialyltransferase)
+r_1152,s_0772_c_1+s_0564_c_1,s_0404_c_1+s_0650_c_1,0,inf
+
+// r_1153::Sialyltransferase 9 (Cmp-Neuaclactosylceramide Alpha-2,3-Sialyltransferase)
+r_1153,s_0116_c_1+s_0564_c_1,s_0227_c_1+s_0650_c_1,0,inf
+
+// r_1154::Solute Carrier Family 1, Member 6
+r_1154,s_1056_c_2+s_0679_c_1,s_0746_c_1+s_1040_c_2,-inf,inf
+
+// r_1155::Solute Carrier Family 13 (Sodium-Dependent Dicarboxylate Transporter), Member 2
+r_1155,s_1099_c_2,s_0300_c_1,-inf,inf
+
+// r_1156::Solute Carrier Family 13 (Sodium-Dependent Dicarboxylate Transporter), Member 3
+r_1156,s_1130_c_2,s_0070_c_1,-inf,inf
+
+// r_1157::Solute Carrier Family 13 (Sodium/Sulphate Symporters), Member 1
+r_1157,s_1075_c_2,s_0541_c_1,-inf,inf
+
+// r_1158::Solute Carrier Family 25 (Mitochondrial Carnitine/Acylcarnitine Translocase), Member 20
+r_1158,s_1083_c_2+s_0488_c_1,s_0204_c_1+s_1171_c_2,-inf,inf
+
+// r_1159::Solute Carrier Family 25 (Mitochondrial Carnitine/Acylcarnitine Translocase), Member 20
+r_1159,s_1083_c_2+s_0465_c_1,s_0204_c_1+s_1213_c_2,-inf,inf
+
+// r_1160::Solute Carrier Family 25 (Mitochondrial Carrier
+r_1160,s_1130_c_2+s_0457_c_1,s_0070_c_1+s_1123_c_2,-inf,inf
+
+// r_1161::Solute Carrier Family 25 (Mitochondrial Carrier
+r_1161,s_1072_c_2+s_0457_c_1,s_0303_c_1+s_1123_c_2,-inf,inf
+
+// r_1162::Solute Carrier Family 25 (Mitochondrial Carrier
+r_1162,s_1075_c_2+s_0457_c_1,s_0541_c_1+s_1123_c_2,-inf,inf
+
+// r_1163::Solute Carrier Family 25 (Mitochondrial Carrier
+r_1163,s_0526_c_1+s_1001_c_2,s_0997_c_2,0,inf
+
+// r_1164::Solute Carrier Family 27 (Fatty Acid Transporter), Member 2
+r_1164,s_0839_c_1+s_0197_c_1+s_0624_c_1,s_0779_c_1+s_0648_c_1+s_0591_c_1,-inf,inf
+
+// r_1165::Spermidine Synthase
+r_1165,s_0766_c_1+s_0909_c_1,s_0983_c_1+s_0010_c_1,0,inf
+
+// r_1166::Spermidine Synthase
+r_1166,s_0983_c_1+s_0952_c_1,s_0766_c_1+s_0010_c_1,0,inf
+
+// r_1167::Spermidine/Spermine N1-Acetyl Transferase
+r_1167,s_0909_c_1+s_0408_c_1,s_0231_c_1+s_0624_c_1,0,inf
+
+// r_1168::Spermine Synthase
+r_1168,s_0766_c_1+s_0010_c_1,s_0983_c_1+s_0952_c_1,0,inf
+
+// r_1169::Sphingomyelin Phosphodiesterase 3, Neutral
+r_1169,s_0134_c_1,s_0092_c_1+s_0064_c_1,0,inf
+
+// r_1170::Sphingosine Kinase 1
+r_1170,s_0335_c_1+s_0839_c_1,s_0337_c_1+s_0386_c_1,0,inf
+
+// r_1171::Sphingosine Phosphate Lyase 1
+r_1171,s_0094_c_1,s_0060_c_1+s_0555_c_1,0,inf
+
+// r_1172::SPNAT
+r_1172,s_0051_c_1,s_0644_c_1,0,inf
+
+// r_1173::Squalene Epoxidase
+r_1173,s_0601_c_1+s_0869_c_1+s_0775_c_1,s_0088_c_1+s_0075_c_1,0,inf
+
+// r_1174::St3 Beta-Galactoside Alpha-2,3-Sialyltransferase 1
+r_1174,s_0627_c_1,s_0901_c_1+s_0354_c_1,0,inf
+
+// r_1175::St3 Beta-Galactoside Alpha-2,3-Sialyltransferase 1
+r_1175,s_0901_c_1+s_0564_c_1,s_0627_c_1+s_0650_c_1,0,inf
+
+// r_1176::St6(Alpha-N-Acetyl-Neuraminyl-2,3-Beta-Galactosyl-1,3)-N-Acetylgalactosaminide Alpha-2,6-Sialyltransferase 6
+r_1176,s_0828_c_1+s_0354_c_1,s_0627_c_1,-inf,inf
+
+// r_1177::St8 Alpha-N-Acetyl-Neuraminide Alpha-2,8-Sialyltransferase 5
+r_1177,s_0265_c_1,s_0354_c_1+s_0828_c_1,-inf,inf
+
+// r_1178::St8 Alpha-N-Acetyl-Neuraminide Alpha-2,8-Sialyltransferase 5
+r_1178,s_0314_c_1,s_0354_c_1+s_0627_c_1,-inf,inf
+
+// r_1179::St8 Alpha-N-Acetyl-Neuraminide Alpha-2,8-Sialyltransferase 5
+r_1179,s_0627_c_1,s_0314_c_1,0,inf
+
+// r_1180::STE1
+r_1180,s_0945_c_1,s_0423_c_1+s_0457_c_1,0,inf
+
+// r_1181::Sterol O-Acyltransferase 1
+r_1181,0.025*s_0824_c_1+0.165*s_0127_c_1+0.066*s_0475_c_1+0.099*s_0315_c_1+0.559*s_0258_c_1+0.005*s_0618_c_1+0.045*s_0189_c_1+0.018*s_0546_c_1+0.009*s_0903_c_1+0.008*s_0489_c_1+s_0326_c_1,s_0624_c_1+s_0877_c_1,-inf,inf
+
+// r_1182::Sterol:Nadp+ Delta24-Oxidoreductase
+r_1182,s_0554_c_1,s_0480_c_1,0,inf
+
+// r_1183::Substrate,Reduced-Flaboprotein:Oxygen Oxidoreductase (Rh-Hydroxylating Or -Epoxidizing)
+r_1183,s_0003_c_1+s_0460_c_1+s_0869_c_1,s_0748_c_1+s_0053_c_1+s_0659_c_1,-inf,inf
+
+// r_1184::Succinate-Coa Ligase, Gdp-Forming, Alpha Subunit
+r_1184,s_1184_c_2+s_1041_c_2+s_1017_c_2,s_1079_c_2+s_1075_c_2+s_1030_c_2,-inf,inf
+
+// r_1185::Succinate-Coenzyme A Ligase, Adp-Forming, Beta Subunit
+r_1185,s_0470_c_1+s_0386_c_1+s_0765_c_1,s_0839_c_1+s_0624_c_1+s_0541_c_1,-inf,inf
+
+// r_1186::Succinate-Coenzyme A Ligase, Adp-Forming, Beta Subunit
+r_1186,s_0839_c_1+s_0541_c_1+s_0624_c_1,s_0386_c_1+s_0765_c_1+s_0470_c_1,-inf,inf
+
+// r_1187::Succinatecoa Ligase (Gdp-Forming)
+r_1187,s_0832_c_1+s_0541_c_1+s_0624_c_1,s_0383_c_1+s_0765_c_1+s_0470_c_1,-inf,inf
+
+// r_1188::Succinatecoa Ligase (Gdp-Forming)
+r_1188,s_0844_c_1+s_0541_c_1+s_0624_c_1,s_0284_c_1+s_0765_c_1+s_0470_c_1,-inf,inf
+
+// r_1189::Succinylglutamate Desuccinylase
+r_1189,s_0860_c_1,s_0541_c_1+s_0679_c_1,0,inf
+
+// r_1190::Sulfite Oxidase
+r_1190,s_0761_c_1+s_0869_c_1+s_0659_c_1,s_0457_c_1+s_0955_c_1,-inf,inf
+
+// r_1191::Sulfotransferase Family 1A, Phenol-Preferring, Member 1
+r_1191,s_0185_c_1+s_0399_c_1,s_0022_c_1+s_0702_c_1,-inf,inf
+
+// r_1192::Sulfotransferase Family 2A,
+r_1192,s_0708_c_1+s_0185_c_1,s_0236_c_1+s_0022_c_1,-inf,inf
+
+// r_1193::Sulfotransferase, Estrogen Preferring
+r_1193,s_0185_c_1+s_0423_c_1,s_0022_c_1+s_0945_c_1,0,inf
+
+// r_1194::T-Cell Expressing Clone J6 /atpase, H+/K+ Exchanging, Gastric, Alpha Polypeptide
+r_1194,s_1184_c_2+s_1041_c_2,s_1079_c_2+3.0*s_1001_c_2,0,inf
+
+// r_1195::TGUT_PENDING
+r_1195,s_0956_c_1,s_0650_c_1,0,inf
+
+// r_1196::Thioredoxin Reductase 2, Mitochondrial [Precursor]
+r_1196,s_1168_c_2+s_1002_c_2,s_1181_c_2+s_1111_c_2,0,inf
+
+// r_1197::Thioredoxin Reductase 2, Mitochondrial [Precursor]
+r_1197,s_0775_c_1+s_0736_c_1,s_0075_c_1+s_0499_c_1,0,inf
+
+// r_1198::Threonine-Trna Ligase
+r_1198,s_0381_c_1+s_0805_c_1+s_0839_c_1,s_0262_c_1+s_0648_c_1+s_0591_c_1,0,inf
+
+// r_1199::Thymidylate 5'-Phosphohydrolase
+r_1199,s_0712_c_1+s_0659_c_1,s_0149_c_1+s_0765_c_1,0,inf
+
+// r_1200::Thymidylate Kinase
+r_1200,s_0149_c_1+s_0839_c_1,s_0386_c_1+s_0712_c_1,0,inf
+
+// r_1201::Thymoma Viral Proto-Oncogene 1
+r_1201,s_0334_c_1+s_0839_c_1,s_0449_c_1+s_0386_c_1,0,inf
+
+// r_1202::Thymoma Viral Proto-Oncogene 2
+r_1202,s_0714_c_1+s_0839_c_1,s_0095_c_1+s_0386_c_1,0,inf
+
+// r_1203::Thyroid Peroxidase
+r_1203,s_0016_c_1+s_0023_c_1+s_0955_c_1,s_0085_c_1+s_0847_c_1+2.0*s_0659_c_1,0,inf
+
+// r_1204::Thyroid Peroxidase
+r_1204,s_0016_c_1+s_0019_c_1,s_0770_c_1+s_0023_c_1,0,inf
+
+// r_1205::Thyroid Peroxidase
+r_1205,s_0019_c_1+s_0037_c_1,s_0770_c_1+s_0016_c_1,0,inf
+
+// r_1206::TR3b
+r_1206,s_0736_c_1+s_0775_c_1,s_0075_c_1+s_0499_c_1,0,inf
+
+// r_1207::Trans-4-Hydroxy-L-Proline:Nad 5-Oxidoreductase
+r_1207,s_0038_c_1+s_0096_c_1,s_0615_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_1208::Trans-4-Hydroxy-L-Proline:Nad Oxidoreductase
+r_1208,s_0038_c_1+s_0100_c_1,s_0615_c_1+s_0792_c_1,-inf,inf
+
+// r_1209::Trans-4-Hydroxy-L-Proline:Nadp 5-Oxidoreductase
+r_1209,s_0038_c_1+s_0075_c_1,s_0615_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_1210::TransaldOlase
+r_1210,s_0929_c_1+s_0785_c_1,s_0925_c_1+s_0743_c_1,-inf,inf
+
+// r_1211::Transformed Mouse 3T3 Cell Double Minute 2
+r_1211,s_0374_c_1,s_0560_c_1,0,inf
+
+// r_1212::Transketolase
+r_1212,s_0887_c_1+s_0344_c_1,s_0929_c_1+s_0785_c_1,-inf,inf
+
+// r_1213::Transketolase
+r_1213,s_0925_c_1+s_0344_c_1,s_0929_c_1+s_0743_c_1,-inf,inf
+
+// r_1214::Trehalase (Brush-Border Membrane Glycoprotein)
+r_1214,s_0453_c_1,2.0*s_0548_c_1,0,inf
+
+// r_1215::Triosephosphate Isomerase
+r_1215,s_0929_c_1,s_0414_c_1,-inf,inf
+
+// r_1216::Trna(Ala) Ligase (Amp-Forming)
+r_1216,s_0839_c_1+s_0349_c_1+s_0731_c_1,s_0648_c_1+s_0591_c_1+s_0274_c_1,-inf,inf
+
+// r_1217::Trna(Asp) Ligase (Amp-Forming)
+r_1217,s_0068_c_1+s_0746_c_1+s_0839_c_1,s_0046_c_1+s_0591_c_1+s_0648_c_1,-inf,inf
+
+// r_1218::Trna(Gln) Ligase (Amp-Forming)
+r_1218,s_0839_c_1+s_0679_c_1+s_0463_c_1,s_0648_c_1+s_0591_c_1+s_0550_c_1,-inf,inf
+
+// r_1219::Trna-Guanine Transglycosylase
+r_1219,s_0747_c_1,s_0275_c_1+s_0002_c_1,0,inf
+
+// r_1220::Trnaasp Ligase (Amp-Forming)
+r_1220,s_0839_c_1+s_0746_c_1+s_0292_c_1,s_0648_c_1+s_0591_c_1+s_0464_c_1,-inf,inf
+
+// r_1221::Tryptamine: Oxygen Oxidoreductase(Deaminating)(Flavin-Containing)
+r_1221,s_0718_c_1+s_0659_c_1+s_0869_c_1,s_0501_c_1+s_0774_c_1+s_0955_c_1,-inf,inf
+
+// r_1222::Tryptophan 2,3-Dioxygenase/Indoleamine-Pyrrole 2,3 Dioxygenase
+r_1222,s_0946_c_1+s_0869_c_1,s_0833_c_1,0,inf
+
+// r_1223::Tryptophan Hydroxylase
+r_1223,s_0946_c_1+s_0435_c_1+s_0869_c_1,s_0098_c_1+s_0145_c_1,0,inf
+
+// r_1224::Tryptophanyl-Trna Synthetase
+r_1224,s_0839_c_1+s_0946_c_1+s_0397_c_1,s_0648_c_1+s_0591_c_1+s_0817_c_1,0,inf
+
+// r_1225::Tyramine:Oxygen Oxidoreductase(Deaminating)(Flavin-Containing)
+r_1225,s_0351_c_1+s_0659_c_1+s_0869_c_1,s_0133_c_1+s_0774_c_1+s_0955_c_1,0,inf
+
+// r_1226::Tyrosinase
+r_1226,s_0037_c_1+s_0679_c_1+s_0869_c_1,s_0810_c_1,0,inf
+
+// r_1227::Tyrosinase
+r_1227,2.0*s_0037_c_1+3.5*s_0869_c_1,s_0636_c_1+s_0415_c_1+s_0029_c_1,0,inf
+
+// r_1228::Tyrosinase
+r_1228,2.0*s_0986_c_1+2.0*s_0869_c_1,2.0*s_0663_c_1,0,inf
+
+// r_1229::Tyrosinase-Related Protein 1
+r_1229,s_0894_c_1,s_0415_c_1,-inf,inf
+
+// r_1230::Tyrosine Hydroxylase
+r_1230,s_0037_c_1+s_0435_c_1+s_0869_c_1,s_0098_c_1+s_0636_c_1,0,inf
+
+// r_1231::Ubiquinol-Cytochrome C Reductase Iron-Sulfur Subunit
+r_1231,s_1039_c_2+2.0*s_1062_c_2+1.5*s_1001_c_2,s_0998_c_2+2.0*s_1098_c_2,0,inf
+
+// r_1232::Udp Diphosphohydrolase
+r_1232,s_0275_c_1,s_0642_c_1+s_0765_c_1,0,inf
+
+// r_1233::Udp-Gal:Betaglcnac Beta 1,4-Galactosyltransferase, Polypeptide 6
+r_1233,s_0123_c_1,s_0116_c_1,0,inf
+
+// r_1234::Udp-Galbetaglcnac Beta 1,4-Galactosyltransferase, Polypeptide 5
+r_1234,s_0843_c_1+s_0346_c_1,s_0719_c_1+s_0275_c_1,0,inf
+
+// r_1235::Udp-Glucose 4-Epimerase
+r_1235,s_0557_c_1,s_0346_c_1,-inf,inf
+
+// r_1236::Udp-Glucose Ceramide Glucosyltransferase
+r_1236,s_0092_c_1+s_0557_c_1,s_0123_c_1+s_0275_c_1,0,inf
+
+// r_1237::Udp-Glucose Ceramide Glucosyltransferase-Like 1
+r_1237,s_0797_c_1,s_0267_c_1+s_0284_c_1,0,inf
+
+// r_1238::Udp-Glucose Dehydrogenase
+r_1238,s_0557_c_1+2.0*s_0096_c_1,s_0175_c_1+2.0*s_0611_c_1,-inf,inf
+
+// r_1239::Udp-Glucuronosyltransferase 1 Family, Member 2
+r_1239,2.0*s_0175_c_1+s_0052_c_1,2.0*s_0275_c_1+s_0312_c_1,0,inf
+
+// r_1240::Udp-Glucuronosyltransferase 2 Family, Member 5
+r_1240,s_0175_c_1,s_0275_c_1+s_0597_c_1,-inf,inf
+
+// r_1241::Udp-N-Acetyl-Alpha-D-Galactosamine
+r_1241,s_0444_c_1+s_0346_c_1,s_0263_c_1+s_0275_c_1,0,inf
+
+// r_1242::Udp-N-Acetyl-Alpha-D-Galactosamine (N-Acetylneuraminyl)-Galactosyl-N-Acetylglucosaminylpolypeptide-Beta-1, 4-N-Acetylgalactosaminyltransferase
+r_1242,s_0873_c_1+s_0346_c_1,s_0772_c_1+s_0275_c_1,0,inf
+
+// r_1243::Udp-N-Acetyl-Alpha-D-Galactosamine(N-Acetylneuraminyl)-Galactosylglucosylceramide-Beta-1, 4-N-Acetylgalactosaminyltransferase
+r_1243,s_0874_c_1+s_0730_c_1,s_0143_c_1+s_0275_c_1,0,inf
+
+// r_1244::Udp-N-Acetyl-Alpha-D-Galactosamine(N-Acetylneuraminyl)-Galactosylglucosylceramide-Beta-1, 4-N-Acetylgalactosaminyltransferase
+r_1244,s_0227_c_1+s_0730_c_1,s_0510_c_1+s_0275_c_1,0,inf
+
+// r_1245::Udp-N-Acetyl-Alpha-D-Galactosamine(N-Acetylneuraminyl)-Galactosylglucosylceramide-Beta-1, 4-N-Acetylgalactosaminyltransferase
+r_1245,s_0116_c_1+s_0730_c_1,s_0873_c_1+s_0275_c_1,0,inf
+
+// r_1246::Udp-N-Acetylglucosamine-2-Epimerase/N-Acetylmannosamine Kinase
+r_1246,s_0660_c_1+s_0275_c_1,s_0343_c_1,-inf,inf
+
+// r_1247::Udp-N-Acetylglucosamine-2-Epimerase/N-Acetylmannosamine Kinase
+r_1247,s_0839_c_1+s_0660_c_1,s_0005_c_1+s_0386_c_1,0,inf
+
+// r_1248::Urate Oxidase
+r_1248,s_0665_c_1+s_0869_c_1,s_0709_c_1+s_0955_c_1+s_0029_c_1,0,inf
+
+// r_1249::Uridine 5'-Monophosphate Phosphohydrolase
+r_1249,s_0642_c_1+s_0659_c_1,s_0765_c_1+s_0780_c_1,0,inf
+
+// r_1250::Uridine 5'-Monophosphate Synthase
+r_1250,s_0124_c_1+s_0616_c_1,s_0591_c_1+s_0647_c_1,-inf,inf
+
+// r_1251::Uridine 5'-Monophosphate Synthase
+r_1251,s_0647_c_1,s_0029_c_1+s_0642_c_1,0,inf
+
+// r_1252::Uridine Phosphorylase
+r_1252,s_0780_c_1+s_0765_c_1,s_0431_c_1+s_0723_c_1,-inf,inf
+
+// r_1253::Uridine Triphosphate Pyrophosphohydrolase
+r_1253,s_0830_c_1+s_0659_c_1,s_0642_c_1+s_0591_c_1,0,inf
+
+// r_1254::Uroporphyrinogen Decarboxylase
+r_1254,s_0074_c_1,4.0*s_0029_c_1+s_0469_c_1,0,inf
+
+// r_1255::Uroporphyrinogen Decarboxylase
+r_1255,s_0764_c_1,s_0097_c_1+4.0*s_0029_c_1,0,inf
+
+// r_1256::Uroporphyrinogen Iii Synthase
+r_1256,s_0537_c_1,s_0074_c_1,0,inf
+
+// r_1257::Utp Amp Phosphotransferase Mitochondrial
+r_1257,s_0830_c_1+s_0648_c_1,s_0275_c_1+s_0386_c_1,-inf,inf
+
+// r_1258::Utp Diphosphohydrolase
+r_1258,s_0830_c_1,s_0275_c_1+s_0765_c_1,0,inf
+
+// r_1259::Utp-N-Acetyl-Alpha-D-Glucosamine-1-Phosphate Uridylyltransferase
+r_1259,s_0830_c_1+s_0208_c_1,s_0591_c_1+s_0343_c_1,-inf,inf
+
+// r_1260::Utp:Cytidine 5'-Phosphotransferase
+r_1260,s_0830_c_1+s_0930_c_1,s_0275_c_1+s_0650_c_1,-inf,inf
+
+// r_1261::Utp:Uridine 5'-Phosphotransferase
+r_1261,s_0830_c_1+s_0780_c_1,s_0275_c_1+s_0642_c_1,-inf,inf
+
+// r_1262::Vacuolar atp Synthase Subunit S1 [Precursor]
+r_1262,s_0839_c_1,s_0386_c_1+s_0765_c_1+s_1299_c_3,0,inf
+
+// r_1263::Valyl-Trna Synthetase 2
+r_1263,s_0066_c_1+s_0839_c_1+s_0428_c_1,s_0648_c_1+s_0591_c_1+s_0884_c_1,0,inf
+
+// r_1264::Xanthine Dehydrogenase / Xanthine Oxidase
+r_1264,s_0886_c_1+s_0096_c_1,s_0665_c_1+s_0611_c_1,0,inf
+
+// r_1265::Xanthine Dehydrogenase / Xanthine Oxidase
+r_1265,s_0886_c_1+s_0869_c_1,s_0665_c_1+s_0955_c_1,0,inf
+
+// r_1266::Xanthosine 5'-Monophosphate Phosphohydrolase
+r_1266,s_0593_c_1+s_0659_c_1,s_0765_c_1+s_0651_c_1,0,inf
+
+// r_1267::Xanthosine:Orthophosphate Ribosyltransferase
+r_1267,s_0886_c_1+s_0723_c_1+s_0659_c_1,s_0765_c_1+s_0651_c_1,-inf,inf
+
+// r_1268::Xmp:Pyrophosphate Phosphoribosyltransferase
+r_1268,s_0886_c_1+s_0616_c_1,s_0591_c_1+s_0593_c_1,0,inf
+
+// r_1269::Xtp Pyrophosphohydrolase
+r_1269,s_0977_c_1+s_0659_c_1,s_0593_c_1+s_0591_c_1,-inf,inf
+
+// r_1270::AATRA20
+r_1270,s_1307_c_3+s_1299_c_3,s_0081_c_1,0,inf
+
+// r_1271::ACLTRA
+r_1271,s_1321_c_3,s_0680_c_1,0,inf
+
+// r_1272::ALAOUT
+r_1272,s_0349_c_1,s_1255_c_3+s_1299_c_3,0,inf
+
+// r_1273::ALAXT
+r_1273,s_1255_c_3+s_1299_c_3,s_0349_c_1,0,inf
+
+// r_1274::Ammonia Transporter
+r_1274,s_1254_c_3,s_0774_c_1,-inf,inf
+
+// r_1275::ARGOUT
+r_1275,s_0004_c_1,s_1333_c_3+s_1299_c_3,0,inf
+
+// r_1276::ARGXT
+r_1276,s_1333_c_3+s_1299_c_3,s_0004_c_1,0,inf
+
+// r_1277::ASNOUT
+r_1277,s_0612_c_1,s_1268_c_3+s_1299_c_3,0,inf
+
+// r_1278::ASNXT
+r_1278,s_1268_c_3+s_1299_c_3,s_0612_c_1,0,inf
+
+// r_1279::ASPOUT
+r_1279,s_0746_c_1,s_1292_c_3+s_1299_c_3,0,inf
+
+// r_1280::ASPXT
+r_1280,s_1292_c_3+s_1299_c_3,s_0746_c_1,0,inf
+
+// r_1281::CARTRA10
+r_1281,s_1226_c_3+s_1299_c_3,s_0070_c_1,-inf,inf
+
+// r_1282::CARTRA11
+r_1282,s_1226_c_3+s_0715_c_1,s_0070_c_1+s_1229_c_3,-inf,inf
+
+// r_1283::CARTRA12
+r_1283,s_1227_c_3,s_0652_c_1,-inf,inf
+
+// r_1284::CARTRA13
+r_1284,s_1300_c_3,s_0035_c_1,-inf,inf
+
+// r_1285::CARTRA14
+r_1285,s_1351_c_3,s_0377_c_1,-inf,inf
+
+// r_1286::CARTRA15
+r_1286,s_1253_c_3+s_1299_c_3,s_0919_c_1,-inf,inf
+
+// r_1287::CARTRA16
+r_1287,s_1345_c_3+s_1299_c_3,s_0739_c_1,0,inf
+
+// r_1288::CARTRA17
+r_1288,s_1310_c_3+s_1299_c_3,s_0579_c_1,0,inf
+
+// r_1289::CARTRA18
+r_1289,s_1316_c_3+s_1299_c_3,s_0230_c_1,-inf,inf
+
+// r_1290::CARTRA19
+r_1290,s_1252_c_3,s_0908_c_1,-inf,inf
+
+// r_1291::CARTRA2
+r_1291,s_1343_c_3+s_1299_c_3,s_0359_c_1,0,inf
+
+// r_1292::CARTRA21
+r_1292,s_1285_c_3+s_1299_c_3,s_0757_c_1,0,inf
+
+// r_1293::CARTRA22
+r_1293,s_1336_c_3+s_1299_c_3,s_0030_c_1,0,inf
+
+// r_1294::CARTRA23
+r_1294,s_1237_c_3+s_1299_c_3,s_0069_c_1,0,inf
+
+// r_1295::CARTRA24
+r_1295,s_1233_c_3+s_1299_c_3,s_0522_c_1,0,inf
+
+// r_1296::CARTRA25
+r_1296,s_1278_c_3+s_1299_c_3,s_0173_c_1,0,inf
+
+// r_1297::CARTRA26
+r_1297,s_1239_c_3+s_1299_c_3,s_0453_c_1,0,inf
+
+// r_1298::CARTRA28
+r_1298,s_1332_c_3,s_0880_c_1,-inf,inf
+
+// r_1299::CARTRA4
+r_1299,s_1272_c_3+s_1299_c_3,s_0767_c_1,0,inf
+
+// r_1300::CARTRA5
+r_1300,s_1259_c_3+s_1299_c_3,s_0893_c_1,0,inf
+
+// r_1301::CARTRA7
+r_1301,s_1288_c_3+s_1299_c_3,s_0574_c_1,0,inf
+
+// r_1302::CARTRA8
+r_1302,s_1344_c_3,s_1248_c_3+s_1272_c_3,0,inf
+
+// r_1303::CARTRA9
+r_1303,s_1344_c_3+s_1299_c_3,s_0912_c_1,0,inf
+
+// r_1304::CYSOUT
+r_1304,s_0754_c_1,s_1297_c_3+s_1299_c_3,0,inf
+
+// r_1305::CYSXT
+r_1305,s_1297_c_3+s_1299_c_3,s_0754_c_1,0,inf
+
+// r_1306::Folate Transporter 1
+r_1306,s_1262_c_3,s_0891_c_1,0,inf
+
+// r_1307::GLCXT
+r_1307,s_1248_c_3,s_0548_c_1,0,inf
+
+// r_1308::GLNOUT
+r_1308,s_0425_c_1,s_1294_c_3+s_1299_c_3,0,inf
+
+// r_1309::GLNXT
+r_1309,s_1294_c_3+s_1299_c_3,s_0425_c_1,0,inf
+
+// r_1310::GLUOUT
+r_1310,s_0679_c_1,s_1347_c_3+s_1299_c_3,0,inf
+
+// r_1311::GLUXT
+r_1311,s_1347_c_3+s_1299_c_3,s_0679_c_1,0,inf
+
+// r_1312::GLYOUT
+r_1312,s_0316_c_1,s_1263_c_3+s_1299_c_3,0,inf
+
+// r_1313::GLYXT
+r_1313,s_1263_c_3+s_1299_c_3,s_0316_c_1,0,inf
+
+// r_1314::HISOUT
+r_1314,s_0201_c_1,s_1302_c_3+s_1299_c_3,0,inf
+
+// r_1315::HISXT
+r_1315,s_1302_c_3+s_1299_c_3,s_0201_c_1,0,inf
+
+// r_1316::ILEOUT
+r_1316,s_0366_c_1,s_1291_c_3+s_1299_c_3,0,inf
+
+// r_1317::ILEXT
+r_1317,s_1291_c_3+s_1299_c_3,s_0366_c_1,0,inf
+
+// r_1318::LEUOUT
+r_1318,s_0487_c_1,s_1311_c_3+s_1299_c_3,0,inf
+
+// r_1319::LEUXT
+r_1319,s_1311_c_3+s_1299_c_3,s_0487_c_1,0,inf
+
+// r_1320::LYSOUT
+r_1320,s_0750_c_1,s_1273_c_3+s_1299_c_3,0,inf
+
+// r_1321::LYSXT
+r_1321,s_1273_c_3+s_1299_c_3,s_0750_c_1,0,inf
+
+// r_1322::MBPTRA1
+r_1322,s_1267_c_3+s_1299_c_3,s_0685_c_1,-inf,inf
+
+// r_1323::MBPTRA2
+r_1323,s_1286_c_3,s_0576_c_1,-inf,inf
+
+// r_1324::MBPTRA3
+r_1324,s_1245_c_3,s_0876_c_1,-inf,inf
+
+// r_1325::MBPTRA4
+r_1325,s_1348_c_3+s_1299_c_3,s_0541_c_1,-inf,inf
+
+// r_1326::METOUT
+r_1326,s_0391_c_1,s_1283_c_3+s_1299_c_3,0,inf
+
+// r_1327::METXT
+r_1327,s_1283_c_3+s_1299_c_3,s_0391_c_1,0,inf
+
+// r_1328::OTRA10
+r_1328,s_1342_c_3+s_1299_c_3,s_0300_c_1,-inf,inf
+
+// r_1329::OTRA11
+r_1329,s_1309_c_3+s_1299_c_3,s_0079_c_1,-inf,inf
+
+// r_1330::OTRA12
+r_1330,s_1303_c_3,s_0409_c_1,0,inf
+
+// r_1331::OTRA13
+r_1331,s_1320_c_3,s_0604_c_1,0,inf
+
+// r_1332::OTRA14
+r_1332,s_1235_c_3,s_0658_c_1,0,inf
+
+// r_1333::OTRA15
+r_1333,s_1319_c_3,s_0732_c_1,0,inf
+
+// r_1334::OTRA16
+r_1334,s_1335_c_3,s_0804_c_1,0,inf
+
+// r_1335::OTRA17
+r_1335,s_1229_c_3+s_1299_c_3,s_0715_c_1,-inf,inf
+
+// r_1336::OTRA18
+r_1336,s_1279_c_3,s_0502_c_1+s_1299_c_3,-inf,inf
+
+// r_1337::OTRA25
+r_1337,s_1234_c_3,s_0456_c_1,-inf,inf
+
+// r_1338::OTRA26
+r_1338,s_1337_c_3,s_0235_c_1,-inf,inf
+
+// r_1339::OTRA27
+r_1339,s_1230_c_3+s_1299_c_3,s_0109_c_1,0,inf
+
+// r_1340::OTRA30
+r_1340,s_1280_c_3,s_0709_c_1,-inf,inf
+
+// r_1341::OTRA31
+r_1341,s_1236_c_3,s_0859_c_1,0,inf
+
+// r_1342::OTRA32
+r_1342,s_1338_c_3,s_0161_c_1,-inf,inf
+
+// r_1343::OTRA33
+r_1343,s_1256_c_3,s_0022_c_1,-inf,inf
+
+// r_1344::OTRA34
+r_1344,s_1270_c_3,s_0827_c_1,-inf,inf
+
+// r_1345::OTRA35
+r_1345,s_1228_c_3,s_0246_c_1+s_1299_c_3,-inf,inf
+
+// r_1346::OTRA36
+r_1346,s_1340_c_3,s_0307_c_1,-inf,inf
+
+// r_1347::OTRA37
+r_1347,s_1328_c_3+s_1299_c_3,s_0147_c_1,-inf,inf
+
+// r_1348::OTRA38
+r_1348,s_1352_c_3+s_1299_c_3,s_0328_c_1,-inf,inf
+
+// r_1349::OTRA39
+r_1349,s_1266_c_3+s_1299_c_3,s_0497_c_1,-inf,inf
+
+// r_1350::OTRA40
+r_1350,s_1314_c_3,s_0949_c_1,0,inf
+
+// r_1351::OTRA41
+r_1351,s_1313_c_3,s_0952_c_1,0,inf
+
+// r_1352::OTRA42
+r_1352,s_1317_c_3,s_0331_c_1,0,inf
+
+// r_1353::OTRA45
+r_1353,s_1295_c_3,s_0607_c_1,-inf,inf
+
+// r_1354::OTRA46
+r_1354,s_1276_c_3,s_0733_c_1,-inf,inf
+
+// r_1355::OTRA5
+r_1355,s_1293_c_3+s_1299_c_3,s_0216_c_1,-inf,inf
+
+// r_1356::PHEOUT
+r_1356,s_0013_c_1,s_1223_c_3+s_1299_c_3,0,inf
+
+// r_1357::PHEXT
+r_1357,s_1223_c_3+s_1299_c_3,s_0013_c_1,0,inf
+
+// r_1358::PMTRA1
+r_1358,s_1231_c_3+s_1299_c_3,s_0969_c_1,0,inf
+
+// r_1359::PMTRA11
+r_1359,s_1318_c_3+s_1299_c_3,s_0010_c_1,0,inf
+
+// r_1360::PMTRA12
+r_1360,s_1249_c_3+s_1299_c_3,s_0215_c_1,0,inf
+
+// r_1361::PMTRA13
+r_1361,s_1306_c_3+s_1299_c_3,s_0136_c_1,0,inf
+
+// r_1362::PMTRA14
+r_1362,s_1287_c_3+s_1299_c_3,s_0812_c_1,0,inf
+
+// r_1363::PMTRA15
+r_1363,s_1327_c_3+s_1299_c_3,s_0431_c_1,0,inf
+
+// r_1364::PMTRA16
+r_1364,s_1257_c_3+s_1299_c_3,s_0976_c_1,0,inf
+
+// r_1365::PMTRA17
+r_1365,s_1242_c_3+s_1299_c_3,s_0059_c_1,0,inf
+
+// r_1366::PMTRA18
+r_1366,s_1265_c_3+s_1299_c_3,s_0773_c_1,0,inf
+
+// r_1367::PMTRA19
+r_1367,s_1282_c_3+s_1299_c_3,s_0226_c_1,-inf,inf
+
+// r_1368::PMTRA2
+r_1368,s_1224_c_3+s_1299_c_3,s_0778_c_1,0,inf
+
+// r_1369::PMTRA29
+r_1369,s_1225_c_3+s_1299_c_3,s_0162_c_1,0,inf
+
+// r_1370::PMTRA30
+r_1370,s_1305_c_3+s_1299_c_3,s_0559_c_1,0,inf
+
+// r_1371::PMTRA31
+r_1371,s_1222_c_3+s_1299_c_3,s_0780_c_1,0,inf
+
+// r_1372::PMTRA32
+r_1372,s_1271_c_3+s_1299_c_3,s_0930_c_1,0,inf
+
+// r_1373::PMTRA33
+r_1373,s_1308_c_3+s_1299_c_3,s_0661_c_1,0,inf
+
+// r_1374::PMTRA34
+r_1374,s_1330_c_3+s_1299_c_3,s_0651_c_1,0,inf
+
+// r_1375::PMTRA35
+r_1375,s_1329_c_3+s_1299_c_3,s_0149_c_1,0,inf
+
+// r_1376::PMTRA36
+r_1376,s_1277_c_3+s_1299_c_3,s_0585_c_1,0,inf
+
+// r_1377::PMTRA37
+r_1377,s_1251_c_3+s_1299_c_3,s_0057_c_1,0,inf
+
+// r_1378::PMTRA38
+r_1378,s_1322_c_3+s_1299_c_3,s_0508_c_1,0,inf
+
+// r_1379::PMTRA39
+r_1379,s_1334_c_3+s_1299_c_3,s_0686_c_1,0,inf
+
+// r_1380::PMTRA4
+r_1380,s_1349_c_3,s_0204_c_1,-inf,inf
+
+// r_1381::PMTRA40
+r_1381,s_1238_c_3+s_1299_c_3,s_0405_c_1,0,inf
+
+// r_1382::PMTRA41
+r_1382,s_1225_c_3+s_1299_c_3,s_0162_c_1,0,inf
+
+// r_1383::PMTRA48
+r_1383,s_1225_c_3+s_1299_c_3,s_0162_c_1,0,inf
+
+// r_1384::PMTRA5
+r_1384,s_1290_c_3+s_1299_c_3,s_0391_c_1,0,inf
+
+// r_1385::PMTRA51
+r_1385,s_1271_c_3+s_1299_c_3,s_0930_c_1,0,inf
+
+// r_1386::PMTRA55
+r_1386,s_1251_c_3+s_1299_c_3,s_0057_c_1,0,inf
+
+// r_1387::PMTRA6
+r_1387,s_1301_c_3+s_1299_c_3,s_0249_c_1,0,inf
+
+// r_1388::PMTRA60
+r_1388,s_1331_c_3,s_0886_c_1,-inf,inf
+
+// r_1389::PMTRA7
+r_1389,s_1250_c_3+s_1299_c_3,s_0321_c_1,0,inf
+
+// r_1390::PMTRA8
+r_1390,s_1274_c_3+s_1299_c_3,s_0526_c_1,-inf,inf
+
+// r_1391::PROOUT
+r_1391,s_0629_c_1,s_1260_c_3+s_1299_c_3,0,inf
+
+// r_1392::PROXT
+r_1392,s_1260_c_3+s_1299_c_3,s_0629_c_1,0,inf
+
+// r_1393::Renal Sodium-Dependent Phosphate Transport Protein 1
+r_1393,s_1315_c_3+s_1299_c_3,s_0765_c_1,-inf,inf
+
+// r_1394::RIBFLAVXT
+r_1394,s_1312_c_3+s_1299_c_3,s_0927_c_1,0,inf
+
+// r_1395::SEROUT
+r_1395,s_0562_c_1,s_1240_c_3+s_1299_c_3,0,inf
+
+// r_1396::SERXT
+r_1396,s_1240_c_3+s_1299_c_3,s_0562_c_1,0,inf
+
+// r_1397::Sodium/Myo-Inositol Cotransporter
+r_1397,s_1275_c_3,s_0755_c_1,0,inf
+
+// r_1398::Solute Carrier Family 16 (Monocarboxylic Acid Transporters), Member 1
+r_1398,s_1284_c_3+s_1299_c_3,s_0140_c_1,-inf,inf
+
+// r_1399::Solute Carrier Family 16 (Monocarboxylic Acid Transporters), Member 1
+r_1399,s_1269_c_3+s_1299_c_3,s_0011_c_1,-inf,inf
+
+// r_1400::Solute Carrier Family 2 (Facilitated Glucose Transporter), Member 5
+r_1400,s_1272_c_3,s_0767_c_1,0,inf
+
+// r_1401::Solute Carrier Family 27 (Fatty Acid Transporter), Member 1
+r_1401,s_1247_c_3,s_0684_c_1,0,inf
+
+// r_1402::Solute Carrier Family 5 (Choline Transporter), Member 7
+r_1402,s_1290_c_3,s_0014_c_1,0,inf
+
+// r_1403::THROUT
+r_1403,s_0381_c_1,s_1241_c_3+s_1299_c_3,0,inf
+
+// r_1404::THRXT
+r_1404,s_1241_c_3+s_1299_c_3,s_0381_c_1,0,inf
+
+// r_1405::Thymoma Viral Proto-Oncogene 1
+r_1405,s_1239_c_3,s_0753_c_1,0,inf
+
+// r_1406::TRPOUT
+r_1406,s_0946_c_1,s_1346_c_3+s_1299_c_3,0,inf
+
+// r_1407::TRPXT
+r_1407,s_1346_c_3+s_1299_c_3,s_0946_c_1,0,inf
+
+// r_1408::TYROUT
+r_1408,s_0037_c_1,s_1243_c_3+s_1299_c_3,0,inf
+
+// r_1409::TYRXT
+r_1409,s_1243_c_3+s_1299_c_3,s_0037_c_1,0,inf
+
+// r_1410::Urea Transporter
+r_1410,s_0323_c_1,s_1261_c_3+2.0*s_1299_c_3,0,inf
+
+// r_1411::Urea Transporter, Erythrocyte
+r_1411,s_1261_c_3+2.0*s_1299_c_3,s_0323_c_1,-inf,inf
+
+// r_1412::VALOUT
+r_1412,s_0066_c_1,s_1339_c_3+s_1299_c_3,0,inf
+
+// r_1413::VALXT
+r_1413,s_1339_c_3+s_1299_c_3,s_0066_c_1,0,inf
+
+// r_1414::(Quinone-Acceptor) Oxidoreductase
+r_1414,s_0100_c_1+s_0611_c_1,s_0792_c_1+s_0096_c_1,-inf,inf
+
+// r_1415::1-phosphatidylinositol-5-phosphate 4-kinase;type II PIP kinase
+r_1415,s_0839_c_1+s_0253_c_1,s_0386_c_1+s_0379_c_1,-inf,inf
+
+// r_1416::3-Methylglutaconyl Coa Hydratase
+r_1416,s_0347_c_1,s_0953_c_1,-inf,inf
+
+// r_1417::6-Deoxy-L-Galactose 1-Phosphotransferase
+r_1417,s_0839_c_1+s_0940_c_1,s_0386_c_1+s_0726_c_1,-inf,inf
+
+// r_1418::Acyl Carrier-Protein Synthase, Phosphopantetheine Protein Transferase
+r_1418,s_0624_c_1,s_0022_c_1+s_0193_c_1,0,inf
+
+// r_1419::adenosine-tetraphosphatase
+r_1419,s_0752_c_1+s_0659_c_1,s_0839_c_1+s_0765_c_1,-inf,inf
+
+// r_1420::alpha-L-fucosidase;alpha-fucosidase
+r_1420,s_0971_c_1+s_0659_c_1,s_0708_c_1+s_0382_c_1,-inf,inf
+
+// r_1421::Aminomuconate-Semialdehyde Dehydrogenase
+r_1421,s_0749_c_1+s_0096_c_1,s_0669_c_1+s_0611_c_1,0,inf
+
+// r_1422::Ammonia Ligase (Amp-Forming)
+r_1422,s_0839_c_1+s_0593_c_1+s_0774_c_1,s_0648_c_1+s_0591_c_1+s_0653_c_1,-inf,inf
+
+// r_1423::arachidonate 15-lipoxygenase
+r_1423,s_0101_c_1+s_0869_c_1,s_0758_c_1,-inf,inf
+
+// r_1424::arachidonate 5-lipoxygenase
+r_1424,s_0101_c_1+s_0869_c_1,s_0603_c_1,-inf,inf
+
+// r_1425::Ca2+/calmodulin-dependent protein kinase
+r_1425,s_0839_c_1+s_0289_c_1,s_0386_c_1+s_0527_c_1,-inf,inf
+
+// r_1426::cyclin-dependent kinase
+r_1426,s_0839_c_1+s_0289_c_1,s_0386_c_1+s_0527_c_1,-inf,inf
+
+// r_1427::D-Glucosamine-6-Phosphate N-Acetyltransferase
+r_1427,s_0408_c_1+s_0307_c_1,s_0624_c_1+s_0240_c_1,-inf,inf
+
+// r_1428::D-ribulokinase;D-ribulokinase (phosphorylating)
+r_1428,s_0839_c_1+s_0898_c_1,s_0386_c_1+s_0291_c_1,-inf,inf
+
+// r_1429::dolichyl-diphosphooligosaccharide-protein glycotransferase
+r_1429,s_0672_c_1+s_0683_c_1,s_0362_c_1+s_0683_c_1,-inf,inf
+
+// r_1430::dual-specificity kinase;ADK1
+r_1430,s_0839_c_1+s_0289_c_1,s_0386_c_1+s_0527_c_1,-inf,inf
+
+// r_1431::FFBM09
+r_1431,s_1012_c_2,s_1112_c_2+s_1192_c_2,-inf,inf
+
+// r_1432::FFBM10
+r_1432,s_1172_c_2+s_1181_c_2,s_1112_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1433::FFBM11
+r_1433,s_1012_c_2+s_1181_c_2,s_1051_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1434::FFBM12
+r_1434,s_1107_c_2+s_1181_c_2,s_1015_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1435::FFBM13
+r_1435,s_1107_c_2,s_1109_c_2+s_1192_c_2,-inf,inf
+
+// r_1436::FFBM14
+r_1436,s_1160_c_2+s_1181_c_2,s_1186_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1437::FFBM15
+r_1437,s_1071_c_2+s_1181_c_2,s_1090_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1438::FFBM16
+r_1438,s_1071_c_2,s_1021_c_2+s_1192_c_2,-inf,inf
+
+// r_1439::FFBM17
+r_1439,s_1011_c_2+s_1181_c_2,s_1202_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1440::FFBM18
+r_1440,s_1011_c_2,s_1182_c_2+s_1192_c_2,-inf,inf
+
+// r_1441::FFBM19
+r_1441,s_1211_c_2+s_1181_c_2,s_1201_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1442::FFBM20
+r_1442,s_1014_c_2+s_1181_c_2,s_1038_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1443::FFBM21
+r_1443,s_1014_c_2,s_1074_c_2+s_1192_c_2,-inf,inf
+
+// r_1444::FFBM22
+r_1444,s_1129_c_2+s_1181_c_2,s_1074_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1445::FFBM23
+r_1445,s_1158_c_2+s_1181_c_2,s_1203_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1446::FFBM24
+r_1446,s_1156_c_2+s_1181_c_2,s_1109_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1447::FFBM25
+r_1447,s_1210_c_2+s_1181_c_2,s_1004_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1448::FFBM26
+r_1448,s_1210_c_2,s_1201_c_2+s_1192_c_2,-inf,inf
+
+// r_1449::FFBM27
+r_1449,s_1020_c_2+s_1181_c_2,s_1182_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1450::FFBM28
+r_1450,s_1096_c_2+s_1181_c_2,s_1021_c_2+s_1002_c_2+s_1001_c_2,-inf,inf
+
+// r_1451::FFBM29
+r_1451,s_1008_c_2+s_1002_c_2+s_1001_c_2,s_1212_c_2+s_1181_c_2,-inf,inf
+
+// r_1452::FFBM30
+r_1452,s_1160_c_2,s_1203_c_2+s_1192_c_2,-inf,inf
+
+// r_1453::FFBM31
+r_1453,s_1135_c_2+s_1162_c_2,s_1030_c_2+s_1006_c_2,0,inf
+
+// r_1454::FFBM32
+r_1454,s_1057_c_2+s_1162_c_2,s_1030_c_2+s_1207_c_2,-inf,inf
+
+// r_1455::General Fatty Acid Synthesis
+r_1455,0.025*s_0824_c_1+0.165*s_0127_c_1+0.066*s_0475_c_1+0.099*s_0315_c_1+0.559*s_0258_c_1+0.005*s_0618_c_1+0.045*s_0189_c_1+0.018*s_0546_c_1+0.009*s_0903_c_1+0.008*s_0489_c_1,s_0509_c_1+s_0193_c_1,0,inf
+
+// r_1456::glucose 1-dehydrogenase
+r_1456,s_0548_c_1+s_0096_c_1,s_0656_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_1457::glucose 1-dehydrogenase
+r_1457,s_0548_c_1+s_0075_c_1,s_0656_c_1+s_0775_c_1+s_0213_c_1,-inf,inf
+
+// r_1458::glucuronosyl-N-acetylgalactosaminyl-proteoglycan4-beta-N-acetylgalactosaminyltransferase
+r_1458,s_0111_c_1+s_0552_c_1,s_0275_c_1+s_0442_c_1,-inf,inf
+
+// r_1459::glutaminase;glutaminase I;L-glutaminase;glutamine aminohydrolase
+r_1459,s_0907_c_1+s_0659_c_1,s_0643_c_1+s_0774_c_1,-inf,inf
+
+// r_1460::Glycerol Acylhydrolase
+r_1460,s_0908_c_1+s_0509_c_1,s_0727_c_1,-inf,inf
+
+// r_1461::histone acetyltransferase
+r_1461,s_0408_c_1+s_0110_c_1,s_0624_c_1+s_0598_c_1,-inf,inf
+
+// r_1462::HPG01
+r_1462,s_0791_c_1,s_0914_c_1,0,inf
+
+// r_1463::HPG02
+r_1463,s_0279_c_1+s_0765_c_1,s_0675_c_1+s_0659_c_1,0,inf
+
+// r_1464::HPG03
+r_1464,s_0140_c_1+s_0624_c_1+s_0096_c_1,s_0611_c_1+s_0029_c_1+s_0408_c_1,0,inf
+
+// r_1465::HPG04
+r_1465,s_0870_c_1,s_0964_c_1,0,inf
+
+// r_1466::HPG06
+r_1466,s_0792_c_1+s_0209_c_1,s_0100_c_1+s_0050_c_1,0,inf
+
+// r_1467::HPG07
+r_1467,s_0617_c_1,s_0430_c_1+s_0121_c_1,0,inf
+
+// r_1468::HPG08
+r_1468,s_0455_c_1,s_0617_c_1,0,inf
+
+// r_1469::HPG09
+r_1469,s_0155_c_1,s_0480_c_1,0,inf
+
+// r_1470::HPG10
+r_1470,s_0177_c_1,s_0398_c_1,0,inf
+
+// r_1471::HPG11
+r_1471,s_1281_c_3+s_1299_c_3,s_0909_c_1,0,inf
+
+// r_1472::HPG12
+r_1472,s_0987_c_3+s_1299_c_3,s_0493_c_1,-inf,inf
+
+// r_1473::HPG125
+r_1473,s_0006_c_1,s_1232_c_3,0,inf
+
+// r_1474::HPG13
+r_1474,s_0075_c_1+s_0611_c_1+2.0*s_1299_c_3,s_0775_c_1+s_0096_c_1,0,inf
+
+// r_1475::HPG14
+r_1475,s_1323_c_3,s_0457_c_1,0,inf
+
+// r_1476::HPG15
+r_1476,s_1304_c_3+s_1299_c_3,s_0118_c_1,-inf,inf
+
+// r_1477::HPG16
+r_1477,s_1221_c_3,s_0869_c_1,-inf,inf
+
+// r_1478::HPG17
+r_1478,s_1350_c_3,s_0029_c_1,-inf,inf
+
+// r_1479::HPG18
+r_1479,s_0087_c_1,s_0735_c_1,0,inf
+
+// r_1480::HPG19
+r_1480,s_1299_c_3,s_0213_c_1,-inf,inf
+
+// r_1481::HPG23
+r_1481,s_0861_c_1+s_0114_c_1,s_0650_c_1+s_0759_c_1,-inf,inf
+
+// r_1482::HPG24
+r_1482,s_0759_c_1,s_0765_c_1+s_0048_c_1,0,inf
+
+// r_1483::HPG25
+r_1483,s_0461_c_1+s_0624_c_1+s_0096_c_1,s_0126_c_1+s_0611_c_1,0,inf
+
+// r_1484::HPG26
+r_1484,s_0483_c_1,s_0959_c_1,0,inf
+
+// r_1485::HPG27
+r_1485,s_0959_c_1,s_0679_c_1+s_0774_c_1+s_0029_c_1,0,inf
+
+// r_1486::HPG28
+r_1486,s_0541_c_1+s_0100_c_1,s_0614_c_1+s_0079_c_1,0,inf
+
+// r_1487::HPG31
+r_1487,s_0363_c_1+s_1141_c_2,s_0335_c_1+s_1180_c_2,0,inf
+
+// r_1488::HPG32
+r_1488,s_0079_c_1+s_0614_c_1,s_0541_c_1+s_0100_c_1,0,inf
+
+// r_1489::HPG34
+r_1489,s_1143_c_2+s_1002_c_2,s_1181_c_2+s_1140_c_2,0,inf
+
+// r_1490::HPG35
+r_1490,s_1139_c_2+s_1140_c_2,s_1143_c_2+s_1161_c_2,0,inf
+
+// r_1491::HPG36
+r_1491,s_1010_c_2+s_1002_c_2,s_1143_c_2+s_1181_c_2,-inf,inf
+
+// r_1492::HPG37
+r_1492,s_1010_c_2+s_1161_c_2,s_1140_c_2+s_1139_c_2,0,inf
+
+// r_1493::HPG39
+r_1493,s_0408_c_1+2.0*s_0611_c_1,s_0876_c_1+2.0*s_0096_c_1+s_0624_c_1,-inf,inf
+
+// r_1494::HPG41
+r_1494,s_0611_c_1+s_0209_c_1,s_0096_c_1+s_0050_c_1+2.0*s_1299_c_3,0,inf
+
+// r_1495::HPG44
+r_1495,2.0*s_0050_c_1+s_0869_c_1,2.0*s_0209_c_1+4.0*s_1299_c_3,0,inf
+
+// r_1496::HPG45
+r_1496,s_0108_c_1,s_0365_c_1,0,inf
+
+// r_1497::hydroxyacylglutathione hydrolase;glyoxalase II
+r_1497,s_0474_c_1+s_0659_c_1,s_0782_c_1+s_0211_c_1,-inf,inf
+
+// r_1498::lysophospholipase;lecithinase B
+r_1498,s_0606_c_1+s_0659_c_1,s_0742_c_1+s_0643_c_1,-inf,inf
+
+// r_1499::MABP
+r_1499,0.0897*s_0562_c_1+0.0673*s_0381_c_1+0.0493*s_0612_c_1+0.0538*s_0425_c_1+0.0852*s_0750_c_1+0.0269*s_0004_c_1+0.0269*s_0201_c_1+0.0583*s_0679_c_1+0.0404*s_0746_c_1+0.0269*s_0754_c_1+0.0448*s_0316_c_1+0.0987*s_0629_c_1+0.0314*s_0349_c_1+0.0179*s_0366_c_1+0.0762*s_0487_c_1+0.0135*s_0391_c_1+0.0314*s_0013_c_1+0.0179*s_0946_c_1+0.1031*s_0066_c_1+0.0404*s_0037_c_1+4.306*s_0839_c_1,s_0006_c_1+4.306*s_0386_c_1+4.306*s_0765_c_1,0,inf
+
+// r_1500::MITTRA36
+r_1500,s_0485_c_1,s_1134_c_2,-inf,inf
+
+// r_1501::MITTRA37
+r_1501,s_0482_c_1,s_0994_c_2,-inf,inf
+
+// r_1502::MITTRA38
+r_1502,s_0970_c_1,s_1057_c_2,-inf,inf
+
+// r_1503::Monophenol,L-Dopa O2 Oxidoreductase
+r_1503,s_0351_c_1+s_0869_c_1+s_0611_c_1+s_0213_c_1,s_0305_c_1+s_0096_c_1+s_0659_c_1,-inf,inf
+
+// r_1504::N-acetylgalactosaminyl-proteoglycan 3-beta-glucuronosyltransferase
+r_1504,s_0175_c_1+s_0447_c_1,s_0275_c_1+s_0024_c_1,-inf,inf
+
+// r_1505::N6-Acetyl-L-Lysine: Akg Aminotransferase
+r_1505,s_0241_c_1+s_0715_c_1,s_0852_c_1+s_0679_c_1,-inf,inf
+
+// r_1506::Niacinamide Transport
+r_1506,s_1258_c_3,s_0072_c_1,0,inf
+
+// r_1507::Nicotinamide Deamidase
+r_1507,s_0072_c_1,s_0698_c_1+s_0774_c_1,0,inf
+
+// r_1508::non-specific protein-tyrosine kinase
+r_1508,s_0839_c_1+s_0154_c_1,s_0386_c_1+s_0667_c_1,-inf,inf
+
+// r_1509::non-specific serine/threonine protein kinase
+r_1509,s_0839_c_1+s_0602_c_1,s_0386_c_1+s_0821_c_1,-inf,inf
+
+// r_1510::Ornithine Citrulline Antiport
+r_1510,s_0997_c_2+s_0720_c_1,s_0526_c_1+s_1063_c_2,-inf,inf
+
+// r_1511::P1,P3-Bis(5'-Adenosyl) Triphosphate Adenylohydrolase
+r_1511,s_0941_c_1+s_0659_c_1,s_0386_c_1+s_0648_c_1,-inf,inf
+
+// r_1512::PDEb
+r_1512,s_0669_c_1+s_0775_c_1,s_0255_c_1+s_0075_c_1+s_0774_c_1,0,inf
+
+// r_1513::peptidylprolyl isomerase
+r_1513,s_0788_c_1,s_0390_c_1,-inf,inf
+
+// r_1514::phosphatidylinositol N-acetylglucosaminyltransferase
+r_1514,s_0343_c_1+s_0332_c_1,s_0275_c_1+s_0523_c_1,-inf,inf
+
+// r_1515::phosphoprotein phosphatase
+r_1515,s_0527_c_1+s_0659_c_1,s_0289_c_1+s_0765_c_1,-inf,inf
+
+// r_1516::polypeptide N-acetylgalactosaminyltransferase
+r_1516,s_0730_c_1+s_0812_c_1,s_0275_c_1+s_0985_c_1,-inf,inf
+
+// r_1517::prostaglandin-D synthase
+r_1517,s_0129_c_1,s_0233_c_1,-inf,inf
+
+// r_1518::protein-tyrosine-phosphatase
+r_1518,s_0599_c_1+s_0659_c_1,s_0808_c_1+s_0765_c_1,-inf,inf
+
+// r_1519::Putative
+r_1519,s_0098_c_1,s_0435_c_1,0,inf
+
+// r_1520::ribitol 2-dehydrogenase
+r_1520,s_0584_c_1+s_0096_c_1,s_0898_c_1+s_0611_c_1+s_0213_c_1,-inf,inf
+
+// r_1521::RNA-3'-phosphate cyclase;RNA cyclase
+r_1521,s_0839_c_1+s_0892_c_1,s_0648_c_1+s_0591_c_1+s_0433_c_1,-inf,inf
+
+// r_1522::Sphinganine N-Acyltransferase
+r_1522,s_0335_c_1+s_0670_c_1,s_0092_c_1+s_0624_c_1,0,inf
+
+// r_1523::Sphinganine N-Acyltransferase
+r_1523,s_0335_c_1+0.025*s_0662_c_1+0.165*s_0478_c_1+0.066*s_0248_c_1+0.099*s_0285_c_1+0.559*s_0259_c_1+0.005*s_0589_c_1+0.0405*s_0277_c_1+0.018*s_0666_c_1,s_0092_c_1+s_0624_c_1,0,inf
+
+// r_1524::STadd1
+r_1524,s_0436_c_1,s_1296_c_3,0,inf
+
+// r_1525::STadd10
+r_1525,s_0741_c_1,s_1264_c_3,0,inf
+
+// r_1526::STadd11
+r_1526,s_0391_c_1+s_0576_c_1,s_0816_c_1+s_0659_c_1,0,inf
+
+// r_1527::STadd12
+r_1527,s_0816_c_1,s_1341_c_3,0,inf
+
+// r_1528::STadd13
+r_1528,s_0677_c_1+s_0326_c_1,s_0606_c_1+0.0*s_0877_c_1,0,inf
+
+// r_1529::STadd14
+r_1529,s_0606_c_1+0.0*s_0670_c_1,s_0624_c_1+s_0677_c_1,0,inf
+
+// r_1530::STadd15
+r_1530,s_0606_c_1+s_0659_c_1,s_0742_c_1+0.0*s_0509_c_1,0,inf
+
+// r_1531::STadd16
+r_1531,s_0742_c_1,s_1298_c_3,0,inf
+
+// r_1532::STadd2
+r_1532,s_0241_c_1,s_1289_c_3,0,inf
+
+// r_1533::STadd3
+r_1533,s_0425_c_1+s_0140_c_1,s_0349_c_1+s_0128_c_1,0,inf
+
+// r_1534::STadd4
+r_1534,s_0128_c_1,s_1326_c_3,0,inf
+
+// r_1535::STadd5
+r_1535,s_0408_c_1+s_0013_c_1,s_0624_c_1+s_0047_c_1,0,inf
+
+// r_1536::STadd6
+r_1536,s_0047_c_1,s_1325_c_3,0,inf
+
+// r_1537::STadd7
+r_1537,s_0218_c_1+s_0720_c_1,s_0120_c_1+s_0659_c_1,0,inf
+
+// r_1538::STadd8
+r_1538,s_0120_c_1,s_1246_c_3,0,inf
+
+// r_1539::STadd9
+r_1539,s_0674_c_1,s_1244_c_3,0,inf
+
+// r_1540::tRNA isopentenyltransferase
+r_1540,s_0164_c_1+s_0397_c_1,s_0591_c_1+s_0413_c_1,-inf,inf
+
+// r_1541::Trnag Ligase (Amp-Forming)
+r_1541,s_0330_c_1+s_0679_c_1+s_0839_c_1,s_0342_c_1+s_0591_c_1+s_0648_c_1,-inf,inf
+
+// r_1542::ubiquitin thiolesterase
+r_1542,s_0401_c_1+s_0659_c_1,s_0130_c_1+s_0655_c_1,-inf,inf
+
+// r_1543::ubiquitin---protein ligase;ubiquitin-activating enzyme
+r_1543,s_0839_c_1+s_0130_c_1+s_0911_c_1,s_0648_c_1+s_0591_c_1+s_0605_c_1,-inf,inf
+
+// r_1544::BIOTRP
+r_1544,s_0740_c_1,s_1324_c_3,0,inf
+
+// r_1545::Obj_FN
+r_1545,0.4029*s_0349_c_1+0.2471*s_0004_c_1+0.465*s_0746_c_1+0.2496*s_0612_c_1+0.0793*s_0754_c_1+0.2757*s_0425_c_1+0.6539*s_0679_c_1+0.4119*s_0316_c_1+0.0694*s_0201_c_1+0.205*s_0366_c_1+0.4173*s_0487_c_1+0.3038*s_0750_c_1+0.152*s_0391_c_1+0.1899*s_0013_c_1+0.2368*s_0629_c_1+0.3042*s_0562_c_1+0.2497*s_0381_c_1+0.0259*s_0946_c_1+0.1045*s_0037_c_1+0.2986*s_0066_c_1+0.014*s_0020_c_1+0.01*s_0551_c_1+0.01*s_0633_c_1+0.014*s_0827_c_1+0.045*s_0648_c_1+0.03*s_0844_c_1+0.033*s_0841_c_1+0.045*s_0830_c_1+0.019*s_0326_c_1+0.07*s_0677_c_1+0.027*s_0610_c_1+0.01*s_0332_c_1+0.003*s_0169_c_1+0.001*s_0048_c_1+0.003*s_0906_c_1+0.008*s_0134_c_1+43.153*s_0839_c_1+0.279*s_0021_c_1+0.00215*s_0096_c_1+0.00013*s_0075_c_1+5.0e-5*s_0611_c_1+0.0004*s_0775_c_1+3.0e-6*s_0470_c_1+5.0e-5*s_0408_c_1+5.6e-5*s_0624_c_1+0.05*s_0080_c_1+0.035*s_0909_c_1+0.007*s_0010_c_1+0.0085*s_0354_c_1+43.153*s_0659_c_1,s_0740_c_1+43.153*s_0386_c_1+43.153*s_0765_c_1+43.153*s_0213_c_1,0,inf
+
+// r_1546::TX_Product
+r_1546,368*s_0773_c_1+471*s_0059_c_1+483*s_0226_c_1+307*s_0431_c_1,product_mRNA,0,inf
+
+// r_1547::TL_Product
+r_1547,46*s_0316_c_1+36*s_0349_c_1+40*s_0004_c_1+22*s_0612_c_1+29*s_0746_c_1+38*s_0754_c_1+27*s_0679_c_1+17*s_0201_c_1+20*s_0366_c_1+43*s_0487_c_1+22*s_0750_c_1+7*s_0391_c_1+18*s_0013_c_1+30*s_0629_c_1+50*s_0562_c_1+25*s_0381_c_1+13*s_0946_c_1+24*s_0037_c_1+28*s_0066_c_1+27*s_0425_c_1,product,0,inf
