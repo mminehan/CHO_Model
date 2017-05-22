@@ -1,5 +1,7 @@
 function runSim(time_array,state_array,data_dictionary,feed_flag)
 
+(mRNA_length,protein_length)=sequence()
+
 number_of_timesteps = length(time_array)
 
 # initialize the problem -
@@ -11,10 +13,10 @@ K_glucose_uptake = 36.0
 
 #Distinguish between feed and no feed conditions
 if feed_flag == true
-  F_in = 0.005 #Feed rate (L/min)
-  F_out = 0.005 #Removal rate (L/min)
+  F_in = 0.005 #Feed rate (L/hr)
+  F_out = 0.005 #Removal rate (L/hr)
   feed_array = zeros(number_of_external_states - 1) #Exclude Volume
-  feed_array[3] = 115.0 #concentration of glucose in feed
+  feed_array[3] = 1500 #concentration of glucose in feed #1500 used to mimic paper results, saturation about 700mmol @ 30C
 else
   F_in = 0.0 #Feed rate (L/min)
   F_out = 0.0 #Removal rate (L/min)
@@ -42,9 +44,9 @@ for time_step_index = 1:number_of_timesteps-1
   #ethanol = state_array[time_step_index,5]
 
   # Default flux bounds array -
-	v_TX = 954.5*60/1629 #BP/min CHO cell, 1629 = mRNA length
-	v_TL = 300*60/526 #AA/min Homo Sapiens, 526 = protein length
-	km = 10.0^-3 #Polysome density?
+	v_TX = 954.5*60/mRNA_length #BP/min CHO cell, 1629 = mRNA length
+	v_TL = 300*60/protein_length #AA/min Homo Sapiens, 526 = protein length
+	km = 10.0^-3 #Ribosome saturation constant wrt. mRNA, Polysome density?
 	kd = 0.1 #mRNA degradation constant, this one's from Homo Sapiens
 	default_bounds_array = data_dictionary["default_flux_bounds_array"]
 	default_bounds_array[2258,2] = v_TX
@@ -75,8 +77,9 @@ for time_step_index = 1:number_of_timesteps-1
   # grab the fluxes from the flux_array -
   qProd = flux_array[2259]
   qMRNA = flux_array[2258]
-  mu = 0.03466*glucose/(k_g+glucose)
-  k_death = 0.03466*0.005
+  mu_max = 0.03466
+  mu = mu_max*glucose/(k_g+glucose) #calculated from doubing time: 0.03466
+  k_death = mu_max*0.005
 
   @show mu
 

@@ -1,5 +1,5 @@
-include("Include.jl")
 
+function sequence()
 #from http://www.ebi.ac.uk/ena/data/view/AAA60111
 mRNA_sequence = "TCGCCCAGCCAGGAAATCCATGCCCGATTCAGAAGAGGAGCCAGATCTTACCAAGTGATC
 TGCAGAGATGAAAAAACGCAGATGATATACCAGCAACATCAGTCATGGCTGCGCCCTGTG
@@ -113,3 +113,6 @@ AA_ind[20] = "s_0425_c_1"
 TX = string(nucleotide_count[1])*"*"*a_id*"+"*string(nucleotide_count[2])*"*"*c_id*"+"*string(nucleotide_count[3])*"*"*g_id*"+"*string(nucleotide_count[4])*"*"*u_id*", product_mRNA,0,inf"
 
 TL = string(AA_count[1])*"*"*AA_ind[1]*"+"*string(AA_count[2])*"*"*AA_ind[2]*"+"*string(AA_count[3])*"*"*AA_ind[3]*"+"*string(AA_count[4])*"*"*AA_ind[4]*"+"*string(AA_count[5])*"*"*AA_ind[5]*"+"*string(AA_count[6])*"*"*AA_ind[6]*"+"*string(AA_count[7])*"*"*AA_ind[7]*"+"*string(AA_count[8])*"*"*AA_ind[8]*"+"*string(AA_count[9])*"*"*AA_ind[9]*"+"*string(AA_count[10])*"*"*AA_ind[10]*"+"*string(AA_count[11])*"*"*AA_ind[11]*"+"*string(AA_count[12])*"*"*AA_ind[12]*"+"*string(AA_count[13])*"*"*AA_ind[13]*"+"*string(AA_count[14])*"*"*AA_ind[14]*"+"*string(AA_count[15])*"*"*AA_ind[15]*"+"*string(AA_count[16])*"*"*AA_ind[16]*"+"*string(AA_count[17])*"*"*AA_ind[17]*"+"*string(AA_count[18])*"*"*AA_ind[18]*"+"*string(AA_count[19])*"*"*AA_ind[19]*"+"*string(AA_count[20])*"*"*AA_ind[20]*",product,0,inf"
+
+out = [mRNA_length;protein_length]
+end

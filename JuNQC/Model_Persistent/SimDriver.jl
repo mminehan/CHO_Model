@@ -5,7 +5,7 @@
 # include -
 include("Include.jl")
 
-# setup the time-scale - Total simulation
+# setup the time-scale (hours)- Total simulation
 time_start = 0.0
 time_feed_start = 10.0
 time_feed_stop = 225.0
